@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../fonts/montserrat/Montserrat-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+:root {
+    --cor1: #252532;
+    --cor2: #4C478C;
+    --cor3: #716BC5;
+    --cor4: #E3DFF5;
+    --cor5: #F8F5FC;
+}
