@@ -1,4 +1,4 @@
-.main {
+main {
     padding: 50px;
     display: flex;
     justify-content: center;
@@ -20,10 +20,11 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
 }
 
 .hero-content h3 {
+    font-weight: bolder;
     font-size: 1em;
     color: var(--cor2);
     text-transform: uppercase;
@@ -31,6 +32,67 @@
 
 
 .hero-content h1 {
+    color: #252532;
     font-size: 3em;
-    font-weight: 900;
+    font-weight: bolder;
+}
+
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.hero-knowmore-btn {
+    width: 150px;
+    text-align: center;
+    padding: 15px 15px;
+    border-radius: 10px;
+    font-weight: 500;
+    background-color: #5e59ad;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.hero-knowmore-btn:hover {
+    background-color: #3f3b79;
+    transition: 0.3s;
+
+}
+
+.hero-signup-btn {
+    width: 150px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: 500;
+    border: 2px solid #5e59ad;
+    text-decoration: none;
+    transition: 0.3s;
+
+}
+
+.hero-signup-btn:hover {
+    transition: 0.3s;
+    color: white;
+    background-color: #5e59ad;
+}
+
+.hero-small-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #3f3b79;
+}
+
+.hero-heart-span {
+    font-size: 1.3em;
+}
+
+.hero-slowi {
+    width: 50%;
 }
