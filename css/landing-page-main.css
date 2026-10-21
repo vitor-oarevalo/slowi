@@ -142,28 +142,6 @@ main {
 
 
 
-.rest-aside {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-
-    border-radius: 20px;
-    padding: 10px 20px;
-
-    position: absolute;
-    bottom: 30px;
-    left: 20px;
-    
-    font-weight: bolder;
-    color: #3f3b79;
-    background-color: white;
-    transition: 0.3s;
-
-}
-
-
-
 .present-section-img img {
     border-radius: 20px;
 }
@@ -264,7 +242,7 @@ main {
 
 .features-header h3 {
     color: #3f3b79;
-    font-size: 0.8em;
+    font-size: 1em;
     text-transform: uppercase;
 }
 
@@ -364,4 +342,63 @@ main {
 .help-link:hover::before {
     width: 50%;
     transition: 0.3s;
+}
+
+
+
+
+.slowi-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+    background-color: #3f3b79;
+    padding: 50px;
+}
+
+
+.slowi-section-content {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+    gap: 5px;
+
+    color: white;
+    width: 40%;
+    height: 400px;
+    text-align: justify;
+}
+
+
+.slowi-section-content h3 {
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+
+.slowi-section-content h1 {
+    font-size: 3em;
+}
+
+
+
+.rhythm-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: white;
+    color: black;
+}
+
+.slowi-rest {
+    width: 540px;
+    height: 400px;
+
+    border-radius: 15px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.384);
 }
