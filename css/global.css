@@ -18,3 +18,13 @@
     --cor4: #E3DFF5;
     --cor5: #F8F5FC;
 }
+
+::selection {
+  background-color: #817ae0;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #817ae0;
+  color: #ffffff;
+}

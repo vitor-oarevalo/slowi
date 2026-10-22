@@ -429,8 +429,6 @@ main {
     color: #4C478C;
 }
 
-
-
 .help-section-content {
     display: flex;
     flex-direction: column;
@@ -486,4 +484,26 @@ main {
 .help-card-container {
     display: flex;
     gap: 30px;
+}
+
+
+
+
+.message-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 60vh;
+    color: white;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(../assets/img/background-pattern.png) no-repeat center;
+    background-size: cover;
+}
+
+.message-section p {
+    width: 50%;
 }
