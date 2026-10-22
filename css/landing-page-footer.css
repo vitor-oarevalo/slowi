@@ -1,0 +1,90 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 300px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    padding: 0px 50px;
+    gap: 50px;
+}
+
+.footer-content-main-column {
+    width: 400px !important;
+    gap: 10px !important;
+}
+
+.footer-content-column {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    width: fit-content;
+    height: 60%;
+}
+
+.link-footer {
+    color: black;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+.link-footer::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -2px;
+    transition: 0.3s;
+    background-color: #716BC5;
+}
+
+.link-footer:hover::before {
+    width: 50%;
+    transition: 0.3s;
+}
+
+
+.footer-logo-slowi {
+    width: 150px;
+}
+
+
+.footer-content-column ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+}
+
+.footer-content-column ul h3 {
+    text-transform: uppercase;
+    color: #4C478C;
+    font-size: 1em;
+}
+
+.footer-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    padding: 20px 50px;
+}
+
+.footer-footer p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-icon {
+    width: 20px;
+}
