@@ -106,4 +106,4 @@ O Slowi é um projeto em desenvolvimento. Suas funcionalidades, sua arquitetura 
 
 **Slowi — Seu espaço, seu tempo.** 🦥💜
 
-<a href="https://vitor-oarevalo.github.io/slowi/pages/landing.html" target="_blank">Link do Projeto</a>
+<a href="https://vitor-oarevalo.github.io/slowi/pages/landing-page.html" target="_blank">Link do Projeto</a>
