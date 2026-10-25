@@ -31,7 +31,6 @@ ul li {
     justify-content: space-between;
     width: 100%;
     list-style: none;
-    background-color: white;
     border-radius: 10px;
 
 }
@@ -52,4 +51,8 @@ ul li {
 
 .selected {
     background-color: #E3DFF5;
+}
+
+.selected-dark {
+    background-color: #27272b;
 }

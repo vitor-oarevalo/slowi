@@ -3,7 +3,12 @@ body.dark-mode {
       color: #ffffff;
     }
 
-    .theme-toggle-input {
+body.dark-mode .menu-link.selected {
+      background-color: #27272a;
+      color: #ffffff;
+    }
+
+.theme-toggle-input {
       display: none;
     }
 
