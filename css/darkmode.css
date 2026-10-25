@@ -1,0 +1,52 @@
+body.dark-mode {
+      background-color: #121214;
+      color: #ffffff;
+    }
+
+    .theme-toggle-input {
+      display: none;
+    }
+
+    .theme-toggle-label {
+      width: 76px;
+      height: 38px;
+      background-color: #9e9e9e;
+      border-radius: 50px;
+      padding: 4px;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background-color 0.3s ease;
+      background-image: 
+        url('../assets/icon/moon-darkmode.png'), 
+        url('../assets/icon/sun-darkmode.png');
+      background-repeat: no-repeat;
+      background-position: 8px center, 46px center; /* Posições: Lua à esquerda, Sol à direita */
+      background-size: 20px 20px;
+    }
+
+    .theme-toggle-label::after {
+      content: '';
+      width: 30px;
+      height: 30px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+      z-index: 2;
+    }
+
+
+    .theme-toggle-input:checked + .theme-toggle-label {
+      background-color: #27272a;
+    }
+
+    .theme-toggle-input:checked + .theme-toggle-label::after {
+      transform: translateX(38px);
+      background-color: #18181b;
+    }

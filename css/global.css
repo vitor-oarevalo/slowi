@@ -9,6 +9,7 @@
     box-sizing: border-box;
     font-family: 'Montserrat';
     scroll-behavior: smooth;
+    transition: 0.3s;
 }
 
 :root {
