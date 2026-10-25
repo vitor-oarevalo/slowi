@@ -7,8 +7,13 @@ body {
 .index-menu {
     width: 300px;
     height: 100%;
-    background-color: red;
     position: fixed;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.24);
+}
+
+.menu-icon {
+    width: 30px;
+    height: 30px;
 }
 
 ul {
@@ -18,20 +23,33 @@ ul {
     justify-content: space-between;
     flex-direction: column;
     gap: 10px;
-    background-color: blue;
 }
 
 ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     list-style: none;
-    background-color: green;
+    background-color: white;
+    border-radius: 10px;
+
 }
 
 .menu-link {
     display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+    color: #777386;
     width: 100%;
     padding: 15px;
+    border-radius: 10px;
+
     text-decoration: none;
-    color: black;
-    background-color: white;
+
+}
+
+.selected {
+    background-color: #E3DFF5;
 }
