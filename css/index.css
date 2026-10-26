@@ -1,11 +1,19 @@
 @charset "UTF-8";
 
 body {
+    display: flex;
     height: 300vh;
+
+}
+
+main {
+    padding: 50px;
+    width: 100%;
+    margin-left: 25vw;
 }
 
 .index-menu {
-    width: 300px;
+    width: 25vw;
     height: 100%;
     position: fixed;
     box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.24);
@@ -44,8 +52,18 @@ ul li {
     width: 100%;
     padding: 15px;
     border-radius: 10px;
-
     text-decoration: none;
+
+}
+
+.menu-link:hover {
+    transform: translateY(-10px);
+    background-color: #f1f1f1;
+}
+
+.selected:hover {
+    background-color: #dad8e4;
+    transform: translateY(-10px);
 
 }
 
@@ -55,4 +73,52 @@ ul li {
 
 .selected-dark {
     background-color: #27272b;
+}
+
+
+
+.greetings-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #E3DFF5;
+}
+
+.greetings-section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    width: 80%;
+    height: 100%;
+
+    background-color: blue;
+    padding: 20px;
+}
+
+.greeting-btns {
+    display: flex;
+    gap: 10px;
+    background-color: red;
+}
+
+.write-btn {
+    width: 200px;
+    height: 50px;
+    background-color: #4C478C;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+}
+
+.img-art {
+    width: 20%;
+    height: 100%;
+    background-color: red;
+}
+
+.img-slowi {
+    width: 100%;
+    height: 200px;
 }
