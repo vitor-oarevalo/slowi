@@ -33,16 +33,29 @@
       Deixe que ele passe pelo fluxo do rio...
     </p>
 </section>
-    <header class="index-menu">
+
+    <button id="open-btn" class="open-menu-btn" type="button" aria-label="Abrir menu" aria-controls="menu-lateral" aria-expanded="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="4" y1="7" x2="20" y2="7"/>
+            <line x1="4" y1="12" x2="20" y2="12"/>
+            <line x1="4" y1="17" x2="20" y2="17"/>
+        </svg>
+    </button>
+
+    <div id="menu-overlay" class="menu-overlay"></div>
+
+    <header class="index-menu" id="menu-lateral" aria-label="Menu principal">
         <ul>
-            <li><img src="../assets/img/slowi-logo.png" alt=""></li>
-            <li><a href="#" class="menu-link selected"><img src="../assets/icon/index-menu-home.png" alt="Ícone de casa" class="menu-icon">Início</a></li>
-            <li><a href="#" class="menu-link"><img src="../assets/icon/index-menu-diary.png" alt="Ícone de diário" class="menu-icon">Diário Emocional</a></li>
-            <li><a href="#" class="menu-link"><img src="../assets/icon/index-menu-windy.png" alt="Ícone de atividades" class="menu-icon">Atividades</a></li>
-            <li><a href="#" class="menu-link"><img src="../assets/icon/index-menu-book.png" alt="Ícone de biblioteca" class="menu-icon">Biblioteca</a></li>
-            <li><a href="#" class="menu-link"><img src="../assets/icon/index-menu-kindness.png" alt="Ícone de ajuda" class="menu-icon">Onde buscar ajuda</a></li>
-            <li><a href="#" class="menu-link"><img src="../assets/icon/index-menu-user.png" alt="Ícone de perfil" class="menu-icon">Perfil</a></li>
-            
+            <li class="menu-header">
+                <img src="../assets/img/slowi-logo.png" alt="Slowi" class="small-img-slowi">
+                <button id="close-btn" type="button" aria-label="Fechar menu" aria-controls="menu-lateral"><img src="../assets/icon/close-menu.png" alt="" class="close-menu"></button>
+            </li>
+            <li><a href="#" class="menu-link selected" aria-current="page"><img src="../assets/icon/index-menu-home.png" alt="" class="menu-icon">Início</a></li>
+            <li><a href="#" class="menu-link"><img src="../assets/icon/index-menu-diary.png" alt="" class="menu-icon">Diário Emocional</a></li>
+            <li><a href="#" class="menu-link"><img src="../assets/icon/index-menu-windy.png" alt="" class="menu-icon">Atividades</a></li>
+            <li><a href="#" class="menu-link"><img src="../assets/icon/index-menu-book.png" alt="" class="menu-icon">Biblioteca</a></li>
+            <li><a href="#" class="menu-link"><img src="../assets/icon/index-menu-kindness.png" alt="" class="menu-icon">Onde buscar ajuda</a></li>
+            <li><a href="#" class="menu-link"><img src="../assets/icon/index-menu-user.png" alt="" class="menu-icon">Perfil</a></li>
         </ul>
     </header>
     <main>
@@ -63,5 +76,6 @@
     </main>
 
     <script src="../js/loading.js"></script>
+    <script src="../js/menu.js"></script>
 </body>
 </html>
