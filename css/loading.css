@@ -1,0 +1,97 @@
+:root {
+  --bg: #7068c4;
+  --fg: #ffffff;
+}
+
+* {
+    box-sizing: border-box; 
+    margin: 0;
+}
+
+
+
+#loader {
+  z-index: 9999;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--bg);
+  text-align: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+  color: white;
+}
+
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scene {
+  position: relative;
+  width: 200px;
+  height: 90px;
+}
+
+/* Barco */
+.boat {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  width: 44px;
+  margin-left: -22px;
+  transform-origin: 50% 90%;
+  animation: bob 3s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50%      { transform: translateY(-6px) rotate(5deg); }
+}
+
+/* Ondas */
+.waves {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 40px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+}
+
+.wave {
+  position: absolute;
+  left: 0;
+  width: 200%;   /* 400px: dois ciclos de 200px */
+  height: 20px;
+}
+
+.wave path {
+  fill: none;
+  stroke: var(--fg);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.wave-1 { top: 0;    animation: flow 4s linear infinite; }
+.wave-2 { top: 18px; animation: flow 6s linear infinite reverse; }
+
+@keyframes flow {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.message {
+  font-size: 1.2em;
+  line-height: 1.5;
+  max-width: 40ch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boat, .wave { animation-duration: 12s; }
+}
