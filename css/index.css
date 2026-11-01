@@ -18,7 +18,8 @@ main {
     flex: 1;
     min-width: 0;
     margin-left: calc(var(--largura-menu));
-  background-color: #E3DFF5;
+  /* background-color: #E3DFF5; */
+  background-color: #4b3a8f;
 
 
 }
@@ -30,6 +31,9 @@ main {
 }
 
 .index-menu {
+    display: flex;
+    flex-direction: column;
+
     width: var(--largura-menu);
     height: 100%;
     position: fixed;
@@ -39,7 +43,6 @@ main {
     overflow-y: auto;
     background-color: #fff;
     box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.24);
-    transition: transform 0.35s ease, visibility 0.35s;
 }
 
 .menu-fechado .index-menu {
@@ -111,9 +114,9 @@ main {
     height: 100%;
     padding: 30px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* aqui */
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .index-menu ul li {
@@ -185,14 +188,13 @@ main {
     background-color: #27272b;
 }
 
-/* ---------- Seção de boas-vindas ---------- */
-
 .greetings-section {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     width: 100%;
-    background-color: #4a3b86;
+    /* background-color: #4a3b86; */
+    background-color: #fbfafc;
     
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.219);
     border-radius: 15px;
@@ -213,26 +215,24 @@ main {
 
 }
 
-
-
 .greetings-section-content {
     display: flex;
     flex-direction: column;
     gap: 15px;
-
     width: 60%;
     height: 100%;
-
     padding: 20px;
 }
 
 .greetings-section-content p, .greetings-section-content h1 {
-    color: #fff;
+    color: #27272b;
+
 }
 
 .greetings-section-content h3 {
     font-size: 1em;
-    color: #E3DFF5;
+    color: #27272b;
+
 }
 
 .img-slowi {
@@ -250,8 +250,8 @@ main {
 .write-btn {
     width: 200px;
     height: 50px;
-  background-color: #fff;
-  color: #4a3b86;
+    background-color: #4a3b86;
+    color: #fff;
 
     border: none;
     outline: none;
@@ -262,7 +262,7 @@ main {
 }
 
 .write-btn:hover {
-  background-color: #4b3a8f;
+  background-color: #5844a7;
   color: white;
     transform: translateY(-5px);
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.137);
@@ -274,7 +274,7 @@ main {
     width: 200px;
     height: 50px;
     background-color: transparent;
-  color: #fff;
+  color: #5844a7;
   border: 2px solid #E3DFF5;
     font-weight: bolder;
     outline: none;
@@ -318,13 +318,11 @@ main {
 
 .feeling-section {
   position: relative;
-  width: 65%;
+  width: 60%;
   background-color: #fff;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.219);
   border-radius: 15px;
   padding: 24px;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
   color: #27272b;
 }
 
@@ -452,6 +450,51 @@ main {
 }
 
 .destiny-section {
-    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 15px;
+    width: 38%;
     background-color: #fff;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.219);
+    padding: 24px;
+
+}
+
+.destiny-section-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    gap: 10px;
+
+}
+
+.destiny-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.first-destiny-icon {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #F8F5FC;
+}
+
+.destiny-section-a {
+    text-decoration: none;
+    color: #27272b;
+}
+
+.destiny-section-a:hover {
+    background-color: #fbfafc;
+    transform: translateY(-5px);
+}
+
+
+.destiny-section-content section {
+    width: 300px;
+    font-size: 0.9em;
 }

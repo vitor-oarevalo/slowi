@@ -1,4 +1,4 @@
-const MIN_TIME = 000;
+const MIN_TIME = 0;
 const inicio = performance.now();
 
 function esconderLoading() {
