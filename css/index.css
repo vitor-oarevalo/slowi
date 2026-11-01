@@ -11,11 +11,18 @@ body {
 
 
 main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     padding: 20px;
     flex: 1;
     min-width: 0;
     margin-left: calc(var(--largura-menu));
+  background-color: #E3DFF5;
+
+
 }
+
 
 .menu-fechado main {
     margin-left: 0;
@@ -184,12 +191,29 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    overflow: hidden;
     width: 100%;
-    background-color: #E3DFF5;
+    background-color: #4a3b86;
+    
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.219);
     border-radius: 15px;
 }
+
+
+.aventureiro {
+    position: relative;
+}
+
+.slowi-takecare {
+    position: absolute;
+    width: 100px;
+    top: -20px;
+    left: -20px;
+    transform: rotate(-10deg);
+    filter: drop-shadow(0px 3px 4px rgba(41, 35, 43, 0.37));
+
+}
+
+
 
 .greetings-section-content {
     display: flex;
@@ -202,9 +226,13 @@ main {
     padding: 20px;
 }
 
+.greetings-section-content p, .greetings-section-content h1 {
+    color: #fff;
+}
+
 .greetings-section-content h3 {
     font-size: 1em;
-    color: #4C478C;
+    color: #E3DFF5;
 }
 
 .img-slowi {
@@ -222,10 +250,11 @@ main {
 .write-btn {
     width: 200px;
     height: 50px;
-    background-color: #4C478C;
+  background-color: #fff;
+  color: #4a3b86;
+
     border: none;
     outline: none;
-    color: white;
     border-radius: 10px;
     font-size: 0.9em;
     font-weight: bolder;
@@ -233,8 +262,10 @@ main {
 }
 
 .write-btn:hover {
-    background-color: #635db4;
+  background-color: #4b3a8f;
+  color: white;
     transform: translateY(-5px);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.137);
     cursor: pointer;
 }
 
@@ -242,17 +273,19 @@ main {
     font-size: 0.9em;
     width: 200px;
     height: 50px;
-    background-color: #FFF;
-    color: #4C478C;
+    background-color: transparent;
+  color: #fff;
+  border: 2px solid #E3DFF5;
     font-weight: bolder;
-    border: none;
     outline: none;
     border-radius: 10px;
 }
 
 .find-btn:hover {
     transform: translateY(-5px);
-    cursor: pointer;    
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.137);
 }
 
 
@@ -272,4 +305,153 @@ main {
         visibility: visible;
         pointer-events: auto;
     }
+}
+
+
+
+.features-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 250px;
+}
+
+.feeling-section {
+  position: relative;
+  width: 65%;
+  background-color: #fff;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.219);
+  border-radius: 15px;
+  padding: 24px;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  color: #27272b;
+}
+
+.feeling-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+.feeling-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+
+/* Botões de emoção */
+.feeling-options {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.feeling-option {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 8px;
+  border: 2px solid transparent;
+  background-color: #E3DFF5;
+  color: #4a3b86;
+  border-radius: 14px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.feeling-option:hover {
+    background-color: #d5cfee;
+  transform: translateY(-5px);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.137);
+
+}
+
+.feeling-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.feeling-option svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.feeling-option svg .fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* Estado selecionado e foco por teclado */
+.feeling-option:has(input:checked) {
+  background-color: #5c47b1;
+  border-color: #4a3b86;
+  color: #fff;
+}
+
+.feeling-option:has(input:focus-visible) {
+  outline: 2px solid #4b3a8f;
+  outline-offset: 2px;
+}
+
+.feeling-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.feeling-footer p {
+  margin: 0;
+  font-size: 13px;
+  color: #27272b;
+
+}
+
+.feeling-submit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background-color: #5c47b1;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.feeling-submit:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.137);
+
+    background-color: #4b3a8f;
+}
+
+
+.slowi-heart-sticker {
+    position: absolute;
+    width: 120px;
+    top: 0;
+    right: 0;
+    transform: translate(2vw, -4vh);
+    filter: drop-shadow(0px 3px 4px rgba(41, 35, 43, 0.37));
+    z-index: 10;
+}
+
+.destiny-section {
+    width: 30%;
+    background-color: #fff;
 }
