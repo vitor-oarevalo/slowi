@@ -114,7 +114,7 @@ main {
     height: 100%;
     padding: 30px;
     display: flex;
-    justify-content: center; /* aqui */
+    justify-content: start; /* aqui */
     flex-direction: column;
     gap: 20px;
 }
@@ -497,4 +497,195 @@ main {
 .destiny-section-content section {
     width: 300px;
     font-size: 0.9em;
+}
+
+.canvas-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.canvas-section-header {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+
+
+.canvas-section-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.wellbeing-card {
+    background-color: #fff;
+    color: #27272b;
+    border-radius: 15px;
+    padding: 24px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.219);
+    width: 63%;
+}
+
+.wellbeing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.wellbeing-header h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* legenda em HTML, no canto superior direito */
+.wellbeing-legend {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #777386;
+}
+
+.wellbeing-legend .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #7a66c9;
+}
+
+.wellbeing-subtitle {
+    margin: 0 0 16px;
+    font-size: 13px;
+    color: #777386;
+}
+
+/* o tamanho do gráfico é controlado por esta div */
+.wellbeing-chart {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.wellbeing-chart canvas {
+    background-color: transparent;
+}
+
+.wellbeing-footer {
+    margin: 16px 0 0;
+    font-size: 12px;
+    color: #777386;
+}
+
+.chart-box {
+    background-color: white;
+    position: relative;
+}
+
+
+.emotions-card {
+    background-color: #fff;
+    color: #27272b;
+    border-radius: 15px;
+    padding: 24px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.219);
+    width: 35%;
+}
+
+.emotions-card h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.emotions-subtitle {
+    margin: 0 0 24px;
+    font-size: 13px;
+    color: #777386;
+}
+
+.emotions-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+/* o tamanho do gráfico é controlado por esta div */
+.emotions-chart {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    flex-shrink: 0;
+}
+
+.emotions-chart canvas {
+    background-color: transparent;
+}
+
+/* texto no centro do doughnut */
+.emotions-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; /* não atrapalha o tooltip */
+}
+
+.emotions-center strong {
+    font-size: 32px;
+    line-height: 1;
+}
+
+.emotions-center span {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #777386;
+}
+
+/* legenda */
+.emotions-legend {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.emotions-legend li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.emotions-legend .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.emotions-legend .count {
+    margin-left: auto;
+    font-weight: 600;
+    color: #4b3a8f;
+}
+
+.emotions-footer {
+    margin: 24px 0 0;
+    font-size: 12px;
+    color: #777386;
+}
+
+canvas {
+    background-color: white;
 }
