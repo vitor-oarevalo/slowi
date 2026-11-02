@@ -712,8 +712,15 @@ canvas {
     justify-content: space-between;
     padding: 30px;
     border-top: 2px solid #27272b;
-    height: fit-content;
+    height: 130px;
+    color: #27272b;
+    text-decoration: none;
 }
+
+.registration:hover {
+    background-color: #eeeeee;
+}
+
 
 .cta-diary {
     display: flex;
