@@ -149,7 +149,11 @@ input {
     color: #4C478C;
 }
 
-button {
+a.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     background-color: #4C478C;
     border: none;
     outline: none;
@@ -161,7 +165,7 @@ button {
     transition: 0.3s;
 }
 
-button:hover {
+a.login:hover {
     transition: 0.3s;
     background-color: #5e58ad;
     transform: translateY(-5px);

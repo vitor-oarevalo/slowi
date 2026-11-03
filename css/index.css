@@ -857,17 +857,10 @@ canvas {
 
 
 .leituras {
-    --roxo: #4a3a9c;
-    --roxo-escuro: #2e2470;
-    --lavanda-claro: #e4dff7;
-    --texto: #1f1b33;
-    --texto-suave: #6b6880;
-    --radius: 14px;
- 
     width: 100%;
     padding: 24px;
     background-color: #fff;
-    color: var(--texto);
+    color: #1f1b33;
     border-radius: 15px;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.219);
 }
@@ -884,7 +877,7 @@ canvas {
     margin: 0;
 }
  
-/* ---------- Cabeçalho ---------- */
+
 .leituras__topo {
     display: flex;
     justify-content: space-between;
@@ -900,7 +893,7 @@ canvas {
  
 .leituras__sub {
     font-size: 0.85rem;
-    color: var(--texto-suave);
+    color: #6b6880;
     margin-top: 4px;
 }
  
@@ -908,7 +901,7 @@ canvas {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: var(--roxo);
+    color: #4a3a9c;
     font-weight: 600;
     font-size: 0.85rem;
     text-decoration: none;
@@ -917,8 +910,7 @@ canvas {
  
 .link-seta svg { transition: transform .2s; }
 .link-seta:hover svg { transform: translateX(3px); }
- 
-/* ---------- Cards ---------- */
+
 .leituras .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -927,7 +919,7 @@ canvas {
  
 .leituras .card {
     background: #fff;
-    border-radius: var(--radius);
+    border-radius: 14px;
     overflow: hidden;
 }
  
@@ -936,8 +928,8 @@ canvas {
     height: 118px;
     object-fit: cover;
     display: block;
-    border-radius: var(--radius);
-    background: var(--lavanda-claro);
+    border-radius: 14px;
+    background: #e4dff7;
 }
  
 .card__corpo { padding: 14px 4px 0; }
@@ -949,8 +941,8 @@ canvas {
     margin-bottom: 10px;
 }
  
-.card__categoria { color: var(--roxo); font-weight: 600; }
-.card__tempo { color: var(--texto-suave); }
+.card__categoria { color: #4a3a9c; font-weight: 600; }
+.card__tempo { color: #6b6880; }
  
 .card__titulo {
     font-size: 1rem;
@@ -960,7 +952,7 @@ canvas {
  
 .card__desc {
     font-size: 0.75rem;
-    color: var(--texto-suave);
+    color: #6b6880;
     margin-bottom: 14px;
     line-height: 1.5;
 }
@@ -969,7 +961,7 @@ canvas {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: var(--roxo);
+    color: #4a3a9c;
     font-size: 0.75rem;
     font-weight: 500;
     text-decoration: none;
@@ -977,11 +969,11 @@ canvas {
  
 .card__link:hover { text-decoration: underline; }
  
-/* ---------- Faixa de ajuda ---------- */
+
 .ajuda {
     margin-top: 28px;
-    background: var(--lavanda-claro);
-    border-radius: var(--radius);
+    background: #e4dff7;
+    border-radius: 14px;
     padding: 18px 24px;
     display: flex;
     align-items: center;
@@ -992,27 +984,26 @@ canvas {
 .ajuda__info { display: flex; align-items: center; gap: 16px; }
  
 .ajuda__titulo {
-    color: var(--roxo-escuro);
+    color: #2e2470;
     font-size: 0.9rem;
     font-weight: 700;
 }
  
 .ajuda__texto {
     font-size: 0.75rem;
-    color: var(--texto-suave);
+    color: #6b6880;
     margin-top: 3px;
 }
  
-.ajuda .link-seta { color: var(--roxo-escuro); }
+.ajuda .link-seta { color: #2e2470; }
  
-/* ---------- Rodapé ---------- */
 .rodape {
     margin-top: 24px;
     display: flex;
     justify-content: space-between;
     gap: 12px;
     font-size: 0.68rem;
-    color: var(--texto-suave);
+    color: #6b6880;
 }
  
 .rodape span { display: inline-flex; align-items: center; gap: 6px; }
