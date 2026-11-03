@@ -6,7 +6,7 @@
 
 body {
     display: flex;
-    height: 300vh;
+    min-height: 100vh;
 }
 
 
@@ -18,7 +18,6 @@ main {
     flex: 1;
     min-width: 0;
     margin-left: calc(var(--largura-menu));
-  /* background-color: #E3DFF5; */
   background-color: #4b3a8f;
 
 
@@ -822,6 +821,10 @@ canvas {
     padding: 0px 10px;
 }
 
+.activity-card-content p, .activity-card-content h4 {
+    font-size: 0.8em;
+}
+
 .activity-card:hover {
     background-color: #4b3a8f;
     transform: translateY(-5px);
@@ -850,3 +853,167 @@ canvas {
     width: 100%;
     transition: 0.3s;
 }
+
+
+
+.leituras {
+    --roxo: #4a3a9c;
+    --roxo-escuro: #2e2470;
+    --lavanda-claro: #e4dff7;
+    --texto: #1f1b33;
+    --texto-suave: #6b6880;
+    --radius: 14px;
+ 
+    width: 100%;
+    padding: 24px;
+    background-color: #fff;
+    color: var(--texto);
+    border-radius: 15px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.219);
+}
+ 
+.leituras *,
+.leituras *::before,
+.leituras *::after {
+    box-sizing: border-box;
+}
+ 
+.leituras h2,
+.leituras h3,
+.leituras p {
+    margin: 0;
+}
+ 
+/* ---------- Cabeçalho ---------- */
+.leituras__topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+ 
+.leituras__titulo {
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+ 
+.leituras__sub {
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+    margin-top: 4px;
+}
+ 
+.link-seta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--roxo);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    white-space: nowrap;
+}
+ 
+.link-seta svg { transition: transform .2s; }
+.link-seta:hover svg { transform: translateX(3px); }
+ 
+/* ---------- Cards ---------- */
+.leituras .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+ 
+.leituras .card {
+    background: #fff;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+ 
+.card__img {
+    width: 100%;
+    height: 118px;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radius);
+    background: var(--lavanda-claro);
+}
+ 
+.card__corpo { padding: 14px 4px 0; }
+ 
+.card__meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.68rem;
+    margin-bottom: 10px;
+}
+ 
+.card__categoria { color: var(--roxo); font-weight: 600; }
+.card__tempo { color: var(--texto-suave); }
+ 
+.card__titulo {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+ 
+.card__desc {
+    font-size: 0.75rem;
+    color: var(--texto-suave);
+    margin-bottom: 14px;
+    line-height: 1.5;
+}
+ 
+.card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--roxo);
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+ 
+.card__link:hover { text-decoration: underline; }
+ 
+/* ---------- Faixa de ajuda ---------- */
+.ajuda {
+    margin-top: 28px;
+    background: var(--lavanda-claro);
+    border-radius: var(--radius);
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+ 
+.ajuda__info { display: flex; align-items: center; gap: 16px; }
+ 
+.ajuda__titulo {
+    color: var(--roxo-escuro);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+ 
+.ajuda__texto {
+    font-size: 0.75rem;
+    color: var(--texto-suave);
+    margin-top: 3px;
+}
+ 
+.ajuda .link-seta { color: var(--roxo-escuro); }
+ 
+/* ---------- Rodapé ---------- */
+.rodape {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 0.68rem;
+    color: var(--texto-suave);
+}
+ 
+.rodape span { display: inline-flex; align-items: center; gap: 6px; }
+ 
