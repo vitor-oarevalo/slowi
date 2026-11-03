@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slowi - Diário Emocional</title>
+    <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/diario.css">
+</head>
+<body>
+    <button id="open-btn" class="open-menu-btn" type="button" aria-label="Abrir menu" aria-controls="menu-lateral" aria-expanded="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>
+        </svg>
+    </button>
+    <div id="menu-overlay" class="menu-overlay"></div>
+
+    <header class="index-menu" id="menu-lateral" aria-label="Menu principal">
+        <ul>
+            <li class="menu-header">
+                <img src="../assets/img/slowi-logo.png" alt="Slowi" class="small-img-slowi">
+                <button id="close-btn" type="button" aria-label="Fechar menu" aria-controls="menu-lateral"><img src="../assets/icon/close-menu.png" alt="" class="close-menu"></button>
+            </li>
+            <li><a href="index.html" class="menu-link"><img src="../assets/icon/index-menu-home.png" alt="" class="menu-icon">Início</a></li>
+            <li><a href="diario.html" class="menu-link selected" aria-current="page"><img src="../assets/icon/index-menu-diary.png" alt="" class="menu-icon">Diário Emocional</a></li>
+            <li><a href="atividades.html" class="menu-link"><img src="../assets/icon/index-menu-windy.png" alt="" class="menu-icon">Atividades</a></li>
+            <li><a href="biblioteca.html" class="menu-link"><img src="../assets/icon/index-menu-book.png" alt="" class="menu-icon">Biblioteca</a></li>
+            <li><a href="ajuda.html" class="menu-link"><img src="../assets/icon/index-menu-kindness.png" alt="" class="menu-icon">Onde buscar ajuda</a></li>
+        </ul>
+        <div class="menu-rodape">
+            <a href="perfil.html" class="menu-usuario">
+                <span class="avatar" aria-hidden="true">C</span>
+                <span><strong>Clara</strong><small>Ver perfil</small></span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <header class="topbar">
+            <nav aria-label="Você está em"><strong>Diário emocional</strong> <span>Registrar</span></nav>
+            <time id="hoje"></time>
+        </header>
+
+        <section class="diario-hero">
+            <article>
+                <h1>Diário emocional</h1>
+                <p>Aqui você pode escrever sem pressa e sem julgamento.</p>
+                <small>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+                    Só você vê o que escreve aqui.
+                </small>
+            </article>
+            <img src="../assets/img/slowi-aventureiro1.png" alt="" class="hero-img">
+        </section>
+
+        <nav class="tabs" role="tablist" aria-label="Seções do diário">
+            <button type="button" role="tab" id="aba-escrever" aria-controls="painel-escrever" aria-selected="true" class="tab">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>Escrever
+            </button>
+            <button type="button" role="tab" id="aba-historico" aria-controls="painel-historico" aria-selected="false" class="tab" tabindex="-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>Histórico
+            </button>
+            <button type="button" role="tab" id="aba-graficos" aria-controls="painel-graficos" aria-selected="false" class="tab" tabindex="-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7"/></svg>Gráficos
+            </button>
+        </nav>
+
+        <section class="diario-card" id="painel-escrever" role="tabpanel" aria-labelledby="aba-escrever">
+            <form id="registro" novalidate>
+                <header class="registro-topo">
+                    <div>
+                        <h2>Um momento para se escutar</h2>
+                        <p>Sem pressa, sem metas e sem página em branco para vencer.</p>
+                    </div>
+                    <button type="button" class="ghost-btn" id="limpar">Limpar campos</button>
+                </header>
+
+                <fieldset class="bloco">
+                    <legend>Data e hora</legend>
+                    <div class="data-campo">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>
+                        <input type="datetime-local" id="data" aria-label="Data e hora do registro" disabled>
+                        <button type="button" id="editar-data" aria-label="Editar data e hora">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>
+                        </button>
+                    </div>
+                    <p class="dica">Por padrão, usamos o momento atual. Se quiser registrar outro momento, é só editar.</p>
+                </fieldset>
+
+                <fieldset class="bloco">
+                    <legend>Como você está se sentindo?</legend>
+                    <span class="lado">Escolha uma emoção principal</span>
+                    <div class="emocoes">
+                        <label class="emocao" style="--c:#E3DFF5">
+                            <input type="radio" name="emocao" value="Calma">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r=".6"/><circle cx="15" cy="10" r=".6"/><path d="M8.5 14.5c1 1.2 2.1 1.8 3.5 1.8s2.5-.6 3.5-1.8"/></svg>
+                            <span>Calma</span>
+                        </label>
+                        <label class="emocao" style="--c:#FBEFD3">
+                            <input type="radio" name="emocao" value="Alegria">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 9.5h2M14 9.5h2"/><path d="M7.5 13.5h9c0 2.6-2 4.5-4.5 4.5s-4.5-1.9-4.5-4.5z"/></svg>
+                            <span>Alegria</span>
+                        </label>
+                        <label class="emocao" style="--c:#E6E0F7">
+                            <input type="radio" name="emocao" value="Cansaço">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+                            <span>Cansaço</span>
+                        </label>
+                        <label class="emocao" style="--c:#FBE3D6">
+                            <input type="radio" name="emocao" value="Ansiedade">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h3l2-5 3 10 3-7 2 2h5"/></svg>
+                            <span>Ansiedade</span>
+                        </label>
+                        <label class="emocao" style="--c:#DCE8F6">
+                            <input type="radio" name="emocao" value="Tristeza">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r=".6"/><circle cx="15" cy="10" r=".6"/><path d="M8.5 16.5c1-1.2 2.1-1.8 3.5-1.8s2.5.6 3.5 1.8"/></svg>
+                            <span>Tristeza</span>
+                        </label>
+                        <label class="emocao" style="--c:#F7DCE0">
+                            <input type="radio" name="emocao" value="Raiva">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M7.5 8.5l3 1.5M16.5 8.5l-3 1.5"/><path d="M8.5 16c1-1 2.1-1.5 3.5-1.5s2.5.5 3.5 1.5"/></svg>
+                            <span>Raiva</span>
+                        </label>
+                        <label class="emocao" style="--c:#EADFF3">
+                            <input type="radio" name="emocao" value="Sobrecarga">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5zM3 13l9 5 9-5"/></svg>
+                            <span>Sobrecarga</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="bloco linha">
+                    <div>
+                        <legend>Qual a intensidade desse sentimento?</legend>
+                        <p class="dica">Escolha o que parece mais próximo do que você sente.</p>
+                    </div>
+                    <div class="intensidade">
+                        <span>Leve</span>
+                        <label><input type="radio" name="intensidade" value="1"><span>1</span></label>
+                        <label><input type="radio" name="intensidade" value="2"><span>2</span></label>
+                        <label><input type="radio" name="intensidade" value="3" checked><span>3</span></label>
+                        <label><input type="radio" name="intensidade" value="4"><span>4</span></label>
+                        <label><input type="radio" name="intensidade" value="5"><span>5</span></label>
+                        <span>Forte</span>
+                    </div>
+                </fieldset>
+
+                <fieldset class="bloco">
+                    <legend>Seu espaço para escrever</legend>
+                    <span class="lado" id="contador">0 caracteres</span>
+                    <p class="dica">O que aconteceu e o que passou pela sua cabeça?</p>
+                    <textarea id="texto" placeholder="Hoje eu me senti..." aria-label="Seu registro"></textarea>
+                </fieldset>
+
+                <fieldset class="bloco">
+                    <legend>Se quiser, comece por uma pergunta <small>(opcional)</small></legend>
+                    <button type="button" class="pergunta">O que mais pesou hoje? <b aria-hidden="true">+</b></button>
+                    <button type="button" class="pergunta">O que me ajudou, mesmo que pouco? <b aria-hidden="true">+</b></button>
+                </fieldset>
+
+                <fieldset class="bloco">
+                    <legend>Etiquetas <small>(opcional)</small></legend>
+                    <div class="etiquetas">
+                        <label><input type="checkbox" name="etiqueta" value="Estudo"><span>Estudo</span></label>
+                        <label><input type="checkbox" name="etiqueta" value="Trabalho"><span>Trabalho</span></label>
+                        <label><input type="checkbox" name="etiqueta" value="Família"><span>Família</span></label>
+                        <label><input type="checkbox" name="etiqueta" value="Sono"><span>Sono</span></label>
+                        <label><input type="checkbox" name="etiqueta" value="Saúde"><span>Saúde</span></label>
+                        <label><input type="checkbox" name="etiqueta" value="Relacionamentos"><span>Relacionamentos</span></label>
+                    </div>
+                </fieldset>
+
+                <p class="erro" id="erro" role="alert" hidden>Escolha uma emoção principal para salvar.</p>
+                <footer class="registro-rodape">
+                    <p>O que você sentir cabe aqui. No seu tempo.</p>
+                    <button type="submit" class="salvar-btn">Salvar
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+                    </button>
+                </footer>
+            </form>
+        </section>
+
+        <section class="diario-card" id="painel-historico" role="tabpanel" aria-labelledby="aba-historico" hidden>
+            <h2>Histórico</h2>
+            <p class="dica">Seus registros anteriores vão aparecer aqui.</p>
+        </section>
+
+        <section class="diario-card" id="painel-graficos" role="tabpanel" aria-labelledby="aba-graficos" hidden>
+            <h2>Gráficos</h2>
+            <p class="dica">Um olhar para como você tem se sentido vai aparecer aqui.</p>
+        </section>
+
+        <aside class="toast" id="toast" role="status" aria-live="polite" hidden>
+            <span class="toast-icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+            <div>
+                <strong>Registro guardado. Obrigado por cuidar de você hoje.</strong>
+                <small id="toast-info"></small>
+            </div>
+        </aside>
+    </main>
+
+    <script src="../js/menu.js"></script>
+    <script src="../js/diario.js"></script>
+</body>
+</html>

@@ -1008,3 +1008,33 @@ canvas {
  
 .rodape span { display: inline-flex; align-items: center; gap: 6px; }
  
+.menu-rodape {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 30px 24px;
+}
+
+.menu-usuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 14px;
+    border-top: 1px solid #e6e3ef;
+    color: #27272b;
+    text-decoration: none;
+}
+
+.menu-usuario span:last-child { display: flex; flex-direction: column; font-size: 0.9em; }
+.menu-usuario small { color: #777386; }
+
+.avatar {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #E3DFF5;
+    color: #4a3b86;
+    font-weight: bolder;
+}

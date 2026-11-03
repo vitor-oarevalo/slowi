@@ -1,0 +1,409 @@
+@charset "UTF-8";
+
+/* ---------- Menu: rodapé com cartão e usuário ---------- */
+.index-menu ul { height: auto; flex: 1; }
+
+.menu-rodape {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 30px 24px;
+}
+
+.passo-card {
+    padding: 14px;
+    border-radius: 12px;
+    background-color: #F8F5FC;
+    color: #4a3b86;
+}
+
+.passo-card h4 { margin: 0 0 4px; font-size: 0.9em; }
+.passo-card p { margin: 0; font-size: 0.8em; color: #777386; }
+
+.menu-usuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 14px;
+    border-top: 1px solid #e6e3ef;
+    color: #27272b;
+    text-decoration: none;
+}
+
+.menu-usuario span:last-child { display: flex; flex-direction: column; font-size: 0.9em; }
+.menu-usuario small { color: #777386; }
+
+.avatar {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #E3DFF5;
+    color: #4a3b86;
+    font-weight: bolder;
+}
+
+/* ---------- Barra do topo ---------- */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    border-radius: 15px;
+    background-color: #fff;
+    color: #27272b;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.219);
+}
+
+.topbar nav span { margin-left: 8px; font-size: 0.85em; color: #777386; }
+.topbar time { font-size: 0.85em; color: #4a3b86; font-weight: 600; }
+
+/* ---------- Apresentação ---------- */
+.diario-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    min-height: 170px;
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: #E3DFF5;
+    color: #27272b;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.219);
+}
+
+.diario-hero article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding: 24px 30px;
+}
+
+.diario-hero h1 { margin: 0; color: #4a3b86; }
+.diario-hero p { margin: 0; }
+
+.diario-hero small {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #777386;
+}
+
+.diario-hero small svg { width: 16px; height: 16px; }
+
+.hero-img { width: 40%; object-fit: cover; object-position: center; }
+
+/* ícones de traço usados em toda a página */
+.diario-hero svg, .tab svg, .data-campo svg, .emocao svg, .salvar-btn svg, .toast-icone svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* ---------- Abas ---------- */
+.tabs { display: flex; gap: 12px; }
+
+.tab {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 50px;
+    border: 2px solid #E3DFF5;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    font: inherit;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.tab svg { width: 20px; height: 20px; }
+.tab:hover { transform: translateY(-5px); }
+
+.tab[aria-selected="true"] {
+    background-color: #fff;
+    border-color: #fff;
+    color: #4a3b86;
+}
+
+/* ---------- Cartão do formulário ---------- */
+.diario-card {
+    padding: 28px;
+    border-radius: 15px;
+    background-color: #fff;
+    color: #27272b;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.219);
+}
+
+.diario-card[hidden] { display: none; }
+.diario-card h2 { margin: 0 0 4px; font-size: 20px; }
+
+.registro-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.registro-topo p, .dica { margin: 0; font-size: 13px; color: #777386; }
+
+.ghost-btn {
+    padding: 8px 14px;
+    border: 2px solid #E3DFF5;
+    border-radius: 10px;
+    background: transparent;
+    color: #5844a7;
+    font: inherit;
+    font-size: 0.85em;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.ghost-btn:hover { background-color: #F8F5FC; }
+
+.bloco {
+    position: relative;
+    display: block;
+    margin: 0 0 24px;
+    padding: 0;
+    border: none;
+}
+
+.bloco legend { padding: 0; margin-bottom: 4px; font-size: 16px; font-weight: 600; }
+.bloco legend small { font-weight: 400; color: #777386; }
+.bloco .dica { margin-bottom: 10px; }
+
+.lado {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    color: #777386;
+}
+
+.bloco.linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+/* ---------- Data e hora ---------- */
+.data-campo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    margin: 10px 0;
+    padding: 8px 12px;
+    border: 2px solid #E3DFF5;
+    border-radius: 10px;
+    color: #4a3b86;
+}
+
+.data-campo svg { width: 18px; height: 18px; }
+
+.data-campo input {
+    border: none;
+    background: transparent;
+    color: #27272b;
+    font: inherit;
+}
+
+.data-campo input:disabled { cursor: default; }
+
+.data-campo button {
+    display: grid;
+    place-items: center;
+    border: none;
+    background: transparent;
+    color: #4a3b86;
+    cursor: pointer;
+}
+
+/* ---------- Emoções ---------- */
+.emocoes {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.emocao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 6px;
+    border: 2px solid transparent;
+    border-radius: 14px;
+    background-color: var(--c);
+    color: #4a3b86;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.emocao svg { width: 26px; height: 26px; }
+.emocao input { position: absolute; opacity: 0; pointer-events: none; }
+
+.emocao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.137);
+}
+
+.emocao:has(input:checked) { border-color: #4a3b86; font-weight: 600; }
+.emocao:has(input:focus-visible), .intensidade label:has(input:focus-visible),
+.etiquetas label:has(input:focus-visible) { outline: 2px solid #4b3a8f; outline-offset: 2px; }
+
+/* ---------- Intensidade ---------- */
+.intensidade { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #777386; }
+
+.intensidade label input { position: absolute; opacity: 0; pointer-events: none; }
+
+.intensidade label span {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background-color: #F8F5FC;
+    color: #4a3b86;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.intensidade label span:hover { background-color: #E3DFF5; }
+.intensidade label:has(input:checked) span { background-color: #5c47b1; color: #fff; }
+
+/* ---------- Texto ---------- */
+#texto {
+    width: 100%;
+    min-height: 150px;
+    padding: 14px;
+    border: 2px solid #E3DFF5;
+    border-radius: 12px;
+    background-color: #fff;
+    color: #27272b;
+    font: inherit;
+    line-height: 1.6;
+    resize: vertical;
+}
+
+#texto:focus { outline: none; border-color: #5c47b1; }
+
+/* ---------- Perguntas ---------- */
+.pergunta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px 16px;
+    border: 2px solid #E3DFF5;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #27272b;
+    font: inherit;
+    font-size: 0.9em;
+    text-align: left;
+    cursor: pointer;
+}
+
+.pergunta b { color: #5c47b1; font-size: 1.3em; }
+.pergunta:hover { background-color: #F8F5FC; }
+
+/* ---------- Etiquetas ---------- */
+.etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.etiquetas input { position: absolute; opacity: 0; pointer-events: none; }
+
+.etiquetas label span {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 2px solid #E3DFF5;
+    border-radius: 999px;
+    color: #4a3b86;
+    font-size: 0.85em;
+    cursor: pointer;
+}
+
+.etiquetas label span:hover { background-color: #F8F5FC; }
+
+.etiquetas label:has(input:checked) span {
+    background-color: #E3DFF5;
+    border-color: #5c47b1;
+    font-weight: 600;
+}
+
+/* ---------- Rodapé do formulário ---------- */
+.registro-rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid #e6e3ef;
+}
+
+.registro-rodape p { margin: 0; font-size: 13px; color: #777386; }
+
+.salvar-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 12px;
+    background-color: #5c47b1;
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.salvar-btn svg { width: 18px; height: 18px; }
+
+.salvar-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.137);
+    background-color: #4b3a8f;
+}
+
+.erro { margin: 0 0 12px; color: #a33a4a; font-size: 0.9em; font-weight: 600; }
+.erro[hidden], .toast[hidden] { display: none; }
+
+/* ---------- Aviso de confirmação ---------- */
+.toast {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    max-width: 340px;
+    padding: 16px 18px;
+    border-radius: 14px;
+    background-color: #fff;
+    color: #27272b;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.toast strong { display: block; font-size: 0.9em; }
+.toast small { color: #777386; }
+
+.toast-icone {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #E3DFF5;
+    color: #4a3b86;
+}
+
+.toast-icone svg { width: 20px; height: 20px; }
