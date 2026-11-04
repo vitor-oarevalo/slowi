@@ -729,13 +729,10 @@ canvas {
     width: fit-content;
 }
 
-.cta-diary a {
+/* .cta-diary a {
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
     text-decoration: none;
-    height: 50px;
     font-size: 1.2em;
     border-radius: 10px;
     padding: 10px;
@@ -749,9 +746,9 @@ canvas {
     width: 0;
     height: 2px;
     background-color: #4a3b86;
-    bottom: 10px;
+    bottom: 1px;
     transition: 0.4s;
-}
+} */
 
 .cta-diary a:hover::before {
     width: 90%;
@@ -762,6 +759,7 @@ canvas {
 .diary-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
 }
 
@@ -833,6 +831,7 @@ canvas {
 }
 
 .explore-activities {
+    display: inline-block;   /* dá altura real ao link para o ::before se posicionar */
     width: fit-content;
     position: relative;
     color: #27272b;
@@ -842,16 +841,17 @@ canvas {
 .explore-activities::before {
     content: '';
     position: absolute;
+    left: 0;                 /* ancora o início da linha */
+    bottom: -2px;
     width: 0%;
     height: 2px;
     background-color: #4a3b86;
-    bottom: -2px;
     transition: 0.3s;
+    z-index: 1;              /* garante que fique acima do fundo */
 }
 
 .explore-activities:hover::before {
     width: 100%;
-    transition: 0.3s;
 }
 
 
@@ -1037,4 +1037,11 @@ canvas {
     background-color: #E3DFF5;
     color: #4a3b86;
     font-weight: bolder;
+}
+
+.btn-a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
