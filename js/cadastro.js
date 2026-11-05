@@ -8,10 +8,41 @@ function mostrarErro(mensagem) {
 
 }
 
-var senhaValidacao = ipt_senha.value;
+const REGMAIUSCULA = /[A-Z]/;
+const REGNUMERO = /\d/;
+const REGESPECIAL = /[@$!%*?&]/
 
 function validarSenha() {
+    var senhaValidacao = ipt_senha.value;
+    criterios_senha.classList.add('ativo');
     
+    crit_tamanho.classList.toggle('ok', senhaValidacao.length >= 8);
+    crit_maiuscula.classList.toggle('ok', REGMAIUSCULA.test(senhaValidacao));
+    crit_numero.classList.toggle('ok', REGNUMERO.test(senhaValidacao));
+    crit_especial.classList.toggle('ok', REGESPECIAL.test(senhaValidacao));
+
+}
+
+function checarSenhas() {
+    var senhaValidacao = ipt_senha.value;
+    var senhaConfirmada = ipt_confirmar_senha.value;
+    
+    criterios_senha2.classList.add('ativo');
+
+
+    crit_senhas.classList.toggle('ok', senhaValidacao == senhaConfirmada);
+
+    if (crit_senhas.classList.contains('ok')) {
+        crit_senhas.innerHTML = `As senhas coincidem`;
+    } else {
+        crit_senhas.innerHTML = `As senhas não coincidem`;
+    }
+}
+
+function removerRegras() {
+    criterios_senha.classList.remove('ativo');
+    criterios_senha2.classList.remove('ativo');
+
 }
 
 function cadastrar() {
@@ -20,7 +51,6 @@ function cadastrar() {
     var senhaVar = ipt_senha.value;
     var confirmacaoSenhaVar = ipt_confirmar_senha.value;
 
-    // Verificando se há algum campo em branco
     if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
         mostrarErro('Preencha todos os campos para criar sua conta')
         return false;
@@ -30,6 +60,13 @@ function cadastrar() {
         mostrarErro('As senhas estão diferentes!')
         return false;
     }
+
+    if (senhaVar.length >= 8 && REGMAIUSCULA.test(senhaVar) && REGNUMERO.test(senhaVar) && REGESPECIAL.test(senhaVar) && senhaVar == confirmacaoSenhaVar) {
+        console.log('Tudo certo')
+    } else {
+        console.log('Errado')
+    }
+
     
 
     // Enviando o valor da nova input

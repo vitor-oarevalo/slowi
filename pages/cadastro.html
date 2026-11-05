@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/global.css">
     <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/cadastro.css">
+    <link rel="stylesheet" href="../css/validarSenha.css">
 </head>
 <body>
     <main>
@@ -33,12 +34,29 @@
                 </div>
                 <div class="input-container">
                     <div class="input">
-                        <input type="password" name="" id="ipt_senha" oninput="validarSenha()">
+                        <input type="password" name="" id="ipt_senha" oninput="validarSenha()" onblur="removerRegras()">
                         <label for="ipt_senha">Senha <span>*</span></label>
+
+                        <div class="criterios-senha" id="criterios_senha">
+                            <p>Sua senha precisa ter:</p>
+                            <ul>
+                                <li id="crit_tamanho">Mínimo de 8 caracteres</li>
+                                <li id="crit_maiuscula">Uma letra maiúscula</li>
+                                <li id="crit_numero">Um número</li>
+                                <li id="crit_especial">Um caractere especial</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="input">
-                        <input type="password" name="" id="ipt_confirmar_senha">
+                        <input type="password" name="" id="ipt_confirmar_senha" oninput="checarSenhas()" onblur="removerRegras()">
                         <label for="ipt_confirmar_senha">Confirmar Senha <span>*</span></label>
+
+                        <div class="criterios-senha" id="criterios_senha2">
+                            <p>Sua senha precisa:</p>
+                            <ul>
+                                <li id="crit_senhas">As senhas não coincidem</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <button onclick="cadastrar()" class="login">Criar conta</button>
