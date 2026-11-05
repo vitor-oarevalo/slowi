@@ -232,3 +232,11 @@ span {
     color: #d9534f;
     margin-bottom: 5px;
 }
+
+.card-erro.sucesso {
+    border-left-color: #3a9d5d;
+}
+
+.card-erro.sucesso .card-erro-titulo {
+    color: #3a9d5d;
+}

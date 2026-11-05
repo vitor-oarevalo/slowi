@@ -1,8 +1,11 @@
 let timerErro;
 
-function mostrarErro(mensagem) {
+function mostrarMensagem(mensagem, tipo) {
   clearTimeout(timerErro);
 
+  card_erro.classList.toggle('sucesso', tipo == 'sucesso')
+  titulo_erro.innerHTML = tipo == 'sucesso' ? 'Tudo certo!' : 'Ops!';
+  
   card_erro.classList.add('ativo');
 
   mensagem_erro.innerHTML = `${mensagem}`
@@ -54,58 +57,48 @@ function cadastrar() {
   var confirmacaoSenhaVar = ipt_confirmar_senha.value;
 
   if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-    mostrarErro('Preencha todos os campos para criar sua conta!')
+    mostrarMensagem('Preencha todos os campos para criar sua conta!')
     return false;
   }
 
   if (senhaVar != confirmacaoSenhaVar) {
-    mostrarErro('As senhas estão diferentes!')
+    mostrarMensagem('As senhas estão diferentes!')
     return false;
   }
 
   if (!(senhaVar.length >= 8 && REGMAIUSCULA.test(senhaVar) && REGNUMERO.test(senhaVar) && REGESPECIAL.test(senhaVar))) {
-    mostrarErro("Sua senha não atende a todos os critérios de segurança")
+    mostrarMensagem('Sua senha não atende a todos os critérios de segurança')
     return false;
   }
 
-
-  // Enviando o valor da nova input
   fetch("/usuarios/cadastrar", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      // crie um atributo que recebe o valor recuperado aqui
-      // Agora vá para o arquivo routes/usuario.js
       nomeServer: nomeVar,
       emailServer: emailVar,
-      senhaServer: senhaVar,
-      idEmpresaVincularServer: idEmpresaVincular
+      senhaServer: senhaVar
     }),
   })
     .then(function (resposta) {
       console.log("resposta: ", resposta);
 
       if (resposta.ok) {
-        cardErro.style.display = "block";
-
-        mensagem_erro.innerHTML =
-          "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+        mostrarMensagem("Cadastro realizado com sucesso! Redirecionando...", "sucesso")
 
         setTimeout(() => {
           window.location = "login.html";
         }, "2000");
-
-        limparFormulario();
 
       } else {
         throw "Houve um erro ao tentar realizar o cadastro!";
       }
     })
     .catch(function (resposta) {
-      console.log(`#ERRO: ${resposta}`);
-
+      console.log(resposta);
+      mostrarMensagem("Não foi possível criar a conta. Tente novamente.")
     });
 
   return false;
