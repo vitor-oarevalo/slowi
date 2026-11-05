@@ -149,7 +149,7 @@ input {
     color: #4C478C;
 }
 
-a.login {
+.login {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -165,14 +165,14 @@ a.login {
     transition: 0.3s;
 }
 
-a.login:hover {
+.login:hover {
     transition: 0.3s;
     background-color: #5e58ad;
     transform: translateY(-5px);
     cursor: pointer;
 }
 
-a.login-link {
+.login-link {
     position: relative;
     color: #4C478C;
     font-weight: 700;
@@ -180,7 +180,7 @@ a.login-link {
     transition: 0.3s;
 }
 
-a.login-link::before {
+.login-link::before {
     content: '';
     position: absolute;
     width: 0%;
@@ -190,11 +190,45 @@ a.login-link::before {
     transition: 0.3s;
 }
 
-a.login-link:hover::before {
+.login-link:hover::before {
     width: 100%;
     transition: 0.3s;
 }
 
 span {
     color: red;
+}
+
+.card-erro {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, -200%);
+    z-index: 10;
+
+    min-width: 280px;
+    max-width: 90%;
+    padding: 15px 25px;
+    text-align: left;
+
+    background-color: var(--cor5);
+    color: var(--cor1);
+    border-radius: 10px;
+    border-left: 6px solid #d9534f;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.479);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.card-erro.ativo {
+    transform: translate(-50%, 0);
+    opacity: 1;
+}
+
+.card-erro-titulo {
+    font-weight: 700;
+    color: #d9534f;
+    margin-bottom: 5px;
 }

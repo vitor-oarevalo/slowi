@@ -10,6 +10,12 @@
 </head>
 <body>
     <main>
+        <div class="card-erro" id="card_erro">
+            <div>
+                <p class="card-erro-titulo">Ops!</p>
+                <p id="mensagem_erro"></p>
+            </div>
+        </div>
         <section class="form-section">
             <article class="form-article">
                 <div class="form-article-header">
@@ -27,7 +33,7 @@
                 </div>
                 <div class="input-container">
                     <div class="input">
-                        <input type="password" name="" id="ipt_senha">
+                        <input type="password" name="" id="ipt_senha" oninput="validarSenha()">
                         <label for="ipt_senha">Senha <span>*</span></label>
                     </div>
                     <div class="input">
@@ -35,7 +41,7 @@
                         <label for="ipt_confirmar_senha">Confirmar Senha <span>*</span></label>
                     </div>
                 </div>
-                <button>Criar conta</button>
+                <button onclick="cadastrar()" class="login">Criar conta</button>
                 <p>Já possuo uma conta. <a href="./login.html" class="login-link">Entrar</a></p>
 
                 
@@ -49,5 +55,7 @@
             </article>
         </section>
     </main>
+
+    <script src="../js/cadastro.js"></script>
 </body>
 </html>
