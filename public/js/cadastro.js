@@ -1,3 +1,5 @@
+// cadastro.js
+
 let timerErro;
 
 function mostrarMensagem(mensagem, tipo) {
@@ -93,9 +95,9 @@ function cadastrar() {
         }, "2000");
 
       } else if (resposta.status == 409) {
-          mostrarMensagem("Este e-mail já está cadastrado", "erro");
+        mostrarMensagem("Este e-mail já está cadastrado", "erro");
       } else {
-        throw "Houve um erro ao tentar realizar o cadastro!";
+        mostrarMensagem("Houve um erro ao tentar realizar o cadastro!", "erro");
       }
     })
     .catch(function (resposta) {

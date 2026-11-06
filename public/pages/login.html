@@ -10,6 +10,12 @@
 </head>
 <body>
     <main>
+        <div class="card-erro" id="card_erro">
+            <div>
+                <p class="card-erro-titulo" id="titulo_erro">Ops!</p>
+                <p id="mensagem_erro"></p>
+            </div>
+        </div>
         <section class="form-section">
             <article class="image-article">
                 <img src="../assets/img/slowi-lendo.png" alt="Slowi lendo" class="slowi-lendo-img">
@@ -32,13 +38,12 @@
                         <input type="password" name="" id="ipt_senha">
                         <label for="ipt_senha">Senha <span>*</span></label>
                     </div>
-                <a href="./index.html" class="login">Entrar</a>
+                <button onclick="entrar()" class="login">Entrar</button>
                 <p>Ainda não possuo uma conta. <a href="./cadastro.html" class="login-link">Cadastrar</a></p>
-
-                
             </article>
-            
         </section>
     </main>
+
+    <script src="../js/login.js"></script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+// usuarioController.js
+
 var crypto = require("crypto");
 
 var usuarioModel = require("../models/usuarioModel");
@@ -14,6 +16,7 @@ function autenticar(req, res) {
 
         usuarioModel.autenticar(email)
             .then(
+                
                 function (resultadoAutenticar) {
                     if (resultadoAutenticar.length == 1) {
                         var guardado = resultadoAutenticar[0].senha;

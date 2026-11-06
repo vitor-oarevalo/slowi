@@ -1,8 +1,10 @@
+// usuarioModel.js
+
 var database = require("../database/config")
 
 function autenticar(email) {
     var instrucaoSql = `
-        SELECT idCadastro, nome, email, senha FROM cadastro WHERE email = '?' AND senha = '?';
+        SELECT idCadastro, nome, email, senha FROM cadastro WHERE email = ?;
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql, [email]);
