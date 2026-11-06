@@ -92,6 +92,8 @@ function cadastrar() {
           window.location = "login.html";
         }, "2000");
 
+      } else if (resposta.status == 409) {
+          mostrarMensagem("Este e-mail já está cadastrado", "erro");
       } else {
         throw "Houve um erro ao tentar realizar o cadastro!";
       }
