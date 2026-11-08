@@ -18,7 +18,7 @@ main {
     flex: 1;
     min-width: 0;
     margin-left: calc(var(--largura-menu));
-  background-color: #4b3a8f;
+    background-color: #4b3a8f;
 
 
 }
@@ -98,7 +98,6 @@ main {
     pointer-events: none;
 }
 
-/* ---------- Itens do menu ---------- */
 
 .small-img-slowi {
     width: 150px;
@@ -116,6 +115,7 @@ main {
     justify-content: start; /* aqui */
     flex-direction: column;
     gap: 20px;
+    overflow: hidden;
 }
 
 .index-menu ul li {
@@ -183,9 +183,41 @@ main {
     background-color: #E3DFF5;
 }
 
-.selected-dark {
-    background-color: #27272b;
+
+.logout-img {
+  width: 30px;
 }
+
+.logout-link {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #FF4040;
+    background: white;
+    outline: none;
+    border: none;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+
+.logout-link:hover {
+    cursor: pointer;
+    background-color: #ffeaea;
+    transform: translateY(-5px);
+    
+}
+
+
+
+
+
+
 
 .greetings-section {
     display: flex;

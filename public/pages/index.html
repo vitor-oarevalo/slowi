@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/loading.css">
+    <script src="../js/sessao.js"></script>
 </head>
 <body>
     <!-- <section id="loader" role="status" aria-live="polite">
@@ -58,16 +59,17 @@
         </ul>
         <div class="menu-rodape">
             <a href="perfil.html" class="menu-usuario">
-                <span class="avatar" aria-hidden="true">C</span>
-                <span><strong>Clara</strong><small>Ver perfil</small></span>
+                <span id="avatar" class="avatar" aria-hidden="true"></span>
+                <span><strong id="username_tag"></strong><small>Ver perfil</small></span>
             </a>
+            <button onclick="sair()" class="logout-link"><img src="../assets/icon/logout.png" alt="" class="logout-img"> Sair</a>
         </div>
     </header>
     <main>
         <section class="greetings-section">
             <article class="greetings-section-content">
                 <h3>QUE BOM TER VOCÊ POR AQUI</h3>
-                <h1>Olá, Clara. Vamos com calma?</h1>
+                <h1>Olá, <span id="greeting_name"></span>. Vamos com calma?</h1>
                 <p>Um espaço para se escutar, fazer uma pausa e acolher o que sente.</p>
                 <div class="greeting-btns">
                     <a href="./diario.html" class="write-btn btn-a">Escrever no diário</a>

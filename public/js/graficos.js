@@ -1,3 +1,15 @@
+function reatribuirNomeSaudacao() {
+    let nomeUsuario = sessionStorage.NOME_USUARIO;
+
+    if (nomeUsuario) {
+        let primeiroNome = nomeUsuario.split(' ')[0];
+
+        document.querySelector("#greeting_name").innerHTML = primeiroNome;
+    }
+}
+
+reatribuirNomeSaudacao();
+
 const registros = [
     { data: '08/10', nivel: 2 },
     { data: '09/10', nivel: 3 },

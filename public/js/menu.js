@@ -3,7 +3,6 @@ const btnAbrir = document.getElementById("open-btn");
 const btnFechar = document.getElementById("close-btn");
 const overlay = document.getElementById("menu-overlay");
 
-// Mesmo ponto de corte usado no CSS (@media max-width: 768px)
 const telaPequena = window.matchMedia("(max-width: 768px)");
 
 function menuEstaAberto() {
@@ -48,3 +47,16 @@ menu.querySelectorAll(".menu-link").forEach((link) => {
         }
     });
 });
+
+
+function reatribuirNome() {
+    let username = document.querySelector("#username_tag");
+    username.innerHTML = `${sessionStorage.NOME_USUARIO}`
+
+    let stringNome = username.innerHTML;
+
+    let avatar = document.querySelector("#avatar");
+    avatar.innerHTML = stringNome.charAt(0);
+}
+
+reatribuirNome()
