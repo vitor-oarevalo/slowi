@@ -7,10 +7,6 @@ const contador = $("#contador");
 const erro = $("#erro");
 const toast = $("#toast");
 
-// Por enquanto os registros ficam só na memória da página.
-// Para o banco de dados, envie o objeto "registro" ao backend dentro do submit.
-const registros = [];
-
 const pad = (n) => String(n).padStart(2, "0");
 
 function agoraLocal() {
@@ -50,12 +46,8 @@ function abrirAba(aba) {
     });
 }
 
-abas.forEach((aba, i) => {
+abas.forEach((aba) => {
     aba.addEventListener("click", () => abrirAba(aba));
-    aba.addEventListener("keydown", (e) => {
-        if (e.key === "ArrowRight") { abrirAba(abas[(i + 1) % abas.length]); abas[(i + 1) % abas.length].focus(); }
-        if (e.key === "ArrowLeft") { abrirAba(abas[(i + abas.length - 1) % abas.length]); abas[(i + abas.length - 1) % abas.length].focus(); }
-    });
 });
 
 /* Perguntas que ajudam a começar: inserem a pergunta no texto */
@@ -83,6 +75,7 @@ $("#limpar").addEventListener("click", limpar);
 /* Salvar */
 let temporizador;
 
+
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -92,22 +85,54 @@ form.addEventListener("submit", (e) => {
         return;
     }
     erro.hidden = true;
+
     const registro = {
-        data: data.value,
+        dataRegistro: data.value.replace("T", " ").concat(':00'),
         emocao: emocao.value,
         intensidade: Number(document.querySelector("input[name=intensidade]:checked").value),
-        texto: texto.value.trim(),
-        etiquetas: [...document.querySelectorAll("input[name=etiqueta]:checked")].map((x) => x.value)
+        registro: texto.value.trim(),
+        etiqueta: [...document.querySelectorAll("input[name=etiqueta]:checked")].map((x) => x.value).join(","),
+        fkCadastro: Number(sessionStorage.ID_USUARIO)
     };
-    registros.push(registro);
+
+    if (registro.registro == "") {
+        registro.registro = null;
+    }
+
+    if (registro.etiqueta == "") {
+        registro.etiqueta = null;
+    }
+
+
+    fetch("/diario/registrar", {
+        method: "POST",
+        headers: {
+        "Content-Type": "application/json",
+        },
+        body: JSON.stringify(registro),
+    })
+    .then(function (resposta) {
+      if (resposta.ok) {
+        const hora = new Date(registro.dataRegistro).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+        $("#toast-info").textContent = `${hora} · Emoção: ${registro.emocao}`;
+        toast.hidden = false;
+        clearTimeout(temporizador);
+        temporizador = setTimeout(() => (toast.hidden = true), 5000);
+
+        limpar();
+
+      } else {
+        erro.textContent = "Houve um erro ao registrar. Tente novamente.";
+        erro.hidden = false;
+      }
+    })
+    .catch(function (resposta) {
+      console.log(resposta);
+      erro.textContent = "Houve um erro ao registrar. Tente novamente."
+      erro.hidden = false;
+    });
     
-    const hora = new Date(registro.data).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
-    $("#toast-info").textContent = `${hora} · Emoção: ${registro.emocao}`;
-    toast.hidden = false;
-    clearTimeout(temporizador);
-    temporizador = setTimeout(() => (toast.hidden = true), 5000);
     
-    limpar();
 });
 
 iniciarData();

@@ -394,9 +394,9 @@ main {
 }
 
 .feeling-option:hover {
-    background-color: #d5cfee;
+  background-color: #d5cfee;
   transform: translateY(-5px);
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.137);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.137);
 
 }
 
