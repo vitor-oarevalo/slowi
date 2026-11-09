@@ -11,7 +11,7 @@ function registrar(req, res) {
     var registro = req.body.registro;
     var etiqueta = req.body.etiqueta;
     var fkCadastro = req.body.fkCadastro;
-
+    
     if (dataRegistro == undefined || emocao == undefined || intensidade == undefined || fkCadastro == undefined) {
         res.status(400).send("Algum valor está vazio");
     } else if (!(intensidade >= 1 && intensidade <= 5) || !(Number.isInteger(intensidade))) {
@@ -45,6 +45,24 @@ function registrar(req, res) {
     }
 }
 
+function listar(req, res) {
+    var fkCadastro = Number(req.params.fkCadastro);
+
+    if (!Number.isInteger(fkCadastro)) {
+        return res.status(400).send("Ocorreu um erro ao listar: ID inválido");
+    } 
+
+    diarioModel.listar(fkCadastro)
+        .then(function (resultado) {
+            return res.status(200).json(resultado);
+        })
+        .catch(function (erro) {
+            console.log(erro);
+            return res.status(500).json("Erro interno do servidor");
+        });
+}
+
 module.exports = {
-    registrar
+    registrar,
+    listar
 }
