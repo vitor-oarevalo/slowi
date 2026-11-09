@@ -1,5 +1,3 @@
-// usuarioController.js
-
 var crypto = require("crypto");
 
 var usuarioModel = require("../models/usuarioModel");

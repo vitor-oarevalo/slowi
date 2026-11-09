@@ -1,5 +1,6 @@
 const $ = (seletor) => document.querySelector(seletor);
 
+const botaoSalvar = $(".salvar-btn");
 const form = $("#registro");
 const data = $("#data");
 const texto = $("#texto");
@@ -81,13 +82,21 @@ form.addEventListener("submit", (e) => {
 
     const emocao = document.querySelector("input[name=emocao]:checked");
     if (!emocao) {
+        erro.textContent = "Escolha uma emoção principal para salvar.";
         erro.hidden = false;
         return;
     }
+
+    if (data.value == "") {
+        erro.textContent = "Escolha a data e a hora do registro.";
+        erro.hidden = false;
+        return;
+    }
+
     erro.hidden = true;
 
     const registro = {
-        dataRegistro: data.value.replace("T", " ").concat(':00'),
+        dataRegistro: data.value.replace("T", " ") + ":00",
         emocao: emocao.value,
         intensidade: Number(document.querySelector("input[name=intensidade]:checked").value),
         registro: texto.value.trim(),
@@ -103,36 +112,38 @@ form.addEventListener("submit", (e) => {
         registro.etiqueta = null;
     }
 
+    const hora = new Date(data.value).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+
+    botaoSalvar.disabled = true;
 
     fetch("/diario/registrar", {
         method: "POST",
         headers: {
-        "Content-Type": "application/json",
+            "Content-Type": "application/json",
         },
         body: JSON.stringify(registro),
     })
-    .then(function (resposta) {
-      if (resposta.ok) {
-        const hora = new Date(registro.dataRegistro).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
-        $("#toast-info").textContent = `${hora} · Emoção: ${registro.emocao}`;
-        toast.hidden = false;
-        clearTimeout(temporizador);
-        temporizador = setTimeout(() => (toast.hidden = true), 5000);
+        .then(function (resposta) {
+            if (resposta.ok) {
+                $("#toast-info").textContent = `${hora} · Emoção: ${registro.emocao}`;
+                toast.hidden = false;
+                clearTimeout(temporizador);
+                temporizador = setTimeout(() => (toast.hidden = true), 5000);
 
-        limpar();
-
-      } else {
-        erro.textContent = "Houve um erro ao registrar. Tente novamente.";
-        erro.hidden = false;
-      }
-    })
-    .catch(function (resposta) {
-      console.log(resposta);
-      erro.textContent = "Houve um erro ao registrar. Tente novamente."
-      erro.hidden = false;
-    });
-    
-    
+                limpar();
+            } else {
+                erro.textContent = "Não foi possível salvar seu registro. Tente novamente.";
+                erro.hidden = false;
+            }
+        })
+        .catch(function (falha) {
+            console.log(falha);
+            erro.textContent = "Não foi possível salvar seu registro. Tente novamente.";
+            erro.hidden = false;
+        })
+        .finally(function () {
+            botaoSalvar.disabled = false;
+        });
 });
 
 iniciarData();

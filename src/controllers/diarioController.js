@@ -1,0 +1,50 @@
+var diarioModel = require("../models/diarioModel");
+
+
+const REGDATA = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]) ([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$/
+const ARRAYEMOCAO = ['Calma', 'Alegria', 'Cansaço', 'Ansiedade', 'Tristeza', 'Raiva', 'Sobrecarga'];
+
+function registrar(req, res) {
+    var dataRegistro = req.body.dataRegistro;
+    var emocao = req.body.emocao;
+    var intensidade = req.body.intensidade;
+    var registro = req.body.registro;
+    var etiqueta = req.body.etiqueta;
+    var fkCadastro = req.body.fkCadastro;
+
+    if (dataRegistro == undefined || emocao == undefined || intensidade == undefined || fkCadastro == undefined) {
+        res.status(400).send("Algum valor está vazio");
+    } else if (!(intensidade >= 1 && intensidade <= 5) || !(Number.isInteger(intensidade))) {
+        res.status(400).send("Intensidade inválida");
+    } else if (!(Number.isInteger(fkCadastro))) {
+        res.status(400).send("fkCadastro inválida");
+    } else if (REGDATA.test(dataRegistro) == false) {
+        res.status(400).send("dataRegistro inválida");
+    } else if (!(ARRAYEMOCAO.includes(emocao))) {
+        res.status(400).send("Emoção inválida");
+    } else {
+        diarioModel.registrar(dataRegistro, emocao, intensidade, registro, etiqueta, fkCadastro)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o registro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    if (erro.code == "ER_NO_REFERENCED_ROW_2") {
+                        res.status(400).send("Usuário não encontrado.")
+                        return;
+                    }
+                    res.status(500).json("Erro interno do servidor");
+                }
+            );
+    }
+}
+
+module.exports = {
+    registrar
+}
