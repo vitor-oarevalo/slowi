@@ -45,6 +45,9 @@ function abrirAba(aba) {
         item.tabIndex = ativa ? 0 : -1;
         document.getElementById(item.getAttribute("aria-controls")).hidden = !ativa;
     });
+    if (aba.id == "aba-historico") {
+        carregarHistorico();
+    }
 }
 
 abas.forEach((aba) => {
@@ -72,6 +75,100 @@ function limpar() {
 }
 
 $("#limpar").addEventListener("click", limpar);
+
+
+const historicoAviso = $("#historico-aviso");
+const historicoLista = $("#history-lista");
+
+const CORES_EMOCAO = {
+    "Calma": "#E3DFF5",
+    "Alegria": "#FBEFD3",
+    "Cansaço": "#E6E0F7",
+    "Ansiedade": "#FBE3D6",
+    "Tristeza": "#DCE8F6",
+    "Raiva": "#F7DCE0",
+    "Sobrecarga": "#EADFF3"
+};
+
+function criar(tag, classe, conteudo) {
+    const el = document.createElement(tag);
+    if (classe) el.className = classe;
+    if (conteudo) el.textContent = conteudo;
+    return el;
+}
+
+function formatarDataHistorico(texto) {
+    return new Date(texto.replace(" ", "T")).toLocaleString("pt-BR", {
+        day: "2-digit", month: "long", year: "numeric",
+        hour: "2-digit", minute: "2-digit"
+    });
+}
+
+function criarCard(item) {
+    const card = criar("article", "history-card");
+
+    const topo = criar("header", "history-topo");
+    topo.appendChild(criar("time", "history-data", formatarDataHistorico(item.dataRegistro)));
+
+    const emocao = criar("span", "history-emocao", item.emocao);
+    emocao.style.backgroundColor = CORES_EMOCAO[item.emocao] || "#E3DFF5";
+    topo.appendChild(emocao);
+    card.appendChild(topo);
+
+    const intensidade = criar("div", "history-intensidade");
+    intensidade.setAttribute("aria-label", `Intensidade ${item.intensidade} de 5`);
+    for (let i = 1; i <= 5; i++) {
+        intensidade.appendChild(criar("span", i <= item.intensidade ? "ponto ativo" : "ponto"));
+    }
+    card.appendChild(intensidade);
+
+    if (item.registro) {
+        card.appendChild(criar("p", "history-texto", item.registro));
+    }
+
+    if (item.etiqueta) {
+        const etiquetas = criar("div", "history-etiquetas");
+        item.etiqueta.split(",").forEach((nome) => {
+            etiquetas.appendChild(criar("span", "history-etiqueta", nome));
+        });
+        card.appendChild(etiquetas);
+    }
+
+    return card;
+}
+
+function mostrarHistorico(lista) {
+    historicoLista.replaceChildren();
+
+    if (lista.length == 0) {
+        historicoAviso.textContent = "Você ainda não tem registros. Que tal escrever o primeiro?";
+        historicoAviso.hidden = false;
+        return;
+    }
+
+    historicoAviso.hidden = true;
+    lista.forEach((item) => historicoLista.appendChild(criarCard(item)));
+}
+
+function carregarHistorico() {
+    historicoAviso.textContent = "Carregando seus registros...";
+    historicoAviso.hidden = false;
+    historicoLista.replaceChildren();
+
+    fetch("/diario/listar/" + Number(sessionStorage.ID_USUARIO)) // essa rota é a rota do http://localhost:8080/diario/listar/6
+        .then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then(mostrarHistorico);
+            } else {
+                historicoAviso.textContent = "Não foi possível carregar seus registros. Tente novamente.";
+            }
+        })
+        .catch(function (falha) {
+            console.log(falha);
+            historicoAviso.textContent = "Não foi possível carregar seus registros. Tente novamente.";
+        });
+}
+
 
 /* Salvar */
 let temporizador;
