@@ -192,7 +192,76 @@
 
         <section class="diario-card" id="painel-graficos" role="tabpanel" aria-labelledby="aba-graficos" hidden>
             <h2>Gráficos</h2>
-            <p class="dica">Um olhar para como você tem se sentido vai aparecer aqui.</p>
+            <section class="canvas-section">
+                <section class="canvas-section-header">
+                    <section class="canvas-section-header-content">
+                        <h3>Um olhar para seus registros</h3>
+                        <p>Cada dia pode ser diferente. Aqui, não existe uma meta a alcançar.</p>
+                    </section>
+                </section>
+                <section class="canvas-section-content">
+                    <section class="wellbeing-card">
+                        <header class="wellbeing-header">
+                            <h3>Registros por dia</h3>
+                            <span class="wellbeing-legend">
+                                <span class="dot"></span>
+                                Seus registros
+                            </span>
+                        </header>
+
+                        <p class="wellbeing-subtitle" id="wellbeingSubtitle"></p>
+
+                        <div class="wellbeing-chart">
+                            <canvas id="wellbeingChart"></canvas> <!-- AQUI -->
+                        </div>
+
+                        <p class="wellbeing-footer">
+                            Cada ponto é um dia em que você escreveu
+                        </p>
+                    </section>
+                    <section class="emotions-card">
+                        <h3>Emoções registradas</h3>
+                        <p class="emotions-subtitle">Uma emoção principal escolhida por registro</p>
+
+                        <div class="emotions-content">
+                            <div class="emotions-chart">
+                                <canvas id="emotionsChart"></canvas> <!-- AQUI -->
+                                <div class="emotions-center">
+                                    <strong id="emotionsTotal">0</strong>
+                                    <span>registros</span>
+                                </div>
+                            </div>
+
+                            <ul class="emotions-legend" id="emotionsLegend"></ul>
+                        </div>
+                        
+                        <p class="emotions-footer">Todas as emoções têm espaço por aqui.</p>
+                    </section>
+                </section>
+            </section>
+            <section class="wellbeing-card">
+                <header class="wellbeing-header">
+                    <h3>Etiquetas Utilizadas</h3>
+                    <span class="wellbeing-legend">
+                        <span class="dot"></span>
+                        Suas Etiquetas
+                    </span>
+                    <span class="wellbeing-legend">
+                        <span class="dot"></span>
+                        Sem etiqueta
+                    </span>
+                </header>
+
+                <p class="wellbeing-subtitle" id="wellbeingSubtitle"></p>
+
+                <div class="wellbeing-chart">
+                    <canvas id="tableChart"></canvas> <!-- AQUI -->
+                </div>
+
+                <p class="wellbeing-footer">
+                    Cada ponto é um dia em que você escreveu
+                </p>
+            </section>
         </section>
 
         <aside class="toast" id="toast" role="status" aria-live="polite" hidden>
@@ -204,8 +273,9 @@
         </aside>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/graficos-historico.js"></script>
     <script src="../js/menu.js"></script>
     <script src="../js/diario.js"></script>
-    <script src="../js/historico.js"></script>
 </body>
 </html>

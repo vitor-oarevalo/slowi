@@ -48,6 +48,10 @@ function abrirAba(aba) {
     if (aba.id == "aba-historico") {
         carregarHistorico();
     }
+
+    if (aba.id == "aba-graficos") {
+        carregarGraficos();
+    }
 }
 
 abas.forEach((aba) => {
@@ -169,6 +173,29 @@ function carregarHistorico() {
         });
 }
 
+function mostrarGrafico(lista) {
+    historicoLista.replaceChildren();
+
+    if (lista.length == 0) {
+        historicoAviso.textContent = "Você ainda não tem registros. Que tal escrever o primeiro?";
+        historicoAviso.hidden = false;
+        return;
+    }
+
+    historicoAviso.hidden = true;
+    lista.forEach((item) => historicoLista.appendChild(criarCard(item)));
+}
+
+
+function carregarGraficos() {
+    fetch("./diario/listar/" + Number(sessionStorage.ID_USUARIO))
+        .then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then(mostrarGrafico)
+            }
+        })
+}
+
 
 /* Salvar */
 let temporizador;
@@ -242,6 +269,8 @@ form.addEventListener("submit", (e) => {
             botaoSalvar.disabled = false;
         });
 });
+
+
 
 iniciarData();
 atualizarContador();
