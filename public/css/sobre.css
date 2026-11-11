@@ -238,12 +238,3 @@
     }
 }
 
-@media (max-width: 520px) {
-    .sobre {
-        padding: 72px 16px 56px;
-    }
-
-    .sobre-galeria {
-        grid-template-columns: 1fr;
-    }
-}
