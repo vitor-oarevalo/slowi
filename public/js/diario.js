@@ -83,13 +83,13 @@ const historicoAviso = $("#historico-aviso");
 const historicoLista = $("#history-lista");
 
 const CORES_EMOCAO = {
-    "Calma": "#E3DFF5",
-    "Alegria": "#FBEFD3",
-    "Cansaço": "#E6E0F7",
-    "Ansiedade": "#FBE3D6",
-    "Tristeza": "#DCE8F6",
-    "Raiva": "#F7DCE0",
-    "Sobrecarga": "#EADFF3"
+    "Calma": "#7a66c9",
+    "Alegria": "#e9b44c",
+    "Cansaço": "#a99bdc",
+    "Ansiedade": "#e07a5f",
+    "Tristeza": "#5b8def",
+    "Raiva": "#d1495b",
+    "Sobrecarga": "#43358a"
 };
 
 function criar(tag, classe, conteudo) {
@@ -183,16 +183,6 @@ function mostrarGrafico(lista) {
     historicoAviso.hidden = true;
     lista.forEach((item) => historicoLista.appendChild(criarCard(item)));
 }
-
-
-// function carregarGraficos() {
-//     fetch("/diario/listar/" + Number(sessionStorage.ID_USUARIO))
-//         .then(function (resposta) {
-//             if (resposta.ok) {
-//                 resposta.json().then(mostrarGrafico)
-//             }
-//         })
-// }
 
 
 /* Salvar */
