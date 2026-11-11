@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slowi - Sobre mim</title>
+    <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/sobre.css">
+    <script src="../js/sessao.js"></script>
+</head>
+<body>
+    <button id="open-btn" class="open-menu-btn" type="button" aria-label="Abrir menu" aria-controls="menu-lateral" aria-expanded="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>
+        </svg>
+    </button>
+    <div id="menu-overlay" class="menu-overlay"></div>
+
+    <header class="index-menu" id="menu-lateral" aria-label="Menu principal">
+        <ul>
+            <li class="menu-header">
+                <img src="../assets/img/slowi-logo.png" alt="Slowi" class="small-img-slowi">
+                <button id="close-btn" type="button" aria-label="Fechar menu" aria-controls="menu-lateral"><img src="../assets/icon/close-menu.png" alt="" class="close-menu"></button>
+            </li>
+            <li><a href="index.html" class="menu-link"><img src="../assets/icon/index-menu-home.png" alt="" class="menu-icon">Início</a></li>
+            <li><a href="diario.html" class="menu-link"><img src="../assets/icon/index-menu-diary.png" alt="" class="menu-icon">Diário Emocional</a></li>
+            <li><a href="atividades.html" class="menu-link"><img src="../assets/icon/index-menu-windy.png" alt="" class="menu-icon">Atividades</a></li>
+            <li><a href="biblioteca.html" class="menu-link"><img src="../assets/icon/index-menu-book.png" alt="" class="menu-icon">Biblioteca</a></li>
+            <li><a href="ajuda.html" class="menu-link"><img src="../assets/icon/index-menu-kindness.png" alt="" class="menu-icon">Onde buscar ajuda</a></li>
+            <!-- Troque o ícone abaixo por um ícone seu, se quiser -->
+            <li><a href="sobre.html" class="menu-link selected" aria-current="page"><img src="../assets/icon/index-menu-kindness.png" alt="" class="menu-icon">Sobre mim</a></li>
+        </ul>
+        <div class="menu-rodape">
+            <a href="perfil.html" class="menu-usuario">
+                <span id="avatar" class="avatar" aria-hidden="true"></span>
+                <span><strong id="username_tag"></strong><small>Ver perfil</small></span>
+            </a>
+            <button onclick="sair()" class="logout-link"><img src="../assets/icon/logout.png" alt="" class="logout-img"> Sair</button>
+        </div>
+    </header>
+
+    <main>
+        <article class="sobre">
+
+            <!-- Apresentação -->
+            <section class="sobre-hero">
+                <figure class="sobre-retrato">
+                    <!-- Troque pela sua foto principal -->
+                    <img src="../assets/img/sobre-retrato.jpg" alt="[Descreva a foto: quem aparece e o que está fazendo]">
+                    <img src="../assets/icon/slowi-takecare.png" alt="" class="sobre-sticker">
+                </figure>
+
+                <div class="sobre-apresentacao">
+                    <h1>Oi, eu sou [seu nome].</h1>
+                    <p class="sobre-lead">[Uma frase curta sobre você: o que estuda e o que o Slowi é para você.]</p>
+                    <p>[Dois ou três parágrafos de apresentação. Onde você estuda, o que gosta de fazer, o que o trouxe até aqui.]</p>
+                </div>
+            </section>
+
+            <!-- A história -->
+            <section class="sobre-secao" aria-labelledby="sobre-porque">
+                <h2 id="sobre-porque">Por que escolhi falar de saúde mental</h2>
+                <div class="sobre-texto">
+                    <p>[Escreva aqui, com a sua voz, o motivo do tema. Você decide o quanto quer contar.]</p>
+                    <p>[Continue a história. Evite nomes e detalhes que identifiquem outras pessoas.]</p>
+
+                    <blockquote class="sobre-citacao">
+                        <p>Ir devagar para ir longe.</p>
+                    </blockquote>
+
+                    <p>[Fale do que mudou em você ao longo do projeto, ou do que você gostaria que alguém sentisse ao usar o Slowi.]</p>
+                </div>
+            </section>
+
+            <!-- Fotos -->
+            <section class="sobre-secao" aria-labelledby="sobre-fotos">
+                <h2 id="sobre-fotos">Alguns momentos</h2>
+                <div class="sobre-galeria">
+                    <figure>
+                        <img src="../assets/img/sobre-1.jpg" alt="[Descreva a foto 1]">
+                        <figcaption>[Legenda curta]</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../assets/img/sobre-2.jpg" alt="[Descreva a foto 2]">
+                        <figcaption>[Legenda curta]</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../assets/img/sobre-3.jpg" alt="[Descreva a foto 3]">
+                        <figcaption>[Legenda curta]</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- O Slowi -->
+            <section class="sobre-secao" aria-labelledby="sobre-slowi">
+                <h2 id="sobre-slowi">De onde veio o Slowi</h2>
+                <div class="sobre-texto">
+                    <p>O nome vem de <em>slow</em>, "devagar" em inglês, e é também o nome do bicho-preguiça que acompanha você pelo site. [Conte por que escolheu a preguiça como mascote.]</p>
+                </div>
+            </section>
+
+            <!-- Aprendizados técnicos -->
+            <section class="sobre-secao" aria-labelledby="sobre-aprendi">
+                <h2 id="sobre-aprendi">O que aprendi construindo</h2>
+                <dl class="sobre-aprendizados">
+                    <div>
+                        <dt>Front-end</dt>
+                        <dd>[O que você aprendeu fazendo as telas, o menu, os gráficos...]</dd>
+                    </div>
+                    <div>
+                        <dt>Back-end e banco de dados</dt>
+                        <dd>[O que você aprendeu com o servidor, as rotas e o MySQL...]</dd>
+                    </div>
+                    <div>
+                        <dt>Segurança</dt>
+                        <dd>[O que você aprendeu sobre senhas com hash, validação no servidor e privacidade do diário...]</dd>
+                    </div>
+                    <div>
+                        <dt>Escrever para outras pessoas</dt>
+                        <dd>[O que mudou na forma como você pensa em textos, cores e mensagens para quem está sensível...]</dd>
+                    </div>
+                </dl>
+            </section>
+
+            <!-- Recado final -->
+            <aside class="sobre-recado" aria-label="Recado final">
+                <h2>Se você chegou até aqui</h2>
+                <p>[Um recado curto e sincero para quem está lendo.]</p>
+                <p>O Slowi é um espaço de apoio e informação, e não substitui acompanhamento profissional. Se precisar conversar com alguém agora, o CVV atende pelo 188, e o SAMU pelo 192.</p>
+                <a href="ajuda.html" class="sobre-link">Onde buscar ajuda</a>
+            </aside>
+
+        </article>
+    </main>
+
+    <script src="../js/menu.js"></script>
+</body>
+</html>

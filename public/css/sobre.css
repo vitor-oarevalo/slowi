@@ -1,0 +1,249 @@
+/* Página "Sobre mim" do Slowi
+   Usa as variáveis de cor do global.css (--cor1 a --cor5).
+   A única forma "ousada" da página é o retrato em formato orgânico;
+   o resto é tranquilo de propósito, para a leitura. */
+
+.sobre {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    color: var(--cor1, #252532);
+}
+
+.sobre h1,
+.sobre h2,
+.sobre h3 {
+    color: var(--cor2, #4C478C);
+    line-height: 1.2;
+}
+
+.sobre p,
+.sobre dd {
+    line-height: 1.75;
+}
+
+/* ---------- Apresentação ---------- */
+
+.sobre-hero {
+    display: grid;
+    grid-template-columns: minmax(240px, 5fr) 7fr;
+    gap: 48px;
+    align-items: center;
+    padding-bottom: 64px;
+}
+
+.sobre-retrato {
+    position: relative;
+    margin: 0;
+}
+
+/* O retrato com forma de pedra de rio: suave, sem cantos */
+.sobre-retrato > img:first-child {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    background-color: var(--cor4, #E3DFF5);
+    border-radius: 58% 42% 52% 48% / 46% 54% 46% 54%;
+}
+
+.sobre-sticker {
+    position: absolute;
+    right: -10px;
+    bottom: -14px;
+    width: 34%;
+    max-width: 130px;
+    height: auto;
+}
+
+.sobre-apresentacao h1 {
+    font-size: clamp(2rem, 4.2vw, 3.1rem);
+    margin-bottom: 16px;
+}
+
+.sobre-lead {
+    font-size: 1.2rem;
+    color: var(--cor2, #4C478C);
+    margin-bottom: 16px;
+    max-width: 46ch;
+}
+
+.sobre-apresentacao p {
+    max-width: 60ch;
+}
+
+/* ---------- Seções ---------- */
+
+.sobre-secao {
+    padding: 56px 0 8px;
+    border-top: 1px solid var(--cor4, #E3DFF5);
+}
+
+.sobre-secao h2 {
+    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+    margin-bottom: 24px;
+}
+
+.sobre-texto {
+    max-width: 65ch;
+}
+
+.sobre-texto p + p {
+    margin-top: 1.2em;
+}
+
+.sobre-texto em {
+    font-style: italic;
+}
+
+/* ---------- Citação ---------- */
+
+.sobre-citacao {
+    margin: 2em 0;
+    padding: 4px 0 4px 24px;
+    border-left: 4px solid var(--cor3, #716BC5);
+}
+
+.sobre-citacao p {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    color: var(--cor2, #4C478C);
+}
+
+/* ---------- Galeria ---------- */
+
+.sobre-galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.sobre-galeria figure {
+    margin: 0;
+}
+
+.sobre-galeria img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    background-color: var(--cor4, #E3DFF5);
+    border-radius: 16px;
+}
+
+/* A foto do meio desce um pouco: ritmo mais calmo que uma grade reta */
+.sobre-galeria figure:nth-child(2) {
+    margin-top: 32px;
+}
+
+.sobre-galeria figcaption {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #5b5870;
+}
+
+/* ---------- Aprendizados ---------- */
+
+.sobre-aprendizados {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 48px;
+}
+
+.sobre-aprendizados > div {
+    padding-top: 16px;
+    border-top: 2px solid var(--cor3, #716BC5);
+}
+
+.sobre-aprendizados dt {
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--cor2, #4C478C);
+}
+
+.sobre-aprendizados dd {
+    margin: 0;
+    max-width: 48ch;
+}
+
+/* ---------- Recado final ---------- */
+
+.sobre-recado {
+    margin-top: 72px;
+    padding: 36px clamp(24px, 5vw, 48px);
+    background-color: var(--cor4, #E3DFF5);
+    border-radius: 28px;
+}
+
+.sobre-recado h2 {
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+}
+
+.sobre-recado p {
+    max-width: 62ch;
+}
+
+.sobre-recado p + p {
+    margin-top: 1em;
+}
+
+.sobre-link {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 12px 24px;
+    background-color: var(--cor2, #4C478C);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 12px;
+}
+
+.sobre-link:hover {
+    background-color: var(--cor3, #716BC5);
+}
+
+.sobre-link:focus-visible,
+.sobre a:focus-visible {
+    outline: 3px solid var(--cor1, #252532);
+    outline-offset: 3px;
+}
+
+/* ---------- Telas menores ---------- */
+
+@media (max-width: 800px) {
+    .sobre-hero {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .sobre-retrato {
+        max-width: 340px;
+        margin: 0 auto;
+    }
+
+    .sobre-galeria {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .sobre-galeria figure:nth-child(2) {
+        margin-top: 0;
+    }
+
+    .sobre-aprendizados {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .sobre {
+        padding: 72px 16px 56px;
+    }
+
+    .sobre-galeria {
+        grid-template-columns: 1fr;
+    }
+}
