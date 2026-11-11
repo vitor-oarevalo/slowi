@@ -132,6 +132,7 @@
 
 /* ---------- Cartão do formulário ---------- */
 .diario-card {
+    position: relative;
     padding: 28px;
     border-radius: 15px;
     background-color: #fff;

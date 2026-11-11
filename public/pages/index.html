@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/loading.css">
+    <link rel="stylesheet" href="../css/diario.css">
     <script src="../js/sessao.js"></script>
 </head>
 <body>
-    <!-- <section id="loader" role="status" aria-live="polite">
+    <section id="loader" role="status" aria-live="polite">
     <div class="scene">
       <svg class="boat" viewBox="0 0 40 44" aria-hidden="true">
         <path d="M17 2 L17 30 L3 30 Z" fill="#fff"/>
@@ -33,7 +34,7 @@
       Seu pensamento ruim é apenas um barco<br>
       Deixe que ele passe pelo fluxo do rio...
     </p>
-</section> -->
+</section>
 
     <button id="open-btn" class="open-menu-btn" type="button" aria-label="Abrir menu" aria-controls="menu-lateral" aria-expanded="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
@@ -53,7 +54,7 @@
             </li>
             <li><a href="index.html" class="menu-link selected"><img src="../assets/icon/index-menu-home.png" alt="" class="menu-icon">Início</a></li>
             <li><a href="diario.html" class="menu-link" aria-current="page"><img src="../assets/icon/index-menu-diary.png" alt="" class="menu-icon">Diário Emocional</a></li>
-            <li><a href="atividades.html" class="menu-link"><img src="../assets/icon/index-menu-windy.png" alt="" class="menu-icon">Atividades</a></li>
+            <li><a href="sobre.html" class="menu-link"><img src="../assets/icon/info-button.png" alt="" class="menu-icon">Sobre mim</a></li>
             <li><a href="biblioteca.html" class="menu-link"><img src="../assets/icon/index-menu-book.png" alt="" class="menu-icon">Biblioteca</a></li>
             <li><a href="ajuda.html" class="menu-link"><img src="../assets/icon/index-menu-kindness.png" alt="" class="menu-icon">Onde buscar ajuda</a></li>
         </ul>
@@ -171,6 +172,7 @@
             </section>
         </section>
         <section class="canvas-section">
+            <p class="dica" id="graficos_aviso" hidden></p>
             <section class="canvas-section-header">
                 <section class="canvas-section-header-content">
                     <h3>Um olhar para seus registros</h3>
@@ -180,10 +182,10 @@
             <section class="canvas-section-content">
                 <section class="wellbeing-card">
                     <header class="wellbeing-header">
-                        <h3>Bem-estar registrado</h3>
+                        <h3>Registros por dia</h3>
                         <span class="wellbeing-legend">
                             <span class="dot"></span>
-                            Seu autorrelato
+                            Seus registros
                         </span>
                     </header>
 
@@ -194,7 +196,7 @@
                     </div>
 
                     <p class="wellbeing-footer">
-                        Escala escolhida por você: 1 = muito baixo · 5 = muito alto
+                        Cada ponto é um dia em que você escreveu
                     </p>
                 </section>
                 <section class="emotions-card">
@@ -217,85 +219,12 @@
                 </section>
             </section>
         </section>
-        <section class="diary-and-activities-section">
-            <section class="diary-section">
-                    <div class="diary-header">
-                        <div class="diary-header-content">
-                            <h3>Seu Diário Emocional</h3>
-                            <p>Registros recentes</p>
-                        </div>
-                        <a href="./diario.html" class="explore-activities">Ver diário</a>
-                    </div>
-                <a href="" class="registration">
-                    <div class="first-column">
-                        <h4>14 out.</h4> 
-                        <p>20:10</p></div>
-                    <div class="second-column">
-                        <h4>Um fim de tarde mais suave</h4>
-                        <p>Caminhei um pouco e consegui estar presente...</p>
-                    </div>
-                    <div class="third-column">
-                        <p>Calma</p>
-                    </div>
-                </a>
-                <a href="" class="registration">
-                    <div class="first-column">
-                        <h4>13 out.</h4> 
-                        <p>19:30</p></div>
-                    <div class="second-column">
-                        <h4>Uma conversa que fez bem</h4>
-                        <p>Foi bom conversar com uma amiga sem pressa...</p>
-                    </div>
-                    <div class="third-column">
-                        <p>Alegria</p>
-                    </div>
-                </a>
-                <a href="" class="registration">
-                    <div class="first-column">
-                        <h4>12 out.</h4> 
-                        <p>23:15</p></div>
-                    <div class="second-column">
-                        <h4>Muita coisa na cabeça</h4>
-                        <p>Anotei o que estava sentindo antes de descansar...</p>
-                    </div>
-                    <div class="third-column">
-                        <p>Ansiedade</p>
-                    </div>
-                </a>
-                <img src="../assets/icon/slowi-sticker.png" alt="Figurinha do Slowi com mensagem de 'Você consegue!'" class="diary-slowi-sticker">
-            </section>
-            <section class="activities-section">
-                <h3>Uma pequena pausa</h3>
-                <p>Escolha uma atividade se quiser. No seu tempo.</p>
-                <a href="" class="activity-card">
-                    <img src="../assets/icon/wind.png" alt="" class="destiny-icon icon-background">
-                    <div class="activity-card-content">
-                        <h4>Respiração Suave</h4>
-                        <p>Observe o ar fazendo seu fluxo e relaxe.</p>
-                        <p>Respiração · 2 min</p>
-                    </div>
-                    <img src="../assets/icon/play-button.png" alt="" class="destiny-icon icon-background">
-                </a>
-                <a href="" class="activity-card">
-                    <img src="../assets/icon/writing.png" alt="" class="destiny-icon icon-background">
-                    <div class="activity-card-content">
-                        <h4>Desabafo Sincero</h4>
-                        <p>Descarregue os pensamentos, sem estrutura, do seu jeito.</p>
-                        <p>Escrita · 3 min</p>
-                    </div>
-                    <img src="../assets/icon/play-button.png" alt="" class="destiny-icon icon-background">
-                </a>
-                <a href="" class="activity-card">
-                    <img src="../assets/icon/leaf.png" alt="" class="destiny-icon icon-background">
-                    <div class="activity-card-content">
-                        <h4>Perceber o que está ao redor</h4>
-                        <p>Note os seus arredores e tome o controle.</p>
-                        <p>Atenção ao ambiente · 2 min</p>
-                    </div>
-                    <img src="../assets/icon/play-button.png" alt="" class="destiny-icon icon-background">
-                </a>
-                <a href="" class="explore-activities">Explorar Atividades</a>
-            </section>
+        <section class="diario-card" id="painel-historico">
+            <h2>Seus últimos registros</h2>
+            <p class="dica" id="historico-aviso"></p>
+            <div class="history-lista" id="history-lista"></div>
+            <a href="diario.html" class="link-seta">Ver todos no diário</a>
+            <img src="../assets/icon/slowi-sticker.png" alt="Figurinha do Slowi com mensagem de 'Você consegue!'" class="diary-slowi-sticker">
         </section>
         <section class="leituras" aria-labelledby="leituras-titulo">
  
@@ -306,7 +235,6 @@
     </div>
     <a href="biblioteca.html" class="link-seta">
       Ver biblioteca
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
 </section>
  
@@ -376,7 +304,6 @@
     </div>
     <a href="ajuda.html" class="link-seta">
       Onde buscar ajuda
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
   </aside>
  
@@ -393,8 +320,14 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../saudacao.js"></script>
+    <script src="../js/graficos-historico.js"></script>
+    <script src="../js/historico.js"></script>
+    <script src="../js/diario.js"></script>
     <script src="../js/loading.js"></script>
     <script src="../js/menu.js"></script>
-    <script src="../js/graficos.js"></script>
+    <script>
+        carregarGraficos();
+        carregarHistorico(3);
+    </script>
 </body>
 </html>

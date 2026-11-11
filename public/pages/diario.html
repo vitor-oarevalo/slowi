@@ -27,7 +27,7 @@
             </li>
             <li><a href="index.html" class="menu-link"><img src="../assets/icon/index-menu-home.png" alt="" class="menu-icon">Início</a></li>
             <li><a href="diario.html" class="menu-link selected" aria-current="page"><img src="../assets/icon/index-menu-diary.png" alt="" class="menu-icon">Diário Emocional</a></li>
-            <li><a href="atividades.html" class="menu-link"><img src="../assets/icon/index-menu-windy.png" alt="" class="menu-icon">Atividades</a></li>
+            <li><a href="sobre.html" class="menu-link"><img src="../assets/icon/info-button.png" alt="" class="menu-icon">Sobre mim</a></li>
             <li><a href="biblioteca.html" class="menu-link"><img src="../assets/icon/index-menu-book.png" alt="" class="menu-icon">Biblioteca</a></li>
             <li><a href="ajuda.html" class="menu-link"><img src="../assets/icon/index-menu-kindness.png" alt="" class="menu-icon">Onde buscar ajuda</a></li>
         </ul>
@@ -240,31 +240,6 @@
                     </section>
                 </section>
             </section>
-            <section class="wellbeing-card barchart-card">
-                <header class="wellbeing-header barchart-header">
-                    <h3>Etiquetas Utilizadas</h3>
-                    <div class="legend-div">
-                        <span class="wellbeing-legend">
-                            <span class="dot"></span>
-                            Suas Etiquetas
-                        </span>
-                        <span class="wellbeing-legend">
-                            <span class="dot none-dot"></span>
-                            Sem etiqueta
-                        </span>
-                    </div>
-                </header>
-
-                <p class="wellbeing-subtitle" id="tagsSubtitle"></p>
-
-                <div class="wellbeing-chart">
-                    <canvas id="barChart"></canvas> <!-- AQUI -->
-                </div>
-
-                <p class="wellbeing-footer">
-                    Quantas vezes cada etiqueta apareceu nos seus registros
-                </p>
-            </section>
         </section>
 
         <aside class="toast" id="toast" role="status" aria-live="polite" hidden>
@@ -277,8 +252,9 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/historico.js"></script>
     <script src="../js/graficos-historico.js"></script>
-    <script src="../js/menu.js"></script>
     <script src="../js/diario.js"></script>
+    <script src="../js/menu.js"></script>
 </body>
 </html>

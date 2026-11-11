@@ -929,6 +929,11 @@ canvas {
     color: #6b6880;
     margin-top: 4px;
 }
+
+.diario-card .link-seta {
+    margin-top: 15px;
+
+}
  
 .link-seta {
     display: inline-flex;
@@ -939,10 +944,23 @@ canvas {
     font-size: 0.85rem;
     text-decoration: none;
     white-space: nowrap;
+    position: relative;
 }
- 
-.link-seta svg { transition: transform .2s; }
-.link-seta:hover svg { transform: translateX(3px); }
+
+.link-seta::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #4a3a9c;
+    bottom: -2px;
+    transition: 0.3s;
+}
+
+.link-seta:hover::before {
+    width: 100%;
+    transition: 0.3s;
+}
 
 .leituras .cards {
     display: grid;
