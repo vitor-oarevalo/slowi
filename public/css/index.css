@@ -599,7 +599,7 @@ main {
 /* o tamanho do gráfico é controlado por esta div */
 .wellbeing-chart {
     position: relative;
-    width: 100%;
+    width: 90%;
     height: 200px;
 }
 
@@ -650,7 +650,7 @@ main {
 /* o tamanho do gráfico é controlado por esta div */
 .emotions-chart {
     position: relative;
-    width: 180px;
+    width: 170px;
     height: 180px;
     flex-shrink: 0;
 }

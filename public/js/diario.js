@@ -47,9 +47,7 @@ function abrirAba(aba) {
     });
     if (aba.id == "aba-historico") {
         carregarHistorico();
-    }
-
-    if (aba.id == "aba-graficos") {
+    } else if (aba.id == "aba-graficos") {
         carregarGraficos();
     }
 }
@@ -187,14 +185,14 @@ function mostrarGrafico(lista) {
 }
 
 
-function carregarGraficos() {
-    fetch("./diario/listar/" + Number(sessionStorage.ID_USUARIO))
-        .then(function (resposta) {
-            if (resposta.ok) {
-                resposta.json().then(mostrarGrafico)
-            }
-        })
-}
+// function carregarGraficos() {
+//     fetch("/diario/listar/" + Number(sessionStorage.ID_USUARIO))
+//         .then(function (resposta) {
+//             if (resposta.ok) {
+//                 resposta.json().then(mostrarGrafico)
+//             }
+//         })
+// }
 
 
 /* Salvar */

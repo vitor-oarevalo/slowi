@@ -192,6 +192,7 @@
 
         <section class="diario-card" id="painel-graficos" role="tabpanel" aria-labelledby="aba-graficos" hidden>
             <h2>Gráficos</h2>
+            <p class="dica" id="graficos_aviso" hidden></p>
             <section class="canvas-section">
                 <section class="canvas-section-header">
                     <section class="canvas-section-header-content">
@@ -239,27 +240,29 @@
                     </section>
                 </section>
             </section>
-            <section class="wellbeing-card">
-                <header class="wellbeing-header">
+            <section class="wellbeing-card barchart-card">
+                <header class="wellbeing-header barchart-header">
                     <h3>Etiquetas Utilizadas</h3>
-                    <span class="wellbeing-legend">
-                        <span class="dot"></span>
-                        Suas Etiquetas
-                    </span>
-                    <span class="wellbeing-legend">
-                        <span class="dot"></span>
-                        Sem etiqueta
-                    </span>
+                    <div class="legend-div">
+                        <span class="wellbeing-legend">
+                            <span class="dot"></span>
+                            Suas Etiquetas
+                        </span>
+                        <span class="wellbeing-legend">
+                            <span class="dot none-dot"></span>
+                            Sem etiqueta
+                        </span>
+                    </div>
                 </header>
 
-                <p class="wellbeing-subtitle" id="wellbeingSubtitle"></p>
+                <p class="wellbeing-subtitle" id="tagsSubtitle"></p>
 
                 <div class="wellbeing-chart">
-                    <canvas id="tableChart"></canvas> <!-- AQUI -->
+                    <canvas id="barChart"></canvas> <!-- AQUI -->
                 </div>
 
                 <p class="wellbeing-footer">
-                    Cada ponto é um dia em que você escreveu
+                    Quantas vezes cada etiqueta apareceu nos seus registros
                 </p>
             </section>
         </section>

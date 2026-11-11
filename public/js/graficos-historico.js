@@ -1,109 +1,97 @@
-const registros = [
-    { data: '08/10', nivel: 2 },
-    { data: '09/10', nivel: 3 },
-    { data: '10/10', nivel: 4 },
-    { data: '11/10', nivel: 3 },
-    { data: '12/10', nivel: 2 },
-    { data: '13/10', nivel: 4 },
-    { data: '14/10', nivel: 4 }
-];
+let graficoLinha;
 
+function carregarGraficos() {
+    fetch("/diario/listar/" + Number(sessionStorage.ID_USUARIO))
+        .then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then(function (lista) {
+                    if (lista.length == 0) {
+                        graficos_aviso.textContent = 'Seus gráficos aparecem depois do primeiro registro.';
+                        graficos_aviso.hidden = false;
+                        return;
+                    }
 
+                    graficos_aviso.hidden = true;
 
-document.getElementById('wellbeingSubtitle').textContent =
-    `${registros.length} registros • Intensidade de cada Registro`;
+                    let dias = contarPorDia(lista);
+                    desenharLinha(dias);
 
-new Chart(document.getElementById('wellbeingChart'), {
-    type: 'line',
-    data: {
-        labels: registros.map(r => r.data),
-        datasets: [{
-            label: 'Seu autorrelato',
-            data: registros.map(r => r.nivel),
-            borderColor: '#7a66c9',
-            backgroundColor: '#7a66c9',
-            borderWidth: 2.5,
-            pointRadius: 2,
-            pointHoverRadius: 5,
-            tension: 0          // linhas retas entre os pontos
-        }]
-    },
-    options: {
-        maintainAspectRatio: false,
-        plugins: {
-            legend: { display: false }   // usamos a legenda em HTML
-        },
-        scales: {
-            y: {
-                min: 1,
-                max: 5,
-                ticks: {
-                    stepSize: 1,
-                    color: '#777386',
-                    padding: 8
-                },
-                grid: { color: '#f1f0f5' },
-                border: { display: false }
-            },
-            x: {
-                ticks: { color: '#777386' },
-                grid: { display: false },
-                border: { display: false }
+                    let totalRegistros = dias.reduce(function (soma, d) {
+                        return soma + d.quantidade;
+                    }, 0);
+                    wellbeingSubtitle.textContent = `${totalRegistros} registros em ${dias.length} dias`;
+                });
+            } else {
+                graficos_aviso.textContent = 'Não foi possível carregar seus gráficos. Tente novamente.';
+                graficos_aviso.hidden = false;
             }
-        }
+        })
+        .catch(function (falha) {
+            console.log(falha);
+            graficos_aviso.textContent = 'Não foi possível carregar seus gráficos. Tente novamente.';
+            graficos_aviso.hidden = false;
+        });
+}
+
+function desenharLinha(dias) {
+    if (graficoLinha) {
+        graficoLinha.destroy();
     }
-});
 
-  const emocoes = [
-    { nome: 'Calma',     valor: 3, cor: '#7a66c9' },
-    { nome: 'Ansiedade', valor: 2, cor: '#43358a' },
-    { nome: 'Alegria',   valor: 1, cor: '#a99bdc' },
-    { nome: 'Tristeza',  valor: 1, cor: '#dcd7f0' }
-];
-
-const total = emocoes.reduce((soma, e) => soma + e.valor, 0);
-
-document.getElementById('emotionsTotal').textContent = total;
-
-const legenda = document.getElementById('emotionsLegend');
-legenda.innerHTML = emocoes.map(e => `
-    <li>
-        <span class="dot" style="background-color: ${e.cor}"></span>
-        ${e.nome}
-        <span class="count">${e.valor}</span>
-    </li>
-`).join('');
-
-// gráfico
-new Chart(document.getElementById('emotionsChart'), {
-    type: 'doughnut',
-    data: {
-        labels: emocoes.map(e => e.nome),
-        datasets: [{
-            data: emocoes.map(e => e.valor),
-            backgroundColor: emocoes.map(e => e.cor),
-            borderColor: '#fff',
-            borderWidth: 3,
-            hoverOffset: 4
-        }]
-    },
-    options: {
-        maintainAspectRatio: false,
-        cutout: '68%',          // espessura do anel
-        plugins: {
-            legend: { display: false }  // usamos a legenda em HTML
-        }
-    }
-});
-
-new Chart(document.querySelector("#tableChart"), {
-     type: 'bar',
-        data: data,
+    graficoLinha = new Chart(document.getElementById('wellbeingChart'), {
+        type: 'line',
+        data: {
+            labels: dias.map(d => d.dia),
+            datasets: [{
+                label: 'Registros',
+                data: dias.map(d => d.quantidade),
+                borderColor: '#7a66c9',
+                backgroundColor: '#7a66c9',
+                borderWidth: 2.5,
+                pointRadius: 2,
+                pointHoverRadius: 5,
+                tension: 0
+            }]
+        },
         options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false }
+            },
             scales: {
-            y: {
-                beginAtZero: true
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 1,
+                        precision: 0,
+                        color: '#777386',
+                        padding: 8
+                    },
+                    grid: { color: '#f1f0f5' },
+                    border: { display: false }
+                },
+                x: {
+                    ticks: { color: '#777386' },
+                    grid: { display: false },
+                    border: { display: false }
+                }
             }
-            }
-        },
-})
+        }
+    });
+}
+
+function contarPorDia(lista) {
+    let contagem = {};
+
+    lista.forEach(function (item) {
+        let dia = item.dataRegistro.slice(0, 10);
+        contagem[dia] = (contagem[dia] || 0) + 1;
+    });
+
+    let dias = Object.keys(contagem).sort().slice(-14);
+
+    return dias.map(function (d) {
+        let partes = d.split("-");
+        return { dia: `${partes[2]}/${partes[1]}`, quantidade: contagem[d] };
+    });    
+}

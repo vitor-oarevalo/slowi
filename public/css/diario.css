@@ -491,3 +491,18 @@
 }
 
 .toast-icone svg { width: 20px; height: 20px; }
+
+.barchart-header {
+    display: flex;
+    justify-content: space-between !important;
+}
+
+.none-dot {
+    background-color: #b9b9b9 !important;
+}
+
+.barchart-card {
+    width: 100% !important;
+    height: 350px ;
+    margin-top: 15px !important;
+}
