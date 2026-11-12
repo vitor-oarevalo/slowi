@@ -947,6 +947,14 @@ canvas {
     position: relative;
 }
 
+.canvas-section-header-content h3 {
+    color: #fff !important;
+}
+
+.canvas-section-header-content p {
+    color: #fff !important;
+}
+
 .link-seta::before {
     content: '';
     position: absolute;

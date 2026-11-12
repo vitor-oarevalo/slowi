@@ -25,12 +25,10 @@
                 <button id="close-btn" type="button" aria-label="Fechar menu" aria-controls="menu-lateral"><img src="../assets/icon/close-menu.png" alt="" class="close-menu"></button>
             </li>
             <li><a href="index.html" class="menu-link"><img src="../assets/icon/index-menu-home.png" alt="" class="menu-icon">Início</a></li>
-            <li><a href="diario.html" class="menu-link"><img src="../assets/icon/index-menu-diary.png" alt="" class="menu-icon">Diário Emocional</a></li>
-            <li><a href="atividades.html" class="menu-link"><img src="../assets/icon/index-menu-windy.png" alt="" class="menu-icon">Atividades</a></li>
+            <li><a href="diario.html" class="menu-link" aria-current="page"><img src="../assets/icon/index-menu-diary.png" alt="" class="menu-icon">Diário Emocional</a></li>
+            <li><a href="sobre.html" class="menu-link selected"><img src="../assets/icon/info-button.png" alt="" class="menu-icon">Sobre mim</a></li>
             <li><a href="biblioteca.html" class="menu-link"><img src="../assets/icon/index-menu-book.png" alt="" class="menu-icon">Biblioteca</a></li>
             <li><a href="ajuda.html" class="menu-link"><img src="../assets/icon/index-menu-kindness.png" alt="" class="menu-icon">Onde buscar ajuda</a></li>
-            <!-- Troque o ícone abaixo por um ícone seu, se quiser -->
-            <li><a href="sobre.html" class="menu-link selected" aria-current="page"><img src="../assets/icon/index-menu-kindness.png" alt="" class="menu-icon">Sobre mim</a></li>
         </ul>
         <div class="menu-rodape">
             <a href="perfil.html" class="menu-usuario">
@@ -41,100 +39,147 @@
         </div>
     </header>
 
-    <main>
-        <article class="sobre">
+    <main class="sobre-main">
+        <header class="topbar">
+            <nav aria-label="Você está em"><strong>Sobre mim</strong></nav>
+            <time id="hoje"></time>
+        </header>
 
-            <!-- Apresentação -->
-            <section class="sobre-hero">
-                <figure class="sobre-retrato">
-                    <!-- Troque pela sua foto principal -->
-                    <img src="../assets/img/sobre-retrato.jpg" alt="[Descreva a foto: quem aparece e o que está fazendo]">
-                    <img src="../assets/icon/slowi-takecare.png" alt="" class="sobre-sticker">
-                </figure>
+        <div class="sobre">
 
-                <div class="sobre-apresentacao">
-                    <h1>Oi, eu sou [seu nome].</h1>
-                    <p class="sobre-lead">[Uma frase curta sobre você: o que estuda e o que o Slowi é para você.]</p>
-                    <p>[Dois ou três parágrafos de apresentação. Onde você estuda, o que gosta de fazer, o que o trouxe até aqui.]</p>
+            <!-- 1. Apresentação -->
+            <section class="sobre-card sobre-hero" aria-labelledby="sobre-titulo">
+                     <img src="../assets/img/header-img.jpg" alt="Foto de Vitor Arevalo" class="sobre-foto">
+
+                <div class="sobre-hero-texto">
+                    <p class="sobre-eyebrow">Pequena apresentação</p>
+                    <h1 id="sobre-titulo">Olá, eu sou Vitor Arevalo :)</h1>
+                    <p>Sou alguém que curte bastante tecnologia, astronomia e jogos. Sempre gostei de criar coisas e esse projeto é uma reflexão deste meu lado mais criativo!</p>
+                    <p>Sou estudante de Análise e Desenvolvimento de Sistemas e esse projeto faz parte da minha jornada pelo curso, como um projeto que define uma parte de mim, uma parte mais emocional...</p>
                 </div>
             </section>
 
-            <!-- A história -->
-            <section class="sobre-secao" aria-labelledby="sobre-porque">
-                <h2 id="sobre-porque">Por que escolhi falar de saúde mental</h2>
-                <div class="sobre-texto">
-                    <p>[Escreva aqui, com a sua voz, o motivo do tema. Você decide o quanto quer contar.]</p>
-                    <p>[Continue a história. Evite nomes e detalhes que identifiquem outras pessoas.]</p>
+            <!-- 2. Minha história -->
+            <section class="sobre-card" aria-labelledby="sobre-historia">
+                <p class="sobre-eyebrow">Conhecendo melhor</p>
+                <h2 id="sobre-historia">Minha história</h2>
+
+                <div class="sobre-historia">
+                    <div class="sobre-texto">
+                        <p>Fui uma criança alegre, que adorava brincar, era risonho e feliz. Entretanto, esse brilho foi se perdendo com o tempo. Passei por situações traumatizantes, como bullying, injustiças e desilusões amorosas. Com aproximadamente 12 anos, apresentei sinais de depressão. Tenho feito tratamento e percebi que existe uma vontade em mim de evitar que mais pessoas passam por esse sofrimento.</p>
+                        <p>É aí que entra o Slowi. Muitos colegas me perguntaram o motivo de eu escolher um tema mais complicado de se lidar em um projeto. Mas ele surge como uma vontade de ajudar ao próximo por meio da tecnologia. Eu sei que ele não tem poder de salvar vida, pois o Slowi é um blog pessoal de minha autoria, entretanto, gosto de trabalhar com causas que sejam mais do que apenas tecnologia. </p>
+                    </div>
 
                     <blockquote class="sobre-citacao">
-                        <p>Ir devagar para ir longe.</p>
+                        <p class="sobre-aspas" aria-hidden="true">“</p>
+                        <p class="citacao">Hei de <strong>vencer</strong></p>
+                        <i>— Alejandro Osuna Ubeda</i>
                     </blockquote>
-
-                    <p>[Fale do que mudou em você ao longo do projeto, ou do que você gostaria que alguém sentisse ao usar o Slowi.]</p>
                 </div>
             </section>
 
-            <!-- Fotos -->
-            <section class="sobre-secao" aria-labelledby="sobre-fotos">
-                <h2 id="sobre-fotos">Alguns momentos</h2>
-                <div class="sobre-galeria">
-                    <figure>
-                        <img src="../assets/img/sobre-1.jpg" alt="[Descreva a foto 1]">
-                        <figcaption>[Legenda curta]</figcaption>
+            <!-- 3. Momentos especiais -->
+            <section class="sobre-card" aria-labelledby="sobre-momentos">
+                <p class="sobre-eyebrow">Memórias</p>
+                <h2 id="sobre-momentos">Momentos especiais</h2>
+                <p class="sobre-sub">Alguns momentos que me fizeram mais feliz :)</p>
+
+                <div class="sobre-grade-3">
+                    <figure class="sobre-momento">
+                        <div class="sobre-foto moment-pic"><img src="../assets/img/viagem-ubatuba.jpeg" alt="Foto de Viagem à Praia" class="moment-img"></div>
+                        <figcaption>
+                            <strong>Viagem para Ubatuba</strong>
+                            <small>Em 2023</small>
+                        </figcaption>
                     </figure>
-                    <figure>
-                        <img src="../assets/img/sobre-2.jpg" alt="[Descreva a foto 2]">
-                        <figcaption>[Legenda curta]</figcaption>
+                    <figure class="sobre-momento">
+                        <div class="sobre-foto moment-pic"><img src="../assets/img/show-terno-rei.jpeg" alt="Show da Banda Terno Rei" class="moment-img"></div>
+                        <figcaption>
+                            <strong>Show do Terno Rei</strong>
+                            <small>Em 2026</small>
+                        </figcaption>
                     </figure>
-                    <figure>
-                        <img src="../assets/img/sobre-3.jpg" alt="[Descreva a foto 3]">
-                        <figcaption>[Legenda curta]</figcaption>
+                    <figure class="sobre-momento">
+                        <div class="sobre-foto moment-pic"><img src="../assets/img/entrada-sptech.jpeg" alt="Entrada na SPTech" class="moment-img"></div>
+                        <figcaption>
+                            <strong>Entrada na SPTech</strong>
+                            <small>Em 2026</small>
+                        </figcaption>
                     </figure>
                 </div>
             </section>
 
-            <!-- O Slowi -->
-            <section class="sobre-secao" aria-labelledby="sobre-slowi">
-                <h2 id="sobre-slowi">De onde veio o Slowi</h2>
-                <div class="sobre-texto">
-                    <p>O nome vem de <em>slow</em>, "devagar" em inglês, e é também o nome do bicho-preguiça que acompanha você pelo site. [Conte por que escolheu a preguiça como mascote.]</p>
+            <!-- 4. A origem do Slowi -->
+            <section class="sobre-card" aria-labelledby="sobre-origem">
+                <p class="sobre-eyebrow">Origem</p>
+                <h2 id="sobre-origem">A origem do Slowi</h2>
+                <p class="sobre-sub">Veja como o nome, o mascote e a proposta nasceram.</p>
+
+                <div class="sobre-grade-3">
+                    <article class="sobre-bloco">
+                        <h3>O nome</h3>
+                        <p>[Explicar de onde vem o nome Slowi.]</p>
+                    </article>
+                    <article class="sobre-bloco">
+                        <h3>O bicho-preguiça</h3>
+                        <p>[Explicar por que a preguiça é o mascote.]</p>
+                    </article>
+                    <article class="sobre-bloco">
+                        <h3>A proposta</h3>
+                        <p>[Explicar o que o Slowi quer oferecer a quem usa.]</p>
+                    </article>
                 </div>
             </section>
 
-            <!-- Aprendizados técnicos -->
-            <section class="sobre-secao" aria-labelledby="sobre-aprendi">
-                <h2 id="sobre-aprendi">O que aprendi construindo</h2>
-                <dl class="sobre-aprendizados">
-                    <div>
-                        <dt>Front-end</dt>
-                        <dd>[O que você aprendeu fazendo as telas, o menu, os gráficos...]</dd>
-                    </div>
-                    <div>
-                        <dt>Back-end e banco de dados</dt>
-                        <dd>[O que você aprendeu com o servidor, as rotas e o MySQL...]</dd>
-                    </div>
-                    <div>
-                        <dt>Segurança</dt>
-                        <dd>[O que você aprendeu sobre senhas com hash, validação no servidor e privacidade do diário...]</dd>
-                    </div>
-                    <div>
-                        <dt>Escrever para outras pessoas</dt>
-                        <dd>[O que mudou na forma como você pensa em textos, cores e mensagens para quem está sensível...]</dd>
-                    </div>
-                </dl>
+            <!-- 5. O que aprendi -->
+            <section class="sobre-card" aria-labelledby="sobre-aprendi">
+                <p class="sobre-eyebrow">Aprendizados</p>
+                <h2 id="sobre-aprendi">O que aprendi</h2>
+                <p class="sobre-sub">Veja o que este projeto me ensinou em cada área.</p>
+
+                <div class="sobre-grade-2">
+                    <article class="sobre-bloco">
+                        <h3>Front-end</h3>
+                        <p>[O que você aprendeu fazendo as telas, o menu e os gráficos.]</p>
+                    </article>
+                    <article class="sobre-bloco">
+                        <h3>Back-end e banco de dados</h3>
+                        <p>[O que você aprendeu com o servidor, as rotas e o MySQL.]</p>
+                    </article>
+                    <article class="sobre-bloco">
+                        <h3>Segurança</h3>
+                        <p>[O que você aprendeu sobre senhas com hash e validação no servidor.]</p>
+                    </article>
+                    <article class="sobre-bloco">
+                        <h3>Experiência de usuário</h3>
+                        <p>[O que você aprendeu sobre escrever e desenhar para quem está sensível.]</p>
+                    </article>
+                </div>
             </section>
 
-            <!-- Recado final -->
-            <aside class="sobre-recado" aria-label="Recado final">
-                <h2>Se você chegou até aqui</h2>
-                <p>[Um recado curto e sincero para quem está lendo.]</p>
-                <p>O Slowi é um espaço de apoio e informação, e não substitui acompanhamento profissional. Se precisar conversar com alguém agora, o CVV atende pelo 188, e o SAMU pelo 192.</p>
-                <a href="ajuda.html" class="sobre-link">Onde buscar ajuda</a>
-            </aside>
+            <!-- 6. Lembrete final -->
+            <section class="sobre-card" aria-labelledby="sobre-lembrete">
+                <p class="sobre-eyebrow">Lembrete</p>
+                <h2 id="sobre-lembrete">Nunca se esqueça de quem você é</h2>
+                <p class="sobre-sub">[Adicionar um recado curto e sincero para quem está lendo.]</p>
 
-        </article>
+                <aside class="sobre-aviso" aria-label="Um lembrete importante">
+                    <div>
+                        <h3>Um lembrete importante</h3>
+                        <p>O Slowi é um espaço de apoio e informação, e não substitui acompanhamento profissional. Se precisar conversar com alguém agora, o CVV atende pelo 188 e o SAMU pelo 192.</p>
+                    </div>
+                    <a href="ajuda.html" class="sobre-link">Onde buscar ajuda</a>
+                </aside>
+            </section>
+
+        </div>
     </main>
 
+    <script>
+        document.getElementById("hoje").textContent = new Date().toLocaleDateString("pt-BR", {
+            weekday: "long", day: "numeric", month: "long", year: "numeric"
+        });
+    </script>
     <script src="../js/menu.js"></script>
 </body>
 </html>

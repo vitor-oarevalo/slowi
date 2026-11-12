@@ -102,6 +102,15 @@
     stroke-linejoin: round;
 }
 
+.canvas-section-header-content h3 {
+    color: #27272b;
+}
+
+.canvas-section-header-content p {
+    color: #46464b;
+}
+
+
 /* ---------- Abas ---------- */
 .tabs { display: flex; gap: 12px; }
 
