@@ -1,5 +1,5 @@
 // const MIN_TIME = 750;
-const MIN_TIME = 0;
+const MIN_TIME = 750;
 const inicio = performance.now();
 
 function esconderLoading() {
