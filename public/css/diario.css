@@ -1,11 +1,15 @@
 @charset "UTF-8";
 
 /* ---------- Menu: rodapé com cartão e usuário ---------- */
-.index-menu ul { height: auto; flex: 1; }
+.index-menu ul { 
+    height: auto;
+    flex: 1;
+}
 
 .menu-rodape {
     display: flex;
     flex-direction: column;
+    height: 130px;
     gap: 16px;
     padding: 0 30px 24px;
 }
