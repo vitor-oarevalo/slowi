@@ -514,3 +514,51 @@
     height: 350px ;
     margin-top: 15px !important;
 }
+
+.history-acoes {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+    margin-top: 14px;
+}
+
+.link-editar,
+.botao-excluir {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: none;
+    color: var(--cor2);
+    cursor: pointer;
+}
+
+.link-editar:hover,
+.botao-excluir:hover {
+    background-color: var(--cor4);
+}
+
+.link-editar:focus-visible,
+.botao-excluir:focus-visible {
+    outline: 3px solid var(--cor2);
+    outline-offset: 2px;
+}
+
+.link-editar svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.botao-excluir .delete-btn {
+    width: 20px;
+    height: 20px;
+}

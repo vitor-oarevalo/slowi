@@ -1,4 +1,16 @@
-var database = require("../database/config")
+var database = require("../database/config");
+
+function gravarEtiquetas(idRegistro, etiquetas) {
+    var insercoes = etiquetas.map(function (nome) {
+        var sqlEtiqueta = `
+            INSERT INTO registroEtiqueta (fkDiarioEmocional, fkEtiqueta)
+            VALUES (?, (SELECT idEtiqueta FROM etiqueta WHERE nome = ?));
+        `;
+        return database.executar(sqlEtiqueta, [idRegistro, nome]);
+    });
+
+    return Promise.all(insercoes);
+}
 
 function registrar(dataRegistro, emocao, intensidade, registro, etiquetas, fkCadastro) {
     var instrucaoSql = `
@@ -8,17 +20,7 @@ function registrar(dataRegistro, emocao, intensidade, registro, etiquetas, fkCad
 
     return database.executar(instrucaoSql, [dataRegistro, emocao, intensidade, registro, fkCadastro])
         .then(function (resultado) {
-            var idRegistro = resultado.insertId;
-
-            var insercoes = etiquetas.map(function (nome) {
-                var sqlEtiqueta = `
-                    INSERT INTO registroEtiqueta (fkDiarioEmocional, fkEtiqueta)
-                    VALUES (?, (SELECT idEtiqueta FROM etiqueta WHERE nome = ?));
-                `;
-                return database.executar(sqlEtiqueta, [idRegistro, nome]);
-            });
-
-            return Promise.all(insercoes).then(function () {
+            return gravarEtiquetas(resultado.insertId, etiquetas).then(function () {
                 return resultado;
             });
         });
@@ -42,6 +44,29 @@ function listar(fkCadastro) {
     return database.executar(instrucaoSql, [fkCadastro]);
 }
 
+function atualizar(fkCadastro, idRegistro, dataRegistro, emocao, intensidade, registro, etiquetas) {
+    var sqlAtualizar = `
+        UPDATE diarioEmocional
+        SET dataRegistro = ?, emocao = ?, intensidade = ?, registro = ?
+        WHERE idDiarioEmocional = ? AND fkCadastro = ?;
+    `;
+
+    return database.executar(sqlAtualizar, [dataRegistro, emocao, intensidade, registro, idRegistro, fkCadastro])
+        .then(function (resultado) {
+            if (resultado.affectedRows == 0) {
+                return resultado;
+            }
+
+            var sqlApagar = `DELETE FROM registroEtiqueta WHERE fkDiarioEmocional = ?;`;
+
+            return database.executar(sqlApagar, [idRegistro]).then(function () {
+                return gravarEtiquetas(idRegistro, etiquetas);
+            }).then(function () {
+                return resultado;
+            });
+        });
+}
+
 function excluir(idRegistro, fkCadastro) {
     var instrucaoSql = `
         DELETE FROM diarioEmocional WHERE idDiarioEmocional = ? AND fkCadastro = ?;
@@ -52,5 +77,6 @@ function excluir(idRegistro, fkCadastro) {
 module.exports = {
     registrar,
     listar,
+    atualizar,
     excluir
 };

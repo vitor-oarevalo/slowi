@@ -11,8 +11,12 @@ router.get("/listar/:fkCadastro", function (req, res) {
     diarioController.listar(req, res);
 });
 
+router.put("/atualizar/:fkCadastro/:idRegistro", function (req, res) {
+    diarioController.atualizar(req, res);
+});
+
 router.delete("/excluir/:fkCadastro/:idRegistro", function (req, res) {
     diarioController.excluir(req, res);
-})
+});
 
 module.exports = router;

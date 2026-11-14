@@ -42,7 +42,7 @@
 
     <main>
         <header class="topbar">
-            <nav aria-label="Você está em"><strong>Diário emocional</strong> <span>Registrar</span></nav>
+            <nav aria-label="Você está em"><strong>Diário emocional</strong> <span id="topo-modo">Registrar</span></nav>
             <time id="hoje"></time>
         </header>
 
@@ -74,8 +74,8 @@
             <form id="registro" novalidate>
                 <header class="registro-topo">
                     <div>
-                        <h2>Um momento para se escutar</h2>
-                        <p>Sem pressa, sem metas e sem página em branco para vencer.</p>
+                        <h2 id="titulo-formulario">Um momento para se escutar</h2>
+                        <p id="subtitulo-formulario">Sem pressa, sem metas e sem página em branco para vencer.</p>
                     </div>
                     <button type="button" class="ghost-btn" id="limpar">Limpar campos</button>
                 </header>
@@ -177,7 +177,7 @@
                 <p class="erro" id="erro" role="alert" hidden>Escolha uma emoção principal para salvar.</p>
                 <footer class="registro-rodape">
                     <p>O que você sentir cabe aqui. No seu tempo.</p>
-                    <button type="submit" class="salvar-btn">Salvar
+                    <button type="submit" class="salvar-btn"><span id="salvar-texto">Salvar</span>
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
                     </button>
                 </footer>

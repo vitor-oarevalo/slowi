@@ -1076,28 +1076,3 @@ canvas {
     text-decoration: none;
 }
 
-.botao-excluir {
-    position: absolute;
-    bottom: 10px;
-    right: 20px;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-}
-
-.botao-excluir:focus-visible {
-    outline: 3px solid var(--cor2);
-    outline-offset: 3px;
-}
-
-.delete-btn {
-    
-    width: 30px;
-    height: 30px;
-    opacity: 0.6;
-}
-
-.delete-btn:hover {
-    cursor: pointer;
-    opacity: 1;
-}
