@@ -9,6 +9,10 @@ router.post("/registrar", function (req, res) {
 
 router.get("/listar/:fkCadastro", function (req, res) {
     diarioController.listar(req, res);
+});
+
+router.delete("/excluir/:fkCadastro/:idRegistro", function (req, res) {
+    diarioController.excluir(req, res);
 })
 
 module.exports = router;

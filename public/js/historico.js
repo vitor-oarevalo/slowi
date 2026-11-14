@@ -26,23 +26,71 @@ function formatarDataHistorico(texto) {
 }
 
 function criarCard(item) {
+    
     const card = criar("article", "history-card");
 
     const topo = criar("header", "history-topo");
     topo.appendChild(criar("time", "history-data", formatarDataHistorico(item.dataRegistro)));
-
+    
     const emocao = criar("span", "history-emocao", item.emocao);
     emocao.style.backgroundColor = CORES_EMOCAO[item.emocao] || "#E3DFF5";
     topo.appendChild(emocao);
     card.appendChild(topo);
-
+    
     const intensidade = criar("div", "history-intensidade");
     intensidade.setAttribute("aria-label", `Intensidade ${item.intensidade} de 5`);
     for (let i = 1; i <= 5; i++) {
         intensidade.appendChild(criar("span", i <= item.intensidade ? "ponto ativo" : "ponto"));
     }
     card.appendChild(intensidade);
+    
+    if (historicoLista.dataset.excluir == "true") {
+        const botaoExcluir = criar("button", "botao-excluir");
+        botaoExcluir.type = "button";
+        botaoExcluir.setAttribute("aria-label", "Excluir este registro");
 
+        const deleteBtn = criar("img", "delete-btn");
+        deleteBtn.src = "../assets/icon/trash.png";
+        deleteBtn.alt = "";
+
+        botaoExcluir.appendChild(deleteBtn);
+
+        card.appendChild(botaoExcluir);
+            botaoExcluir.addEventListener("click", function () {
+            if (!confirm("Excluir este registro? Não dá para desfazer.")) {
+                return;
+            }
+        
+            botaoExcluir.disabled = true;
+        
+            fetch("/diario/excluir/" + Number(sessionStorage.ID_USUARIO) + "/" + item.idDiarioEmocional, {
+                method: "DELETE"
+            })
+                .then(function (resposta) {
+                    if (resposta.ok) {
+                        card.remove();
+                        historicoAviso.hidden = true;
+        
+                        if (historicoLista.children.length == 0) {
+                            historicoAviso.textContent = "Você ainda não tem registros. Que tal escrever o primeiro?";
+                            historicoAviso.hidden = false;
+                        }
+                    } else {
+                        historicoAviso.textContent = "Não foi possível excluir o registro. Tente novamente.";
+                        historicoAviso.hidden = false;
+                        botaoExcluir.disabled = false;
+                    }
+                })
+                .catch(function (falha) {
+                    console.log(falha);
+                    historicoAviso.textContent = "Não foi possível excluir o registro. Tente novamente.";
+                    historicoAviso.hidden = false;
+                    botaoExcluir.disabled = false;
+                });
+        });
+    }
+
+    
     if (item.registro) {
         card.appendChild(criar("p", "history-texto", item.registro));
     }

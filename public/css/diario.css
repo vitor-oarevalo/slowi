@@ -166,6 +166,7 @@
 }
 
 .history-card {
+    position: relative;
     padding: 18px 22px;
     text-align: left;
     background-color: var(--cor5);

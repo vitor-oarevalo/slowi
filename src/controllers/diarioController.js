@@ -74,7 +74,26 @@ function listar(req, res) {
         });
 }
 
+function excluir(req, res) {
+    var fkCadastro = Number(req.params.fkCadastro);
+    var idRegistro = Number(req.params.idRegistro);
+
+    
+    if (Number.isInteger(fkCadastro) && Number.isInteger(idRegistro)) {
+        diarioModel.excluir(idRegistro, fkCadastro)
+        .then(function (resultado) {
+            if (resultado.affectedRows == 0) {
+                return res.status(404).send("Registro não encontrado");
+            }
+            return res.status(200).json("Registro excluído");
+        })
+    } else {
+        return res.status(400).send("Ocorreu um erro ao excluir")
+    }
+}
+
 module.exports = {
     registrar,
-    listar
+    listar,
+    excluir
 }

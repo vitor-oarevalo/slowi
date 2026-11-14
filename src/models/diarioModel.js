@@ -42,7 +42,15 @@ function listar(fkCadastro) {
     return database.executar(instrucaoSql, [fkCadastro]);
 }
 
+function excluir(idRegistro, fkCadastro) {
+    var instrucaoSql = `
+        DELETE FROM diarioEmocional WHERE idDiarioEmocional = ? AND fkCadastro = ?;
+    `;
+    return database.executar(instrucaoSql, [idRegistro, fkCadastro]);
+}
+
 module.exports = {
     registrar,
-    listar
+    listar,
+    excluir
 };
