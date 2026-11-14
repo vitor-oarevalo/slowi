@@ -565,21 +565,26 @@
 
 .kpis-section {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 260px), 1fr)
+    );
     gap: 20px;
     margin-bottom: 24px;
 }
 
 .kpi-article {
-    --kpi-cor: #7a66c9;        /* barrinha do topo e detalhes */
-    --kpi-texto: #43358a;      /* número grande */
-    --kpi-destaque: #43358a;   /* trecho em negrito da nota */
+    --kpi-cor: #7a66c9;
+    --kpi-texto: #43358a;
+    --kpi-destaque: #43358a;
 
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    padding: 24px 24px 20px;
+    gap: 10px;
+    padding: 20px 20px 12px;
+    box-sizing: border-box;
+
     border: 1px solid #e6e3ef;
     border-radius: 16px;
     background-color: #fff;
@@ -609,9 +614,11 @@
 .kpi-topo {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+    min-height: 24px;
     gap: 12px;
 }
+
 
 .kpi-titulo {
     margin: 0;
@@ -636,7 +643,8 @@
     display: flex;
     align-items: baseline;
     gap: 14px;
-    margin: 6px 0 0;
+    min-height: 48px;
+    margin: 0;
 }
 
 .kpi-valor {
@@ -658,7 +666,9 @@
 }
 
 .kpi-barra {
+    flex-shrink: 0;
     height: 8px;
+    margin-top: 0;
     border-radius: 999px;
     background-color: #e4e4e4;
     overflow: hidden;
@@ -675,8 +685,8 @@
 }
 
 .kpi-nota {
-    margin: auto 0 0;
-    padding-top: 14px;
+    margin: 0;
+    padding-top: 10px;
     border-top: 1px solid #ebe9f2;
     font-size: 0.88rem;
     line-height: 1.5;
