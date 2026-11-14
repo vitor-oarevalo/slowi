@@ -202,11 +202,14 @@ main {
     border: none;
     font-size: 1em;
     font-weight: 600;
+    opacity: 0.6;
+    transform: translateY(5px);
 }
 
 
 .logout-link:hover {
     cursor: pointer;
+    opacity: 1;
 }
 
 
