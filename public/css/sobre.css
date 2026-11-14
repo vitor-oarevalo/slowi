@@ -32,7 +32,6 @@ p {
     text-transform: capitalize;
 }
 
-/* ---------- Coluna de cartões ---------- */
 
 .sobre {
     display: flex;
@@ -75,7 +74,6 @@ p {
     line-height: 1.7;
 }
 
-/* Rótulo pequeno em cima de cada título */
 .sobre-eyebrow {
     margin-bottom: 8px;
     font-size: 0.72rem;
@@ -85,13 +83,10 @@ p {
     color: var(--cor2, #4C478C);
 }
 
-/* Frase de apoio logo abaixo do título da seção */
 .sobre-sub {
     margin-bottom: 24px;
     color: #5b5870;
 }
-
-/* ---------- Espaço de foto ---------- */
 
 .sobre-foto {
     display: flex;
@@ -112,9 +107,6 @@ p {
     aspect-ratio: 4 / 3;
 }
 
-/* Quando você trocar o <div> por uma <img>, a borda tracejada some */
-
-/* ---------- 1. Apresentação ---------- */
 
 .sobre-hero {
     display: grid;
@@ -123,7 +115,6 @@ p {
     align-items: center;
 }
 
-/* ---------- 2. Minha história ---------- */
 
 .sobre-historia {
     display: grid;
@@ -164,8 +155,6 @@ p {
     filter: brightness(70%);
 }
 
-/* ---------- Grades (momentos, origem e aprendizados) ---------- */
-
 .sobre-grade-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -178,7 +167,6 @@ p {
     gap: 20px;
 }
 
-/* ---------- 3. Momentos especiais ---------- */
 
 .sobre-momento {
     margin: 0;
@@ -231,8 +219,6 @@ p {
     width: 120px;
 }
 
-/* ---------- 4 e 5. Blocos de texto ---------- */
-
 .sobre-bloco {
     padding: 22px 24px;
     background-color: #fff;
@@ -245,7 +231,6 @@ p {
     color: #3d3a4f;
 }
 
-/* ---------- 6. Aviso final ---------- */
 
 .sobre-aviso {
     display: flex;

@@ -37,7 +37,6 @@
   height: 90px;
 }
 
-/* Barco */
 .boat {
   position: absolute;
   left: 50%;
@@ -53,7 +52,6 @@
   50%      { transform: translateY(-6px) rotate(5deg); }
 }
 
-/* Ondas */
 .waves {
   position: absolute;
   inset: auto 0 0 0;
@@ -66,7 +64,7 @@
 .wave {
   position: absolute;
   left: 0;
-  width: 200%;   /* 400px: dois ciclos de 200px */
+  width: 200%;
   height: 20px;
 }
 

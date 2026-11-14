@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-/* ---------- Menu: rodapé com cartão e usuário ---------- */
 .index-menu ul { 
     height: auto;
     flex: 1;
@@ -62,7 +61,6 @@
 .topbar nav span { margin-left: 8px; font-size: 0.85em; color: #777386; }
 .topbar time { font-size: 0.85em; color: #4a3b86; font-weight: 600; }
 
-/* ---------- Apresentação ---------- */
 .diario-hero {
     display: flex;
     justify-content: space-between;
@@ -97,7 +95,6 @@
 
 .hero-img { width: 40%; object-fit: cover; object-position: center; }
 
-/* ícones de traço usados em toda a página */
 .diario-hero svg, .tab svg, .data-campo svg, .emocao svg, .salvar-btn svg, .toast-icone svg {
     fill: none;
     stroke: currentColor;
@@ -115,7 +112,6 @@
 }
 
 
-/* ---------- Abas ---------- */
 .tabs { display: flex; gap: 12px; }
 
 .tab {
@@ -132,6 +128,12 @@
     font: inherit;
     font-weight: bolder;
     cursor: pointer;
+    text-decoration: none;
+}
+
+.selected-tab {
+    background-color: white !important;
+    color: black !important;
 }
 
 .tab svg { width: 20px; height: 20px; }
@@ -143,7 +145,6 @@
     color: #4a3b86;
 }
 
-/* ---------- Cartão do formulário ---------- */
 .diario-card {
     position: relative;
     padding: 28px;
@@ -285,7 +286,6 @@
     gap: 16px;
 }
 
-/* ---------- Data e hora ---------- */
 .data-campo {
     display: flex;
     align-items: center;
@@ -318,7 +318,6 @@
     cursor: pointer;
 }
 
-/* ---------- Emoções ---------- */
 .emocoes {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -358,7 +357,6 @@
 .emocao:has(input:focus-visible), .intensidade label:has(input:focus-visible),
 .etiquetas label:has(input:focus-visible) { outline: 2px solid #4b3a8f; outline-offset: 2px; }
 
-/* ---------- Intensidade ---------- */
 .intensidade { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #777386; }
 
 .intensidade label input { position: absolute; opacity: 0; pointer-events: none; }
@@ -378,7 +376,6 @@
 .intensidade label span:hover { background-color: #E3DFF5; }
 .intensidade label:has(input:checked) span { background-color: #5c47b1; color: #fff; }
 
-/* ---------- Texto ---------- */
 #texto {
     width: 100%;
     min-height: 150px;
@@ -394,7 +391,6 @@
 
 #texto:focus { outline: none; border-color: #5c47b1; }
 
-/* ---------- Perguntas ---------- */
 .pergunta {
     display: flex;
     justify-content: space-between;
@@ -415,7 +411,6 @@
 .pergunta b { color: #5c47b1; font-size: 1.3em; }
 .pergunta:hover { background-color: #F8F5FC; }
 
-/* ---------- Etiquetas ---------- */
 .etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 .etiquetas input { position: absolute; opacity: 0; pointer-events: none; }
 
@@ -437,7 +432,6 @@
     font-weight: 600;
 }
 
-/* ---------- Rodapé do formulário ---------- */
 .registro-rodape {
     display: flex;
     justify-content: space-between;
@@ -473,7 +467,6 @@
 .erro { margin: 0 0 12px; color: #a33a4a; font-size: 0.9em; font-weight: 600; }
 .erro[hidden], .toast[hidden] { display: none; }
 
-/* ---------- Aviso de confirmação ---------- */
 .toast {
     position: fixed;
     top: 24px;

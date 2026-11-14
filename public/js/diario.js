@@ -24,39 +24,11 @@ function atualizarContador() {
     contador.textContent = `${texto.value.length} caracteres`;
 }
 
-/* Data de hoje na barra do topo */
-$("#hoje").textContent = new Date().toLocaleDateString("pt-BR", {
-    weekday: "long", day: "numeric", month: "long", year: "numeric"
-});
-
-/* Editar data e hora */
 $("#editar-data").addEventListener("click", () => {
     data.disabled = false;
     data.focus();
 });
 
-/* Abas */
-const abas = document.querySelectorAll(".tab");
-
-function abrirAba(aba) {
-    abas.forEach((item) => {
-        const ativa = item === aba;
-        item.setAttribute("aria-selected", ativa);
-        item.tabIndex = ativa ? 0 : -1;
-        document.getElementById(item.getAttribute("aria-controls")).hidden = !ativa;
-    });
-    if (aba.id == "aba-historico") {
-        carregarHistorico();
-    } else if (aba.id == "aba-graficos") {
-        carregarGraficos();
-    }
-}
-
-abas.forEach((aba) => {
-    aba.addEventListener("click", () => abrirAba(aba));
-});
-
-/* Perguntas que ajudam a começar: inserem a pergunta no texto */
 document.querySelectorAll(".pergunta").forEach((botao) => {
     botao.addEventListener("click", () => {
         const pergunta = botao.firstChild.textContent.trim();
@@ -68,7 +40,6 @@ document.querySelectorAll(".pergunta").forEach((botao) => {
 
 texto.addEventListener("input", atualizarContador);
 
-/* Limpar */
 function limpar() {
     form.reset();
     iniciarData();
@@ -78,24 +49,7 @@ function limpar() {
 
 $("#limpar").addEventListener("click", limpar);
 
-
-function mostrarGrafico(lista) {
-    historicoLista.replaceChildren();
-
-    if (lista.length == 0) {
-        historicoAviso.textContent = "Você ainda não tem registros. Que tal escrever o primeiro?";
-        historicoAviso.hidden = false;
-        return;
-    }
-
-    historicoAviso.hidden = true;
-    lista.forEach((item) => historicoLista.appendChild(criarCard(item)));
-}
-
-
-/* Salvar */
 let temporizador;
-
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -165,8 +119,6 @@ form.addEventListener("submit", (e) => {
             botaoSalvar.disabled = false;
         });
 });
-
-
 
 iniciarData();
 atualizarContador();

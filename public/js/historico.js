@@ -69,7 +69,6 @@ function mostrarHistorico(lista, limite) {
 
     historicoAviso.hidden = true;
 
-    // a lista chega do mais recente para o mais antigo, então os primeiros são os mais novos
     let itens = limite ? lista.slice(0, limite) : lista;
     itens.forEach((item) => historicoLista.appendChild(criarCard(item)));
 }

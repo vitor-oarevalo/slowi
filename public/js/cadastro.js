@@ -1,5 +1,3 @@
-// cadastro.js
-
 let timerErro;
 
 function mostrarMensagem(mensagem, tipo) {
