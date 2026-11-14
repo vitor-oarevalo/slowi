@@ -42,8 +42,8 @@ function entrar() {
                 mostrarMensagem("Login realizado! Redirecionando...", "sucesso")
                 
                 setTimeout(function () {
-                    window.location = "index.html";
-                }, 1000);
+                    window.location = "loading.html";
+                }, 500);
 
             });
 
