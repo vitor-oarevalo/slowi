@@ -8,7 +8,7 @@
 .menu-rodape {
     display: flex;
     flex-direction: column;
-    height: 130px;
+    height: 120px;
     gap: 16px;
     padding: 0 30px 24px;
 }

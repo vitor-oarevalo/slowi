@@ -32,10 +32,10 @@
             <li><a href="sobre.html" class="menu-link selected"><img src="../assets/icon/info-button.png" alt="" class="menu-icon">Sobre mim</a></li>
         </ul>
         <div class="menu-rodape">
-            <a href="perfil.html" class="menu-usuario">
+            <div class="menu-usuario">
                 <span id="avatar" class="avatar" aria-hidden="true"></span>
                 <span><strong id="username_tag"></strong></span>
-            </a>
+            </div>
             <button onclick="sair()" class="logout-link"><img src="../assets/icon/logout.png" alt="" class="logout-img"></button>
         </div>
     </header>
@@ -49,8 +49,8 @@
         <div class="sobre">
 
             <section class="sobre-card sobre-hero" aria-labelledby="sobre-titulo">
-                     <img src="../assets/img/header-img.jpg" alt="Foto de Vitor Arevalo" class="sobre-foto">
-
+                <img src="../assets/img/header-img.jpg" alt="Foto de Vitor Arevalo" class="sobre-foto">
+                <img src="../assets/img/slowi-naosozinho.png" alt="" class="slowi-naosozinho">
                 <div class="sobre-hero-texto">
                     <p class="sobre-eyebrow">Pequena apresentação</p>
                     <h1 id="sobre-titulo">Olá, eu sou Vitor Arevalo :)</h1>
@@ -73,6 +73,7 @@
                         <p class="sobre-aspas" aria-hidden="true">“</p>
                         <p class="citacao">Hei de <strong>vencer</strong></p>
                         <i>— Alejandro Osuna Ubeda</i>
+                        <img src="../assets/img/slowi-selfcare.png" alt="" class="slowi-selfcare">
                     </blockquote>
                 </div>
             </section>
@@ -136,30 +137,45 @@
                 <h2 id="sobre-aprendi">Quem sempre me apoiou?</h2>
                 <p class="sobre-sub">Veja as pessoas que me trouxeram até aqui e sempre estiveram aqui por mim.</p>
 
-                <div class="sobre-grade-2">
-                    <article class="sobre-bloco">
-                        <h3>Front-end</h3>
-                        <p>[O que você aprendeu fazendo as telas, o menu e os gráficos.]</p>
-                    </article>
-                    <article class="sobre-bloco">
-                        <h3>Back-end e banco de dados</h3>
-                        <p>[O que você aprendeu com o servidor, as rotas e o MySQL.]</p>
-                    </article>
-                    <article class="sobre-bloco">
-                        <h3>Segurança</h3>
-                        <p>[O que você aprendeu sobre senhas com hash e validação no servidor.]</p>
-                    </article>
-                    <article class="sobre-bloco">
-                        <h3>Experiência de usuário</h3>
-                        <p>[O que você aprendeu sobre escrever e desenhar para quem está sensível.]</p>
-                    </article>
-                </div>
-            </section>
+                <div class="div-agradecimentos">
+                    <div class="agradecimento agr1">
+                        <div class="info-pessoa">
+                            <h1>Katia Beatriz da Silva</h1>
+                            <p>Minha mãe</p>
+                        </div>
+                    </div>
 
+                    <div class="agradecimento agr2">
+                        <div class="info-pessoa">
+                            <h1>Salvador Osuna Arevalo</h1>
+                            <p>Meu pai</p>
+                        </div>
+                    </div>
+
+                    <div class="agradecimento agr3">
+                        <div class="info-pessoa">
+                            <h1>Alejandro Osuna Ubeda</h1>
+                            <p>Meu avô</p>
+                        </div>
+                    </div>
+                </div>                
+            </section>
             <section class="sobre-card" aria-labelledby="sobre-lembrete">
                 <p class="sobre-eyebrow">Lembrete</p>
                 <h2 id="sobre-lembrete">Nunca se esqueça de quem você é</h2>
-                <p class="sobre-sub">[Adicionar um recado curto e sincero para quem está lendo.]</p>
+                <p class="sobre-sub">Você não é apenas os seus dias ruins, lembre-se de quem você é... De sua felicidade...</p>
+
+                <div class="children-img-div">
+                    <img src="../assets/img/crianca1.jpg" class="vitor-crianca" alt="">
+                    <img src="../assets/img/crianca2.jpg" class="vitor-crianca" alt="">
+                    <img src="../assets/img/crianca3.jpg" class="vitor-crianca" alt="">
+                    <img src="../assets/img/crianca4.jpg" class="vitor-crianca" alt="">
+                    <img src="../assets/img/crianca5.jpg" class="vitor-crianca" alt="">
+                    <img src="../assets/img/crianca6.jpg" class="vitor-crianca" alt="">
+                    <img src="../assets/img/crianca7.jpg" class="vitor-crianca" alt="">
+                    <img src="../assets/img/crianca8.jpg" class="vitor-crianca" alt="">
+                    <img src="../assets/img/crianca9.jpg" class="vitor-crianca" alt="">
+                </div>
 
                 <aside class="sobre-aviso" aria-label="Um lembrete importante">
                     <div>
@@ -173,11 +189,7 @@
         </div>
     </main>
 
-    <script>
-        document.getElementById("hoje").textContent = new Date().toLocaleDateString("pt-BR", {
-            weekday: "long", day: "numeric", month: "long", year: "numeric"
-        });
-    </script>
     <script src="../js/menu.js"></script>
+    <script src="../js/topbar.js"></script>
 </body>
 </html>

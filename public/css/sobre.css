@@ -99,7 +99,7 @@ p {
     background-color: var(--cor4, #E3DFF5);
     border-radius: 16px;
     object-fit: cover;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.534);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.363);
 }
 
 .moment-pic {
@@ -134,6 +134,7 @@ p {
     padding: 20px 24px 24px;
     background-color: var(--cor4, #E3DFF5);
     border-radius: 16px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.363);
 }
 
 .sobre-aspas {
@@ -173,7 +174,7 @@ p {
     padding: 12px 12px 18px;
     background-color: #fff;
     border: 1px solid var(--cor4, #E3DFF5);
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.404);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.363);
 }
 
 .sobre-momento figcaption {
@@ -224,6 +225,8 @@ p {
     background-color: #fff;
     border: 1px solid var(--cor4, #E3DFF5);
     border-radius: 18px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.192);
+
 }
 
 .sobre-bloco p {
@@ -240,6 +243,7 @@ p {
     padding: 22px 26px;
     background-color: var(--cor4, #E3DFF5);
     border-radius: 18px;
+    margin-top: 20px;
 }
 
 .sobre-aviso p {
@@ -272,8 +276,101 @@ p {
     border-radius: 15px;
     background-color: #fff;
     color: #27272b;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.219);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.363);
 }
 
 .topbar nav span { margin-left: 8px; font-size: 0.85em; color: #777386; }
 .topbar time { font-size: 0.85em; color: #4a3b86; font-weight: 600; }
+
+
+.div-agradecimentos {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    width: 100%;
+    height: 600px;
+}
+
+.agradecimento {
+    position: relative;
+    width: 300px;
+    height: 600px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.agr1 { background-image: url('../assets/img/agradecimento1.jpg'); }
+.agr2 { background-image: url('../assets/img/agradecimento2.jpg'); }
+.agr3 { background-image: url('../assets/img/agradecimento3.jpg'); }
+
+.info-pessoa {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.03) 100%);
+    transition: 0.3s;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.agradecimento:hover .info-pessoa {
+    top: 0;
+}
+
+.info-pessoa h1 {
+    font-size: 1.1em;
+    width: fit-content;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.info-pessoa p {
+    font-size: 16px;
+}
+
+.children-img-div {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    transition: 0.3s;
+
+}
+
+.vitor-crianca {
+    filter: saturate(150%);
+    width: 126px;
+    height: 100%;
+    transition: 0.3s;
+
+}
+
+
+.children-img-div .vitor-crianca:hover {
+    transform: scale(1.1);
+}
+
+.menu-rodape {
+    transform: translateY(-9px);
+}
+
+.slowi-naosozinho {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;
+}
+
+.slowi-selfcare {
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+}
