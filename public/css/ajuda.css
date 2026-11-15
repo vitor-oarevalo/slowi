@@ -1,0 +1,91 @@
+
+.ajuda-canais {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.ajuda-canal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 24px;
+    text-align: justify;
+    background-color: var(--cor5, #F8F5FC);
+    color: var(--cor1, #252532);
+    border-radius: 12px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.ajuda-numero {
+    margin: 0;
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--cor2, #4C478C);
+}
+
+.ajuda-canal h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.3;
+    color: var(--cor1, #252532);
+}
+
+.ajuda-canal p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.ajuda-acao {
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 12px 22px;
+    background-color: var(--cor2, #4C478C);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.ajuda-acao:hover {
+    background-color: #5c47b1;
+    transform: translateY(-5px);
+}
+
+.ajuda-extra {
+    font-size: 0.85rem;
+    color: #5b5870;
+}
+
+.ajuda-extra a {
+    color: var(--cor2, #4C478C);
+    font-weight: 700;
+}
+
+.ajuda-acao:focus-visible,
+.ajuda-extra a:focus-visible {
+    outline: 3px solid var(--cor1, #252532);
+    outline-offset: 3px;
+}
+
+
+.ajuda-recado {
+    background-color: var(--cor4, #E3DFF5);
+    box-shadow: none;
+}
+
+.ajuda-recado h2 {
+    margin-bottom: 12px;
+    font-size: 1.5rem;
+    color: var(--cor2, #4C478C);
+}
+
+.ajuda-recado p {
+    line-height: 1.7;
+}
+
+.ajuda-recado p + p {
+    margin-top: 12px;
+}

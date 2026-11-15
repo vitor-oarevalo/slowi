@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slowi - Onde buscar ajuda</title>
+    <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/diario.css">
+    <link rel="stylesheet" href="../css/ajuda.css">
+    <script src="../js/sessao.js"></script>
+</head>
+<body>
+    <button id="open-btn" class="open-menu-btn" type="button" aria-label="Abrir menu" aria-controls="menu-lateral" aria-expanded="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>
+        </svg>
+    </button>
+    <div id="menu-overlay" class="menu-overlay"></div>
+
+    <header class="index-menu" id="menu-lateral" aria-label="Menu principal">
+        <ul>
+            <li class="menu-header">
+                <img src="../assets/img/slowi-logo.png" alt="Slowi" class="small-img-slowi">
+                <button id="close-btn" type="button" aria-label="Fechar menu" aria-controls="menu-lateral"><img src="../assets/icon/close-menu.png" alt="" class="close-menu"></button>
+            </li>
+            <li><a href="index.html" class="menu-link"><img src="../assets/icon/index-menu-home.png" alt="" class="menu-icon">Início</a></li>
+            <li><a href="diario.html" class="menu-link"><img src="../assets/icon/index-menu-diary.png" alt="" class="menu-icon">Diário Emocional</a></li>
+            <li><a href="historico.html" class="menu-link"><img src="../assets/icon/history.png" alt="" class="menu-icon">Histórico</a></li>
+            <li><a href="dashboard.html" class="menu-link"><img src="../assets/icon/data-analytics.png" alt="" class="menu-icon">Gráficos</a></li>
+            <li><a href="ajuda.html" class="menu-link selected" aria-current="page"><img src="../assets/icon/index-menu-kindness.png" alt="" class="menu-icon">Onde buscar ajuda</a></li>
+            <li><a href="sobre.html" class="menu-link"><img src="../assets/icon/info-button.png" alt="" class="menu-icon">Sobre mim</a></li>
+        </ul>
+        <div class="menu-rodape">
+            <div class="menu-usuario">
+                <span id="avatar" class="avatar" aria-hidden="true"></span>
+                <span><strong id="username_tag"></strong></span>
+            </div>
+            <button onclick="sair()" class="logout-link" aria-label="Sair"><img src="../assets/icon/logout.png" alt="" class="logout-img"></button>
+        </div>
+    </header>
+
+    <main>
+        <header class="topbar">
+            <nav aria-label="Você está em"><strong>Onde buscar ajuda</strong></nav>
+            <time id="hoje"></time>
+        </header>
+
+        <section class="diario-hero">
+            <article>
+                <h1>Onde buscar ajuda</h1>
+                <p>Pedir ajuda é uma forma de cuidar de si. Veja três caminhos para conversar com alguém, no seu tempo.</p>
+                <small>Se houver risco imediato, ligue para o 192.</small>
+            </article>
+        </section>
+
+        <section class="diario-card" aria-labelledby="canais-titulo">
+            <h2 id="canais-titulo">Canais de apoio</h2>
+            <p class="dica">Escolha o que parecer mais confortável agora.</p>
+
+            <div class="ajuda-canais">
+
+                <article class="ajuda-canal">
+                    <p class="ajuda-numero">188</p>
+                    <h3>CVV · Centro de Valorização da Vida</h3>
+                    <p>Apoio emocional gratuito e sigiloso, 24 horas por dia, todos os dias. Você pode conversar por telefone, chat ou e-mail.</p>
+                    <a href="https://cvv.org.br/" target="_blank" class="ajuda-acao">Conhecer o CVV</a>
+                </article>
+
+                <article class="ajuda-canal">
+                    <p class="ajuda-numero">192</p>
+                    <h3>SAMU · Atendimento de urgência</h3>
+                    <p>Para urgências e emergências, inclusive crises de saúde mental com risco imediato. Se alguém está em perigo agora, ligue.</p>
+                    <a href="https://samues.com.br/" target="_blank" class="ajuda-acao">Conhecer o SAMU</a>
+                </article>
+
+                <article class="ajuda-canal">
+                    <p class="ajuda-numero">CAPS</p>
+                    <h3>Centros de Atenção Psicossocial</h3>
+                    <p>Acompanhamento gratuito pelo SUS para quem está em sofrimento intenso. Em geral não precisa de encaminhamento: procure a unidade mais próxima de casa, ou pergunte na Unidade Básica de Saúde do seu bairro.</p>
+                    <a href="https://www.gov.br/saude/pt-br/composicao/saes/desmad/raps/caps" target="_blank" class="ajuda-acao">Saber mais sobre os CAPS</a>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="diario-card ajuda-recado" aria-labelledby="recado-titulo">
+            <h2 id="recado-titulo">Você não está só</h2>
+            <p>Mesmo quando parece que ninguém entende, existe gente disposta a escutar. Pedir ajuda não é fraqueza, e você não precisa estar no limite para merecer cuidado. Se hoje estiver pesado, ligar para o 188 já é um passo.</p>
+            <p>O Slowi é um espaço de apoio e informação e não substitui acompanhamento profissional. Volte sempre que precisar, no seu tempo.</p>
+        </section>
+    </main>
+
+    <script src="../js/topbar.js"></script>
+    <script src="../js/menu.js"></script>
+</body>
+</html>
