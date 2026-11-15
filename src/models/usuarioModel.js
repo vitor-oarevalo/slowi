@@ -1,5 +1,3 @@
-// usuarioModel.js
-
 var database = require("../database/config")
 
 function autenticar(email) {

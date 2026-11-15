@@ -1,4 +1,3 @@
-// const MIN_TIME = 750;
 const MIN_TIME = 0;
 const inicio = performance.now();
 

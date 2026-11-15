@@ -10,13 +10,9 @@ const toast = $("#toast");
 
 const pad = (n) => String(n).padStart(2, "0");
 
-/* ---------- Modo edição ---------- */
-
-// diario.html?editar=7  ->  idEdicao = 7 (ou null, se não houver o parâmetro ou se for inválido)
 const parametroEdicao = Number(new URLSearchParams(location.search).get("editar"));
 let idEdicao = Number.isInteger(parametroEdicao) && parametroEdicao > 0 ? parametroEdicao : null;
 
-// Troca os textos da página conforme o modo
 function definirModo(editando) {
     $("#topo-modo").textContent = editando ? "Editar" : "Registrar";
     $("#titulo-formulario").textContent = editando ? "Editando um registro" : "Um momento para se escutar";
@@ -27,9 +23,7 @@ function definirModo(editando) {
     $("#limpar").hidden = editando;
 }
 
-// Põe os dados do registro nos campos do formulário
 function preencherFormulario(item) {
-    // "2026-11-14 10:00:00" -> "2026-11-14T10:00" (formato do datetime-local)
     data.value = item.dataRegistro.replace(" ", "T").slice(0, 16);
 
     document.querySelectorAll("input[name=emocao]").forEach((radio) => {
@@ -49,7 +43,6 @@ function preencherFormulario(item) {
     });
 }
 
-// Busca os registros e acha o que está sendo editado
 function carregarParaEdicao() {
     botaoSalvar.disabled = true;
 
@@ -64,7 +57,6 @@ function carregarParaEdicao() {
             const item = lista.find((registro) => registro.idDiarioEmocional == idEdicao);
 
             if (!item) {
-                // id inexistente ou de outra pessoa: volta a ser um registro novo
                 idEdicao = null;
                 definirModo(false);
                 iniciarData();
@@ -85,7 +77,6 @@ function carregarParaEdicao() {
         });
 }
 
-/* ---------- Formulário ---------- */
 
 function agoraLocal() {
     const d = new Date();
@@ -101,13 +92,11 @@ function atualizarContador() {
     contador.textContent = `${texto.value.length} caracteres`;
 }
 
-/* Editar data e hora */
 $("#editar-data").addEventListener("click", () => {
     data.disabled = false;
     data.focus();
 });
 
-/* Perguntas que ajudam a começar: inserem a pergunta no texto */
 document.querySelectorAll(".pergunta").forEach((botao) => {
     botao.addEventListener("click", () => {
         const pergunta = botao.firstChild.textContent.trim();
@@ -119,7 +108,6 @@ document.querySelectorAll(".pergunta").forEach((botao) => {
 
 texto.addEventListener("input", atualizarContador);
 
-/* Limpar */
 function limpar() {
     form.reset();
     iniciarData();
@@ -129,7 +117,6 @@ function limpar() {
 
 $("#limpar").addEventListener("click", limpar);
 
-/* Salvar (cria um registro novo ou atualiza o que está sendo editado) */
 let temporizador;
 
 form.addEventListener("submit", (e) => {
@@ -169,7 +156,6 @@ form.addEventListener("submit", (e) => {
 
     const hora = new Date(data.value).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
 
-    // A única diferença entre criar e editar: o endereço e o método
     const editando = idEdicao != null;
     const url = editando
         ? "/diario/atualizar/" + Number(sessionStorage.ID_USUARIO) + "/" + idEdicao
@@ -192,7 +178,6 @@ form.addEventListener("submit", (e) => {
                 temporizador = setTimeout(() => (toast.hidden = true), 5000);
 
                 if (editando) {
-                    // dá um instante para a pessoa ler o aviso e volta para o histórico
                     setTimeout(() => { location.href = "historico.html"; }, 1500);
                 } else {
                     limpar();
@@ -214,8 +199,6 @@ form.addEventListener("submit", (e) => {
             botaoSalvar.disabled = false;
         });
 });
-
-/* ---------- Início da página ---------- */
 
 atualizarContador();
 

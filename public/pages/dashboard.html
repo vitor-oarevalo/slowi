@@ -75,55 +75,53 @@
 
                 <article class="kpi-article" id="kpi1" aria-labelledby="kpi1-titulo">
                     <header class="kpi-topo">
-                        <h3 class="kpi-titulo" id="kpi1-titulo">Registros nos últimos 7 dias</h3>
+                        <h3 class="kpi-titulo" id="kpi1-titulo">Registros nos últimos 14 dias</h3>
                         <svg class="kpi-icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>
                     </header>
 
                     <p class="kpi-linha-valor">
-                        <strong class="kpi-valor" id="kpi1-valor">17</strong>
+                        <strong class="kpi-valor" id="kpi1-valor">—</strong>
                         <small class="kpi-unidade">registros</small>
                     </p>
 
-                    <p class="kpi-nota" id="kpi1-nota">Na semana anterior foi <strong class="kpi-destaque">3,4</strong>.</p>
+                    <p class="kpi-nota" id="kpi1-nota">Carregando...</p>
                 </article>
 
-                <article class="kpi-article kpi-laranja" id="kpi2" aria-labelledby="kpi2-titulo">
+                <article class="kpi-article" id="kpi2" aria-labelledby="kpi2-titulo">
                     <header class="kpi-topo">
                         <h3 class="kpi-titulo" id="kpi2-titulo">Emoção mais frequente</h3>
                         <svg class="kpi-icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>
                     </header>
 
                     <p class="kpi-linha-valor">
-                        <strong class="kpi-valor kpi-valor-emocao" id="kpi2-valor">Ansiedade</strong>
+                        <strong class="kpi-valor kpi-valor-emocao" id="kpi2-valor">—</strong>
                     </p>
 
-                    <div class="kpi-barra" id="kpi2-barra" role="progressbar" aria-label="9 de 14 registros"
-                        aria-valuemin="0" aria-valuemax="14" aria-valuenow="9">
-                        <div class="kpi-barra-preenchimento" style="width: 64%"></div>
+                    <div class="kpi-barra" id="kpi2-barra" role="progressbar" aria-label="Sem dados"
+                        aria-valuemin="0" aria-valuemax="1" aria-valuenow="0">
+                        <div class="kpi-barra-preenchimento" id="kpi2-preenchimento" style="width: 0%"></div>
                     </div>
 
-                    <p class="kpi-nota kpi-sem-linha" id="kpi2-nota">
-                        Apareceu em <strong class="kpi-destaque">9 registros</strong> nos últimos 7 dias
-                    </p>
+                    <p class="kpi-nota kpi-sem-linha" id="kpi2-nota">Carregando...</p>
                 </article>
 
                 <article class="kpi-article" id="kpi3" aria-labelledby="kpi3-titulo">
                     <header class="kpi-topo">
-                        <h3 class="kpi-titulo" id="kpi3-titulo">Intensidade média dos últimos 7 dias</h3>
+                        <h3 class="kpi-titulo" id="kpi3-titulo">Intensidade média dos últimos 14 dias</h3>
                         <svg class="kpi-icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>
                     </header>
 
                     <p class="kpi-linha-valor">
-                        <strong class="kpi-valor" id="kpi3-valor">4,7</strong>
-                        <small class="kpi-unidade">média da semana</small>
+                        <strong class="kpi-valor" id="kpi3-valor">—</strong>
+                        <small class="kpi-unidade">média do período</small>
                     </p>
 
-                    <div class="kpi-barra kpi-barra-escura" id="kpi3-barra" role="progressbar" aria-label="Intensidade média 4,7 de 5"
-                        aria-valuemin="0" aria-valuemax="5" aria-valuenow="4.7">
-                        <div class="kpi-barra-preenchimento" style="width: 94%"></div>
+                    <div class="kpi-barra kpi-barra-escura" id="kpi3-barra" role="progressbar" aria-label="Sem dados"
+                        aria-valuemin="0" aria-valuemax="5" aria-valuenow="0">
+                        <div class="kpi-barra-preenchimento" id="kpi3-preenchimento" style="width: 0%"></div>
                     </div>
 
-                    <p class="kpi-nota" id="kpi3-nota">Na semana anterior foi <strong class="kpi-destaque">3,2</strong>.</p>
+                    <p class="kpi-nota" id="kpi3-nota">Carregando...</p>
                 </article>
             </section>
             <p class="dica" id="graficos_aviso" hidden></p>
@@ -149,12 +147,12 @@
                         </div>
 
                         <p class="wellbeing-footer">
-                            Cada ponto é um dia em que você escreveu
+                            O gráfico acompanha seus últimos 14 dias de registros
                         </p>
                     </section>
                     <section class="emotions-card">
                         <h3>Emoções registradas</h3>
-                        <p class="emotions-subtitle">Uma emoção principal escolhida por registro</p>
+                        <p class="emotions-subtitle">Todas as emoções desde o começo</p>
 
                         <div class="emotions-content">
                             <div class="emotions-chart">
