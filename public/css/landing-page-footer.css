@@ -47,7 +47,7 @@ footer {
 }
 
 .link-footer:hover::before {
-    width: 50%;
+    width: 100%;
     transition: 0.3s;
 }
 
