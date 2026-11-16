@@ -42,7 +42,7 @@ main {
         transform: translateY(0px);
     }
     50% {
-        transform: translateY(-30px);
+        transform: translateY(-20px);
     }
 
     100% {
@@ -64,7 +64,7 @@ main {
 }
 
 .hero-knowmore-btn {
-    width: 150px;
+    width: 200px;
     text-align: center;
     padding: 15px 15px;
     border-radius: 10px;
