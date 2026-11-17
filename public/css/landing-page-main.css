@@ -345,6 +345,12 @@ main {
 }
 
 
+.resting-img {
+    width: 500px;
+    height: 700px;
+    object-fit: cover;
+}
+
 
 
 .slowi-section {
