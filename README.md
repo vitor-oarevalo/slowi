@@ -1,104 +1,137 @@
-# Slowi
-
 # 🦥 Slowi — Seu espaço, seu tempo
 
-**Um espaço digital de acolhimento, autoconhecimento e bem-estar emocional.**
+**Um espaço digital de acolhimento, autoconhecimento e conscientização sobre saúde mental.**
 
-O Slowi é uma plataforma voltada à saúde mental e ao bem-estar emocional, desenvolvida com o propósito de oferecer um ambiente acolhedor no qual as pessoas possam aprender sobre suas emoções, praticar o autocuidado e encontrar informações confiáveis sobre saúde mental.
-Inspirado na ideia de desacelerar e respeitar o próprio tempo, o Slowi busca tornar o cuidado emocional mais acessível, leve e próximo da realidade das pessoas.
+O Slowi é um projeto acadêmico individual desenvolvido na São Paulo Tech School, idealizado a partir da minha própria vivência e da vontade de tornar o cuidado com a saúde mental um assunto mais presente, acessível e próximo da realidade das pessoas.
 
-> 🌿 **Seu espaço, seu tempo.** Cada pessoa tem seu próprio ritmo, e cuidar de si também significa respeitá-lo.
+Inspirado na ideia de desacelerar e respeitar o próprio ritmo, o projeto busca oferecer um ambiente digital acolhedor para quem deseja compreender melhor suas emoções, refletir sobre seus sentimentos e encontrar um primeiro apoio na jornada de autocuidado.
 
-**O Slowi não se encaixa como produto para quaisquer fins lucrativos nem como fins de solução para quaisquer meios.**
+Mais do que uma aplicação web, o Slowi representa a ideia de que cuidar de si não precisa ser rápido, perfeito ou acontecer de uma só vez.
 
+> 🌿 **Seu espaço, seu tempo.** Cada pessoa tem seu próprio ritmo, e até os passos mais curtos fazem parte do caminho.
 
 ---
 
 ## 🎯 Objetivo do projeto
 
-O objetivo do Slowi é disponibilizar recursos educativos e ferramentas de reflexão que incentivem o autoconhecimento e o cuidado com a saúde mental.
+O objetivo do Slowi é desenvolver um espaço web pessoal de apoio e conscientização sobre saúde mental, reunindo ferramentas de reflexão e recursos informativos que incentivem o autoconhecimento e o cuidado emocional.
 
-A plataforma busca aproximar informações confiáveis do cotidiano dos usuários, oferecendo um ambiente digital intuitivo, acessível e visualmente acolhedor.
+A plataforma foi pensada principalmente para pessoas que estão começando a buscar informações sobre saúde mental e ainda não sabem por onde começar.
 
-O Slowi não tem como objetivo diagnosticar ou tratar transtornos psicológicos, nem substituir o acompanhamento de profissionais de saúde. Sua proposta é complementar o cuidado pessoal por meio de informação, reflexão e orientação.
+Por meio de uma linguagem simples, uma interface intuitiva e recursos acessíveis, o Slowi procura tornar esse primeiro contato mais leve e acolhedor.
+
+O projeto não oferece diagnósticos ou tratamentos e não substitui o acompanhamento de psicólogos, psiquiatras ou outros profissionais qualificados.
 
 ## ✨ Funcionalidades
 
 ### ✅ Funcionalidades implementadas
 
-- **Landing page:** apresentação da plataforma, de sua proposta e de seus objetivos.
+- **Página inicial:** apresentação do Slowi, de sua proposta e da identidade visual do projeto.
+- **Cadastro e login:** criação de contas e autenticação de usuários, com proteção de senhas por hash e salt.
+- **Diário emocional:** registro de emoções, intensidade, reflexões pessoais e etiquetas relacionadas ao cotidiano.
+- **Histórico emocional:** consulta aos registros realizados, com opções para editar e excluir informações.
+- **Dashboard pessoal:** visualização de indicadores e gráficos que ajudam a acompanhar os próprios registros.
+- **Gráfico de emoções:** identificação das emoções mais frequentes no período analisado.
+- **Gráfico de registros:** visualização da quantidade de registros realizados ao longo dos dias.
+- **Indicadores emocionais:** acompanhamento da quantidade de registros e da intensidade média das emoções nos últimos 14 dias.
+- **Onde buscar ajuda:** apresentação de contatos e serviços oficiais de apoio, incluindo CVV, SAMU e CAPS.
+- **Sobre mim:** espaço para compartilhar a motivação por trás do projeto e a experiência de desenvolvimento.
 
+### 🚧 Planos futuros
 
-### 🚧 Funcionalidades planejadas
+- **Biblioteca de conteúdos:** textos educativos sobre saúde mental, autoconhecimento, estigma, normalização do sofrimento e autocuidado, com possibilidade de favoritar conteúdos.
+- **Respiração guiada:** atividade de respiração com opção de música suave ao fundo.
+- **Técnica de grounding:** exercício de atenção aos sentidos para ajudar a pessoa a se reconectar com o momento presente.
+- **Descarregamento de pensamentos:** espaço livre para escrever pensamentos e sentimentos sem a necessidade de organizá-los.
+- **Organizador de preocupações:** ferramenta de reflexão com perguntas que ajudam a diferenciar o que está ou não sob o próprio controle.
+- **Sessão mais segura:** implementação de um sistema de sessões gerenciadas pelo servidor, utilizando tokens de autenticação para proteger o acesso aos registros pessoais.
 
-- **Login:** interface para acesso à conta do usuário.
-- **Cadastro:** interface para criação de uma conta.
-- **Dashboard pessoal:** painel central para acessar os recursos da plataforma e acompanhar o próprio progresso.
-- **Biblioteca de conteúdos:** materiais educativos sobre saúde mental, emoções, autoconhecimento e autocuidado.
-- **Meu espaço:** diário emocional para registrar sentimentos, pensamentos e reflexões pessoais.
-- **Pausas e atividades:** exercícios de reflexão, respiração e pequenas atividades para momentos de pausa.
-- **Onde buscar ajuda:** orientações e informações sobre serviços e recursos de apoio profissional.
-- **Perfil e configurações:** gerenciamento das informações e preferências da conta.
-
-*As funcionalidades planejadas serão desenvolvidas gradualmente, conforme a evolução do projeto.*
+*As funcionalidades futuras serão desenvolvidas gradualmente, conforme a evolução do projeto.*
 
 ## 🎨 Identidade visual
 
-A identidade do Slowi foi pensada para transmitir tranquilidade, acolhimento e simplicidade.
+A identidade visual do Slowi foi construída para transmitir tranquilidade, acolhimento e simplicidade.
 
-- **Paleta visual:** tons de lilás e cores suaves.
-- **Mascote:** um bicho-preguiça cartunesco que representa calma, cuidado e respeito ao próprio ritmo.
-- **Experiência:** interfaces intuitivas, linguagem acolhedora e navegação simples.
-- **Conceito:** desacelerar, compreender os próprios sentimentos e cuidar de si sem cobranças excessivas.
+- **Paleta de cores:** predominância de tons de lilás e cores suaves, escolhidos para criar uma experiência visual confortável.
+- **Mascote:** um bicho-preguiça cartunesco chamado Slowi, que simboliza perseverança, calma e respeito ao próprio ritmo.
+- **Linguagem:** comunicação simples, próxima e acolhedora, com textos em primeira pessoa.
+- **Experiência:** interfaces intuitivas, navegação simples e organização visual que evita o excesso de informações.
 
-## 🛠️ Tecnologias
+O conceito central da identidade é lembrar que desacelerar não significa deixar de avançar.
 
-As tecnologias utilizadas no desenvolvimento incluem:
+## 🛠️ Tecnologias utilizadas
 
 | Tecnologia | Aplicação |
 |---|---|
 | HTML5 | Estruturação das páginas |
-| CSS3 | Estilização, identidade visual e layout |
-| JavaScript | Interatividade e funcionalidades da interface |
-| NodeJS | Conexão com API e Backend |
-| MySQL | Armazenamento e gerenciamento de informações |
+| CSS3 | Estilização, identidade visual e responsividade |
+| JavaScript | Interatividade e funcionalidades da aplicação |
+| Node.js | Ambiente de execução do back-end |
+| Express | Criação de rotas e gerenciamento das requisições |
+| MySQL | Armazenamento e gerenciamento dos dados |
+| Chart.js | Construção dos gráficos do dashboard |
+| crypto | Proteção de senhas por meio de hash e salt |
+| web-data-viz | API utilizada na visualização dos gráficos |
 
+## 🗄️ Banco de dados
 
-## 📂 Estrutura do projeto
+O Slowi utiliza MySQL para armazenar e organizar as informações da aplicação.
 
-A estrutura de diretórios será documentada conforme a organização definitiva do código-fonte.
+A estrutura contempla tabelas relacionadas a:
 
-De maneira geral, o projeto contempla os seguintes componentes:
+- **Cadastro:** informações das contas dos usuários.
+- **Emoção:** emoções disponíveis e suas respectivas cores.
+- **Diário emocional:** registros pessoais, datas, intensidade e emoções associadas.
+- **Etiqueta:** categorias utilizadas para organizar os registros.
+- **RegistroEtiqueta:** relacionamento entre registros emocionais e etiquetas.
 
-- Interface pública e página inicial.
-- Telas de autenticação e cadastro.
-- Área pessoal do usuário.
-- Recursos educativos e atividades de autocuidado.
-- Camada de persistência de dados.
+O diário permite realizar as quatro operações fundamentais de um CRUD:
 
-## 🚀 Como executar
+- **Create:** criar novos registros emocionais.
+- **Read:** consultar registros e visualizar o histórico.
+- **Update:** editar registros existentes.
+- **Delete:** excluir registros.
 
-ALTERAR AQUI POSTERIORMENTE...
+Os relacionamentos entre as tabelas permitem manter os dados organizados e reduzir a duplicação de informações.
 
 ## 🔒 Privacidade e responsabilidade
 
-Por lidar com informações potencialmente pessoais e registros emocionais, o Slowi considera a privacidade e a segurança aspectos importantes de seu desenvolvimento.
+O Slowi trabalha com informações potencialmente pessoais e registros emocionais. Por isso, a privacidade e a segurança são aspectos importantes do projeto.
 
-Entre os princípios que orientam o projeto estão:
+Entre as medidas implementadas estão:
 
-- Respeito à privacidade dos usuários.
-- Tratamento responsável de informações pessoais.
-- Comunicação clara sobre os objetivos e limites da plataforma.
-- Incentivo à busca de ajuda profissional quando necessário.
-- Apresentação de informações educativas com responsabilidade.
+- Armazenamento de senhas com hash e salt.
+- Validação dos dados recebidos pelo servidor.
+- Organização dos registros de acordo com a conta do usuário.
+- Utilização de relacionamentos e chaves estrangeiras no banco de dados.
 
-As medidas técnicas de segurança e proteção de dados serão documentadas conforme forem implementadas.
+Apesar dessas medidas, a versão atual ainda possui limitações de segurança. A identificação do usuário nas requisições utiliza o identificador da conta enviado pelo navegador. Uma evolução prevista é implementar sessões gerenciadas pelo servidor, reforçando a proteção dos registros pessoais.
 
-## 👥 Desenvolvimento
+O Slowi é um projeto acadêmico e exploratório. Não oferece diagnóstico, tratamento ou atendimento emergencial e não substitui o acompanhamento de profissionais de saúde.
 
-O Slowi é um projeto em desenvolvimento. Suas funcionalidades, sua arquitetura e sua experiência de usuário serão aprimoradas ao longo das próximas etapas.
+Em situações de crise ou risco, procure ajuda diretamente pelos serviços oficiais:
 
-## 💜 Mensagem do Slowi
+- **CVV:** 188 — apoio emocional.
+- **SAMU:** 192 — atendimento de urgência e emergência.
+- **CAPS:** Centros de Atenção Psicossocial do SUS.
+
+## 🚀 Como executar
+
+O projeto está disponível para acesso pela versão publicada:
+
+[**Acessar o Slowi**](https://vitor-oarevalo.github.io/slowi/pages/landing-page.html)
+
+Para que o projeto funcione, será necessário executar localmente, será preciso configurar o ambiente com Node.js e MySQL, preparar o banco de dados e iniciar o servidor da aplicação.
+
+## 👤 Desenvolvimento
+
+O Slowi é um projeto acadêmico individual, desenvolvido por **Vitor Arevalo** na São Paulo Tech School, em 2026.
+
+Sua construção envolve conhecimentos de desenvolvimento front-end, back-end, banco de dados, organização de informações e experiência do usuário.
+
+O projeto também representa uma oportunidade de explorar como a tecnologia pode ser utilizada para abordar questões humanas e contribuir, mesmo que em pequena escala, para uma sociedade mais consciente sobre saúde mental.
+
+## 💜 Uma mensagem do Slowi
 
 *Você não precisa resolver tudo hoje.*
 
@@ -106,4 +139,4 @@ O Slowi é um projeto em desenvolvimento. Suas funcionalidades, sua arquitetura 
 
 **Slowi — Seu espaço, seu tempo.** 🦥💜
 
-<a href="https://vitor-oarevalo.github.io/slowi/pages/landing-page.html" target="_blank">Link do Projeto</a>
+---
