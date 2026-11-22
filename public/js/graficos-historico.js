@@ -105,25 +105,28 @@ function contarPorDia(lista) {
     });
 }
 
-const CORES_ROSCA = {
-    "Calma": "#7a66c9",
-    "Alegria": "#e9b44c",
-    "Cansaço": "#a99bdc",
-    "Ansiedade": "#e07a5f",
-    "Tristeza": "#5b8def",
-    "Raiva": "#d1495b",
-    "Sobrecarga": "#43358a"
-};
+
 
 function contarEmocoes(lista) {
     let contagem = {};
 
     lista.forEach(function (item) {
-        contagem[item.emocao] = (contagem[item.emocao] || 0) + 1;
+        if (!contagem[item.emocao]) {
+            contagem[item.emocao] = {
+                valor: 0,
+                cor: "#" + item.corEmocao
+            };
+        }
+
+        contagem[item.emocao].valor++;
     });
 
     return Object.keys(contagem).map(function (nome) {
-        return { nome: nome, valor: contagem[nome], cor: CORES_ROSCA[nome] };
+        return {
+            nome: nome,
+            valor: contagem[nome].valor,
+            cor: contagem[nome].cor
+        };
     }).sort(function (a, b) {
         return b.valor - a.valor;
     });

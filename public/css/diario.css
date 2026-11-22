@@ -700,3 +700,7 @@
     font-weight: 700;
     color: var(--kpi-destaque);
 }
+
+.sobrecarga, .calma, .ansiedade, .tristeza, .raiva {
+    color: #FFF;
+}
