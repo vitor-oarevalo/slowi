@@ -119,7 +119,7 @@ Em situações de crise ou risco, procure ajuda diretamente pelos serviços ofic
 
 O projeto está disponível para acesso pela versão publicada:
 
-[**Acessar o Slowi**](https://vitor-oarevalo.github.io/slowi/pages/landing-page.html)
+[**Acessar o Slowi**](https://vitor-oarevalo.github.io/slowi/public/pages/landing-page.html)
 
 Para que o projeto funcione, será necessário executar localmente, será preciso configurar o ambiente com Node.js e MySQL, preparar o banco de dados e iniciar o servidor da aplicação.
 
