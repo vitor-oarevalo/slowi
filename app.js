@@ -26,7 +26,7 @@ app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
 app.use("/diario", diarioRouter);
 
-app.listen(PORTA_APP, function () {
+app.listen(8080, function () {
     console.log(`
     #####################################################################################################################################
     
@@ -39,7 +39,7 @@ app.listen(PORTA_APP, function () {
 
     #####################################################################################################################################                                                                                                                                 
     \n\n\n                                                                                                 
-    Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar .: http://${HOST_APP}:${PORTA_APP} :. \n\n
+    Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar .: http://10.18.32.211:8080 :. \n\n
     Você está rodando sua aplicação em ambiente de .:${process.env.AMBIENTE_PROCESSO}:. \n\n
     `);
 });
