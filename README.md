@@ -70,7 +70,6 @@ O conceito central da identidade é lembrar que desacelerar não significa deixa
 | Express | Criação de rotas e gerenciamento das requisições |
 | MySQL | Armazenamento e gerenciamento dos dados |
 | Chart.js | Construção dos gráficos do dashboard |
-| crypto | Proteção de senhas por meio de hash e salt |
 | web-data-viz | API utilizada na visualização dos gráficos |
 
 ## 🗄️ Banco de dados

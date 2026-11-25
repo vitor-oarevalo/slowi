@@ -1,5 +1,3 @@
-var crypto = require("crypto");
-
 var usuarioModel = require("../models/usuarioModel");
 
 function autenticar(req, res) {
@@ -11,26 +9,13 @@ function autenticar(req, res) {
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
-
         usuarioModel.autenticar(email)
             .then(
-                
                 function (resultadoAutenticar) {
                     if (resultadoAutenticar.length == 1) {
                         var guardado = resultadoAutenticar[0].senha;
 
-                        var partes = guardado.split(":");
-
-                        var parteSalt = partes[0];
-                        var parteHash = partes[1];
-
-                        let hashDigitado = crypto.scryptSync(senha, parteSalt, 64);
-
-                        let hashBytes = Buffer.from(parteHash, "hex")
-
-                        let autenticacao = crypto.timingSafeEqual(hashDigitado, hashBytes);
-
-                        if (autenticacao) {
+                        if (senha == guardado) {
                             res.json({
                                 idCadastro: resultadoAutenticar[0].idCadastro,
                                 nome: resultadoAutenticar[0].nome,
@@ -65,16 +50,7 @@ function cadastrar(req, res) {
         res.status(400).send("Seu email está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
-    } else {
-        
-        let salt = crypto.randomBytes(16);
-        let saltFormat = salt.toString("hex");
-
-        let hash = crypto.scryptSync(senha, saltFormat, 64);
-        let hashFormat = hash.toString("hex");
-
-        senha = saltFormat + ":" + hashFormat;
-
+    } else {        
         usuarioModel.cadastrar(nome, email, senha)
             .then(
                 function (resultado) {

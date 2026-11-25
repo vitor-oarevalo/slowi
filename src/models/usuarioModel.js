@@ -8,7 +8,7 @@ function autenticar(email) {
     return database.executar(instrucaoSql, [email]);
 }
 
-function cadastrar(nome, email, senha,) {
+function cadastrar(nome, email, senha) {
     var instrucaoSql = `
         INSERT INTO cadastro (nome, email, senha) VALUES (?, ?, ?);
     `;

@@ -39,7 +39,7 @@ app.listen(8080, function () {
 
     #####################################################################################################################################                                                                                                                                 
     \n\n\n                                                                                                 
-    Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar .: http://10.18.32.211:8080 :. \n\n
+    Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar .: http://localhost:8080 :. \n\n
     Você está rodando sua aplicação em ambiente de .:${process.env.AMBIENTE_PROCESSO}:. \n\n
     `);
 });
