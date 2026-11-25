@@ -9,13 +9,8 @@ function menuEstaAberto() {
     return !document.body.classList.contains("menu-fechado");
 }
 
-function definirMenu(aberto, moverFoco = true) {
+function definirMenu(aberto) {
     document.body.classList.toggle("menu-fechado", !aberto);
-    btnAbrir.setAttribute("aria-expanded", String(aberto));
-
-    if (moverFoco) {
-        (aberto ? btnFechar : btnAbrir).focus();
-    }
 }
 
 function abrirMenu() {
@@ -33,20 +28,6 @@ telaPequena.addEventListener("change", (e) => definirMenu(!e.matches, false));
 btnAbrir.addEventListener("click", abrirMenu);
 btnFechar.addEventListener("click", fecharMenu);
 overlay.addEventListener("click", fecharMenu);
-
-document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && menuEstaAberto()) {
-        fecharMenu();
-    }
-});
-
-menu.querySelectorAll(".menu-link").forEach((link) => {
-    link.addEventListener("click", () => {
-        if (telaPequena.matches) {
-            definirMenu(false, false);
-        }
-    });
-});
 
 
 function reatribuirNome() {
