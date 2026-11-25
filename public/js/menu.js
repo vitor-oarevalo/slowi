@@ -3,7 +3,6 @@ const btnAbrir = document.getElementById("open-btn");
 const btnFechar = document.getElementById("close-btn");
 const overlay = document.getElementById("menu-overlay");
 
-const telaPequena = window.matchMedia("(max-width: 768px)");
 
 function menuEstaAberto() {
     return !document.body.classList.contains("menu-fechado");
@@ -20,10 +19,6 @@ function abrirMenu() {
 function fecharMenu() {
     definirMenu(false);
 }
-
-definirMenu(!telaPequena.matches, false);
-
-telaPequena.addEventListener("change", (e) => definirMenu(!e.matches, false));
 
 btnAbrir.addEventListener("click", abrirMenu);
 btnFechar.addEventListener("click", fecharMenu);
