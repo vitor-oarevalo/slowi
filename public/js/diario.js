@@ -5,6 +5,7 @@ const texto = document.querySelector("#texto");
 const contador = document.querySelector("#contador");
 const erro = document.querySelector("#erro");
 const toast = document.querySelector("#toast");
+const toastInfo = document.querySelector("#toast-info")
 
 function pad(n) {
     var numero = String(n);
@@ -212,12 +213,21 @@ form.addEventListener("submit", (e) => {
 
     erro.hidden = true;
 
+    const caixasMarcadas = document.querySelectorAll("input[name=etiqueta]:checked");
+    let etiquetasSelecionadas = [];
+
+    caixasMarcadas.forEach(function(caixa) {
+        etiquetasSelecionadas.push(caixa.value);
+    });
+
+    let etiquetasTexto = etiquetasSelecionadas.join(",");
+
     const registro = {
         dataRegistro: data.value.replace("T", " ") + ":00",
         emocao: emocao.value,
         intensidade: Number(document.querySelector("input[name=intensidade]:checked").value),
         registro: texto.value.trim(),
-        etiqueta: [...document.querySelectorAll("input[name=etiqueta]:checked")].map((x) => x.value).join(","),
+        etiqueta: etiquetasTexto,
         fkCadastro: Number(sessionStorage.ID_USUARIO)
     };
 
@@ -247,7 +257,7 @@ form.addEventListener("submit", (e) => {
     })
         .then(function (resposta) {
             if (resposta.ok) {
-                $("#toast-info").textContent = `${hora} · Emoção: ${registro.emocao}`;
+                toastInfo.textContent = `${hora} · Emoção: ${registro.emocao}`;
                 toast.hidden = false;
                 clearTimeout(temporizador);
                 temporizador = setTimeout(() => (toast.hidden = true), 5000);
@@ -281,5 +291,6 @@ if (idEdicao != null) {
     definirModo(true);
     carregarParaEdicao();
 } else {
+    definirModo(false);
     iniciarData();
 }
