@@ -26,7 +26,7 @@ let titulo_formulario = document.querySelector("#titulo-formulario")
 let subtitulo_formulario = document.querySelector("#subtitulo-formulario")
 let salvar_texto = document.querySelector("#salvar-texto")
 
-let limpar = document.querySelector("#limpar");
+let botaoLimpar = document.querySelector("#limpar");
 
 function definirModo(editando) {
     if (editando) {
@@ -34,13 +34,13 @@ function definirModo(editando) {
         titulo_formulario.textContent = "Editando um registro";
         subtitulo_formulario.textContent = "Mude o que quiser e salve. Se desistir, é só voltar ao histórico.";
         salvar_texto.textContent = "Salvar alterações";
-        limpar.hidden = true;
+        botaoLimpar.hidden = true;
     } else {
         topo_modo.textContent.textContent = "Registrar";
         titulo_formulario.textContent.textContent = "Um momento para se escutar";
         subtitulo_formulario.textContent.textContent = "Sem pressa, sem metas e sem página em branco para vencer.";
         salvar_texto.textContent.textContent = "Salvar";
-        limpar.hidden = false;
+        botaoLimpar.hidden = false;
     }
 }
 
@@ -151,15 +151,31 @@ function atualizarContador() {
     contador.textContent = `${texto.value.length} caracteres`;
 }
 
-$("#editar-data").addEventListener("click", () => {
+const botaoEditarData = document.querySelector("#editar-data");
+
+botaoEditarData.addEventListener("click", () => {
     data.disabled = false;
     data.focus();
 });
 
-document.querySelectorAll(".pergunta").forEach((botao) => {
+const botoesPergunta = document.querySelectorAll(".pergunta");
+
+botoesPergunta.forEach((botao) => {
     botao.addEventListener("click", () => {
         const pergunta = botao.firstChild.textContent.trim();
-        texto.value += (texto.value && !texto.value.endsWith("\n") ? "\n" : "") + pergunta + "\n";
+        var textoAtual = texto.value;
+        var precisaPularLinha = false;
+
+        if (textoAtual != "" && !textoAtual.endsWith("\n")) {
+            precisaPularLinha = true;
+        }
+
+        if (precisaPularLinha) {
+            texto.value = textoAtual + "\n" + pergunta + "\n";
+        } else {
+            texto.value = textoAtual + pergunta + "\n";
+        }
+
         texto.focus();
         atualizarContador();
     });
@@ -174,7 +190,7 @@ function limpar() {
     erro.hidden = true;
 }
 
-$("#limpar").addEventListener("click", limpar);
+botaoLimpar.addEventListener("click", limpar);
 
 let temporizador;
 
