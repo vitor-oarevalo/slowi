@@ -1,45 +1,98 @@
-const $ = (seletor) => document.querySelector(seletor);
+const botaoSalvar = document.querySelector(".salvar-btn");
+const form = document.querySelector("#registro");
+const data = document.querySelector("#data");
+const texto = document.querySelector("#texto");
+const contador = document.querySelector("#contador");
+const erro = document.querySelector("#erro");
+const toast = document.querySelector("#toast");
 
-const botaoSalvar = $(".salvar-btn");
-const form = $("#registro");
-const data = $("#data");
-const texto = $("#texto");
-const contador = $("#contador");
-const erro = $("#erro");
-const toast = $("#toast");
+function pad(n) {
+    var numero = String(n);
+    return numero.padStart(2, "0");
+}
 
-const pad = (n) => String(n).padStart(2, "0");
+const parametros = new URLSearchParams(location.search);
+const valorEdicao = parametros.get("editar");
+const parametroEdicao = Number(valorEdicao);
 
-const parametroEdicao = Number(new URLSearchParams(location.search).get("editar"));
-let idEdicao = Number.isInteger(parametroEdicao) && parametroEdicao > 0 ? parametroEdicao : null;
+let idEdicao = null;
+
+if (Number.isInteger(parametroEdicao) && parametroEdicao > 0) {
+    idEdicao = parametroEdicao;
+}
+
+let topo_modo = document.querySelector("#topo-modo")
+let titulo_formulario = document.querySelector("#titulo-formulario")
+let subtitulo_formulario = document.querySelector("#subtitulo-formulario")
+let salvar_texto = document.querySelector("#salvar-texto")
+
+let limpar = document.querySelector("#limpar");
 
 function definirModo(editando) {
-    $("#topo-modo").textContent = editando ? "Editar" : "Registrar";
-    $("#titulo-formulario").textContent = editando ? "Editando um registro" : "Um momento para se escutar";
-    $("#subtitulo-formulario").textContent = editando
-        ? "Mude o que quiser e salve. Se desistir, é só voltar ao histórico."
-        : "Sem pressa, sem metas e sem página em branco para vencer.";
-    $("#salvar-texto").textContent = editando ? "Salvar alterações" : "Salvar";
-    $("#limpar").hidden = editando;
+    if (editando) {
+        topo_modo.textContent = "Editar";
+        titulo_formulario.textContent = "Editando um registro";
+        subtitulo_formulario.textContent = "Mude o que quiser e salve. Se desistir, é só voltar ao histórico.";
+        salvar_texto.textContent = "Salvar alterações";
+        limpar.hidden = true;
+    } else {
+        topo_modo.textContent.textContent = "Registrar";
+        titulo_formulario.textContent.textContent = "Um momento para se escutar";
+        subtitulo_formulario.textContent.textContent = "Sem pressa, sem metas e sem página em branco para vencer.";
+        salvar_texto.textContent.textContent = "Salvar";
+        limpar.hidden = false;
+    }
 }
 
 function preencherFormulario(item) {
-    data.value = item.dataRegistro.replace(" ", "T").slice(0, 16);
+    let dataFormatada = item.dataRegistro.replace(" ", "T").slice(0, 16);
+    dataFormatada = dataFormatada.slice(0, 16);
+    data.value = dataFormatada;
 
-    document.querySelectorAll("input[name=emocao]").forEach((radio) => {
-        radio.checked = radio.value == item.emocao;
+    let emocoes = document.querySelectorAll("input[name=emocao]");
+
+    emocoes.forEach(function(radio) {
+        if (radio.value == item.emocao) {
+            radio.checked = true;
+        } else {
+            radio.checked = false;
+        }
     });
 
-    document.querySelectorAll("input[name=intensidade]").forEach((radio) => {
-        radio.checked = Number(radio.value) == item.intensidade;
+    let intensidades = document.querySelectorAll("input[name=intensidade]");
+
+    intensidades.forEach(function(radio) {
+        let valorRadio = Number(radio.value);
+
+        if (valorRadio == item.intensidade) {
+            radio.checked = true;
+        } else {
+            radio.checked = false;
+        }
     });
 
-    texto.value = item.registro || "";
+    if (item.registro) {
+        texto.value = item.registro;
+    } else {
+        texto.value = "";
+    }
+
     atualizarContador();
 
-    const marcadas = item.etiqueta ? item.etiqueta.split(",") : [];
-    document.querySelectorAll("input[name=etiqueta]").forEach((caixa) => {
-        caixa.checked = marcadas.includes(caixa.value);
+    let marcadas = [];
+
+    if (item.etiqueta) {
+        marcadas = item.etiqueta.split(",");
+    }
+
+    let etiquetas = document.querySelectorAll("input[name=etiqueta]");
+
+    etiquetas.forEach(function(caixa) {
+        if (marcadas.includes(caixa.value)) {
+            caixa.checked = true;
+        } else {
+            caixa.checked = false;
+        }
     });
 }
 
@@ -54,7 +107,13 @@ function carregarParaEdicao() {
             return resposta.json();
         })
         .then(function (lista) {
-            const item = lista.find((registro) => registro.idDiarioEmocional == idEdicao);
+            const item = lista.find(function(registro) {
+                if (registro.idDiarioEmocional == idEdicao) {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
 
             if (!item) {
                 idEdicao = null;
